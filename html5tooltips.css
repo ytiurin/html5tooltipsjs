@@ -1,0 +1,39 @@
+.html5tooltip
+{
+  background-color: #2A2A2A;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  padding: 7px 9px;
+}
+/*
+.html5tooltip { transition: opacity 0.3s ease-out 0s; }",
+*/
+.html5tooltip-text
+{
+  font-family: arial,sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+}
+.html5tooltip-hr
+{
+  height: 7px;
+}
+.html5tooltip-pointer
+{
+  position: absolute;
+  top: -12px;
+}
+.html5tooltip-pi
+{
+  border: 6px solid rgba(0, 0, 0, 0);
+  border-bottom-color: #ffffff;
+  position: absolute;
+}
+.html5tooltip-po
+{
+  border: 5px solid rgba(0, 0, 0, 0);
+  border-bottom-color: #2A2A2A;
+  left: 1px;
+  position: absolute;
+  top: 2px;
+}
