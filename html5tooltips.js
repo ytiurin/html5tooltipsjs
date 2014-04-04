@@ -96,7 +96,7 @@ function extend(targetObj)
   return targetObj;
 }
 
-function TT()
+function Tooltip()
 {
   var ttElement, ttModel, targetElement, elText, elMore, elMoreText, elPointer;
 
@@ -264,7 +264,7 @@ function scroll()
 
 function init()
 {
-  tt = TT();
+  tt = Tooltip();
 
   activeElements = {
     focused: null,
