@@ -8,7 +8,11 @@ Designing a website with a pleasant user experience requires attention to detail
 
 ###How it works
 
-html5tooltips.js can be described as an isolated layer upon the web document and starts after the page is loaded. Putting tooltips to your website is quite easy. You just need to tie а tooltip text to exact UI element. You can do this by using CSS selectors or by simply adding data-* attribute to an element HTML representation.
+html5tooltips.js can be described as an isolated layer that covers the website pages. It contains a number of hidden text boxes, that shows only when user need some hints or explanation. You could find those kind of tooltips when using popular cloud services like Google Mail or Github. It's very intuitive and in most cases you won't realize it's there, until you pay attention. Those small helpers actually do a great job on keeping users confident in your website environment.  
+
+###Installation
+
+Putting tooltips to your website is quite easy. You just need to tie а tooltip text to exact UI element. You can do this by using CSS selectors or by simply adding data-* attribute to an element HTML representation.
 
 ```javascript
 html5tooltips({
