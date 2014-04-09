@@ -1,18 +1,14 @@
 html5tooltips.js
 ===============
-Fast and responsive tooltips with native javascript and CSS3 animation. Perfect for explaining UI elements and controls.
+Light and clean tooltips, written in pure javascript with CSS3 animation.
 
-###What's the story?
+###Quick introduction
 
-Designing a website with a pleasant user experience requires attention to details. This often happens when your website should give users an ability to do hard things in a simple way. Giving a small explanation text to UI elements may become a clue to a winning design. It won’t necessarily make your website a huge success, but it’ll definitely make users appreciate the care you put into your website.
-
-###How it works
-
-html5tooltips.js can be described as an isolated layer, covering website pages. It contains a number of hidden text boxes, that show up only when user need some hints or explanation. You could find those kind of tooltips, when using popular cloud services like Google Mail or Github. It's very intuitive and, in most cases, inconspicuous, until you realize it's actually there. Those small helpers do a great job on keeping users calm and confident in your website environment.
+html5tooltips.js create a number of hidden text boxes in your web UI, showing up only when user needs some hints or explanation on specific UI elements. You could see this kind of tooltips, when using Google Mail or Github. It's an intuitive and inconspicuous way to keep users calm and confident in your website environment.
 
 ###Simple usage
 
-Using html5tooltips.js is quite easy. You just need to tie a tooltip text to the exact UI element. You can do this by simply adding data-* attribute to an element HTML representation.
+So, you need to tie a tooltip text to a specific UI element. You can do this by simply adding data-* attribute to an element HTML representation.
 
 ```html
 <span id="refresh" data-tooltip-text="Refresh"></span>
@@ -20,7 +16,7 @@ Using html5tooltips.js is quite easy. You just need to tie a tooltip text to the
 
 ###Advanced usage
 
-If you want to have a complete control on the process, you better use javascript constructor. It is perfect when you want to isolate tooltips creation from the document itself.
+You may use a javascript constructor itself. It's more flexible and configurable way to use a tool
 
 ```javascript
 html5tooltips({
@@ -29,16 +25,7 @@ html5tooltips({
 });
 ```
 
-You may use CSS or Xpath selectors, the best that fits for you.
-
-```javascript
-html5tooltips({
-  contentText: "Refresh",
-  targetXPath: "/html/body/div[1]/span[1]"
-});
-```
-
-You can make tooltip stick to one of the target sides.
+Use CSS selectors to tie tooltips to different DOM elements. You can make a tooltip stick to any side of the target element
 
 ```javascript
 html5tooltips({
@@ -48,7 +35,7 @@ html5tooltips({
 });
 ```
 
-You can add even more explanation text to the tooltip. It would appear when user focus on the target element. This best fits to explain text input fields and content editable areas. You can even add html tags to format text and put links inside the tooltip.
+You can add even more explanation text to a tooltip, which shows up only when user focus on a target element. This feature is designed to explain text input fields and content editable areas. You can even use html formatting
 
 ```javascript
 html5tooltips({
