@@ -5,7 +5,7 @@ var tt, tModels, activeElements,
 typeTooltipModel = {
   contentText: "",
   contentMore: "",
-  position: "bottom",
+  stickTo: "bottom",
   targetElements: [],
   targetXPath: ""
 },
