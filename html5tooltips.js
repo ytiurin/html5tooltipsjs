@@ -12,7 +12,7 @@
 
 (function() {
 
-var tt, tModels, activeElements, documentReady,
+var tt, tModels, options, activeElements, documentReady,
 
 typeTooltipModel = {
   contentText: "",
@@ -22,7 +22,14 @@ typeTooltipModel = {
   targetElements: [],
   targetSelector: "",
   targetXPath: "",
-  maxWidth: "auto"
+  maxWidth: null
+},
+
+defaultOptions = {
+  HTMLTemplate: null,
+  disableAnimation: null,
+  stickTo: null,
+  maxWidth: null
 },
 
 template = {
@@ -120,20 +127,6 @@ function Tooltip()
     document.removeChild(ttElement);
   }
 
-  function disableAnimation()
-  {
-    toggleAnimation(false);
-
-    return this;
-  }
-
-  function enableAnimation()
-  {
-    toggleAnimation(true);
-
-    return this;
-  }
-  
   function hideAll()
   {
     if (ttElement.style.visibility !== 'collapse')
@@ -154,7 +147,7 @@ function Tooltip()
   function init()
   {
     var tmplNode = document.createElement("div");
-    tmplNode.innerHTML = template.HTML;
+    tmplNode.innerHTML = options.HTMLTemplate ? options.HTMLTemplate : template.HTML;
     ttElement = tmplNode.firstChild;
     document.body.appendChild(ttElement);
 
@@ -255,8 +248,10 @@ function Tooltip()
     // update width
     ttElement.style.width = "auto";
     ttRect = ttElement.getBoundingClientRect();
-    if (ttModel.maxWidth !== "auto")
-      ttElement.style.width = ttRect.width > ttModel.maxWidth ? ttModel.maxWidth + "px" : "auto";
+
+    var maxWidth = ttModel.maxWidth || options.maxWidth;
+    if (maxWidth)
+      ttElement.style.width = ttRect.width > maxWidth ? maxWidth + "px" : "auto";
 
     // position depend on target and tt width
     targetRect = targetElement.getBoundingClientRect();
@@ -273,18 +268,13 @@ function Tooltip()
     elMoreText.innerHTML = ttModel.contentMore ? ttModel.contentMore : "";
 
     // update animation
-    if (ttModel.disableAnimation)
-      disableAnimation();
-    else
-      enableAnimation();
+    toggleAnimation(!(options.disableAnimation ? options.disableAnimation : ttModel.disableAnimation));
   }
 
   init();
 
   return {
     destroy: destroy,
-    disableAnimation: disableAnimation,
-    enableAnimation: enableAnimation,
     hideAll: hideAll,
     model: model,
     showAll: showAll,
@@ -377,7 +367,7 @@ function init()
   });
 }
 
-function html5tooltips(userTModels)
+function html5tooltips(userTModels, userOptions)
 {
   if (!tModels)
     tModels = [];
@@ -388,6 +378,8 @@ function html5tooltips(userTModels)
 
   else if (typeof userTModels === "object")
     tModels.push(userTModels);
+
+  options = userOptions ? extend({}, userOptions) : {};
 
   if (documentReady)
     init();
@@ -404,7 +396,7 @@ function completed() {
 if (window.define) {
   // AMD
   documentReady = true;
-  
+
   define("html5tooltips", function () {
     return html5tooltips;
   });
