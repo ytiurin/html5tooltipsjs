@@ -17,6 +17,7 @@ var tt, tModels, activeElements, documentReady,
 typeTooltipModel = {
   contentText: "",
   contentMore: "",
+  disableAnimation: false,
   stickTo: "bottom",
   targetElements: [],
   targetSelector: "",
@@ -26,9 +27,9 @@ typeTooltipModel = {
 
 template = {
   HTML: [
-    "<div class='html5tooltip' style='box-sizing:border-box;position:fixed;transition:opacity 0.3s;'>",
+    "<div class='html5tooltip' style='box-sizing:border-box;position:fixed;'>",
       "<div class='html5tooltip-text'></div>",
-      "<div class='html5tooltip-more' style='overflow:hidden;transition:height 0.3s;'>",
+      "<div class='html5tooltip-more' style='overflow:hidden;'>",
         "<div class='html5tooltip-hr'></div>",
         "<div class='html5tooltip-text'></div>",
       "</div>",
@@ -117,6 +118,20 @@ function Tooltip()
   function destroy()
   {
     document.removeChild(ttElement);
+  }
+
+  function disableAnimation()
+  {
+    toggleAnimation(false);
+
+    return this;
+  }
+
+  function enableAnimation()
+  {
+    toggleAnimation(true);
+
+    return this;
   }
   
   function hideAll()
@@ -220,6 +235,16 @@ function Tooltip()
     return this;
   }
 
+  function toggleAnimation(on)
+  {
+    ["t", "MozT", "MsT", "OT", "WebkitT"].forEach(function(pr) {
+      ttElement.style[pr + "ransition"] = on ? "opacity 0.3s" : "";
+      elMore.style[pr + "ransition"] = on ? "height 0.3s" : "";
+    });
+
+    return this;
+  }
+
   function updatePos()
   {
     var targetRect, ttRect;
@@ -231,7 +256,7 @@ function Tooltip()
     ttElement.style.width = "auto";
     ttRect = ttElement.getBoundingClientRect();
     if (ttModel.maxWidth !== "auto")
-      ttElement.style.width = ttRect.width > ttModel.maxWidth ? ttModel.maxWidth + "px" : "auto"; 
+      ttElement.style.width = ttRect.width > ttModel.maxWidth ? ttModel.maxWidth + "px" : "auto";
 
     // position depend on target and tt width
     targetRect = targetElement.getBoundingClientRect();
@@ -246,12 +271,20 @@ function Tooltip()
   {
     elText.innerHTML = ttModel.contentText ? ttModel.contentText : "";
     elMoreText.innerHTML = ttModel.contentMore ? ttModel.contentMore : "";
+    
+    // update animation
+    if (ttModel.disableAnimation)
+      disableAnimation();
+    else
+      enableAnimation();
   }
 
   init();
 
   return {
     destroy: destroy,
+    disableAnimation: disableAnimation,
+    enableAnimation: enableAnimation,
     hideAll: hideAll,
     model: model,
     showAll: showAll,
