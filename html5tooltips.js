@@ -124,6 +124,8 @@ function Tooltip()
     if (ttElement.style.visibility !== 'collapse')
       ttElement.style.visibility = 'collapse';
       ttElement.style.opacity = '0';
+      ttElement.style.left = '-9999px';
+      ttElement.style.top = '-9999px';
 
     if (elMore.style.display !== 'none') {
       elMore.style.display = 'none';
@@ -310,7 +312,7 @@ function init()
         setTimeout(function() {
           if (activeElements.hovered === hoverTarget)
             tt.showBrief();
-        }, 500);
+        }, 300);
       });
 
       el.addEventListener("mouseout", function() {
