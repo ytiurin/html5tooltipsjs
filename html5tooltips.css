@@ -1,13 +1,10 @@
 .html5tooltip
 {
-  background-color: #2A2A2A;
-  border: 1px solid #FFFFFF;
+  background-color: rgba(42, 42, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0);
   color: #FFFFFF;
   padding: 7px 9px;
 }
-/*
-.html5tooltip { transition: opacity 0.3s ease-out 0s; }",
-*/
 .html5tooltip-text
 {
   font-family: arial,sans-serif;
@@ -23,16 +20,16 @@
   position: absolute;
   top: -12px;
 }
-.html5tooltip-pi
-{
-  border: 6px solid rgba(0, 0, 0, 0);
-  border-bottom-color: #ffffff;
-  position: absolute;
-}
 .html5tooltip-po
 {
-  border: 5px solid rgba(0, 0, 0, 0);
-  border-bottom-color: #2A2A2A;
+  border: 6px solid rgba(255, 255, 255, 0);
+  border-bottom-color: rgba(255, 255, 255, 0);
+  position: absolute;
+}
+.html5tooltip-pi
+{
+  border: 5px solid rgba(255, 255, 255, 0);
+  border-bottom-color: rgba(42, 42, 42, 0.95);
   left: 1px;
   position: absolute;
   top: 2px;

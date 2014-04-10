@@ -24,13 +24,13 @@ typeTooltipModel = {
 
 template = {
   HTML: [
-    "<div class='html5tooltip' style='box-sizing:border-box;position:fixed;'>",
+    "<div class='html5tooltip' style='box-sizing:border-box;position:fixed;transition:opacity 0.3s;'>",
       "<div class='html5tooltip-text'></div>",
       "<div class='html5tooltip-more' style='overflow:hidden;transition:height 0.3s;'>",
         "<div class='html5tooltip-hr'></div>",
         "<div class='html5tooltip-text'></div>",
       "</div>",
-      "<div class='html5tooltip-pointer'><div class='html5tooltip-pi'></div><div class='html5tooltip-po'></div></div>",
+      "<div class='html5tooltip-pointer'><div class='html5tooltip-po'></div><div class='html5tooltip-pi'></div></div>",
     "</div>"
   ].join(""),
 
@@ -121,6 +121,7 @@ function Tooltip()
   {
     if (ttElement.style.visibility !== 'collapse')
       ttElement.style.visibility = 'collapse';
+      ttElement.style.opacity = '0';
 
     if (elMore.style.display !== 'none') {
       elMore.style.display = 'none';
@@ -162,12 +163,7 @@ function Tooltip()
   {
     if (ttElement.style.visibility !== 'visible')
       ttElement.style.visibility = 'visible';
-
-    // if (elMore.style.display !== 'none') {
-    //   elMore.style.display = 'none';
-    //   elMore.style.visibility = 'collapse';
-    //   elMore.style.height = 'auto';
-    // }
+      ttElement.style.opacity = '1';
 
     updatePos();
 
@@ -178,6 +174,7 @@ function Tooltip()
   {
     if (ttElement.style.visibility !== 'visible') {
       ttElement.style.visibility = 'visible';
+      ttElement.style.opacity = '1';
 
       if (ttModel.contentMore) {
         elMore.style.display = 'block';
@@ -337,8 +334,6 @@ function init()
 
     tModels[i] = tModel;
   });
-
-  // console.log(tModels);
 }
 
 function html5tooltips(userTModels)
