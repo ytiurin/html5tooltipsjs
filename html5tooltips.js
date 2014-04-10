@@ -12,7 +12,7 @@
 
 (function() {
 
-var tt, tModels, activeElements,
+var tt, tModels, activeElements, documentReady,
 
 typeTooltipModel = {
   contentText: "",
@@ -136,8 +136,12 @@ function Tooltip()
 
   function init()
   {
-    document.body.innerHTML += template.HTML;
-    ttElement = document.getElementsByClassName(template.hookClasses.tooltip)[0];
+    var tmplNode = document.createElement("div");
+    tmplNode.innerHTML = template.HTML;
+    ttElement = tmplNode.firstChild;
+    document.body.appendChild(ttElement);
+
+    // ttElement = document.getElementsByClassName(template.hookClasses.tooltip)[0];
     elText = ttElement.getElementsByClassName(template.hookClasses.tooltipText)[0];
     elMore = ttElement.getElementsByClassName(template.hookClasses.tooltipMore)[0];
     elMoreText = elMore.getElementsByClassName(template.hookClasses.tooltipMoreText)[0];
@@ -349,17 +353,26 @@ function html5tooltips(userTModels)
 
   else if (typeof userTModels === "object")
     tModels.push(userTModels);
+
+  if (documentReady)
+    init();
 }
 
 function completed() {
   document.removeEventListener( "DOMContentLoaded", completed, false );
   window.removeEventListener( "load", completed, false );
+  documentReady = true;
   
   init();
 }
 
-document.addEventListener("DOMContentLoaded", completed, false);
-window.addEventListener( "load", completed, false );
+if (document.readyState === "complete")
+  documentReady = true;
+
+else {
+  document.addEventListener("DOMContentLoaded", completed, false);
+  window.addEventListener( "load", completed, false );
+}
 
 window.addEventListener( "scroll", scroll, false );
 
