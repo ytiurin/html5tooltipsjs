@@ -15,22 +15,40 @@
 {
   height: 7px;
 }
-.html5tooltip-pointer
+.html5tooltip-pointer-bottom,
+.html5tooltip-pointer-left,
+.html5tooltip-pointer-right,
+.html5tooltip-pointer-top
 {
+  height: 12px;
   position: absolute;
-  top: -12px;
+  width: 12px;
 }
 .html5tooltip-po
 {
   border: 6px solid rgba(255, 255, 255, 0);
-  border-bottom-color: rgba(255, 255, 255, 0);
   position: absolute;
 }
 .html5tooltip-pi
 {
   border: 5px solid rgba(255, 255, 255, 0);
-  border-bottom-color: rgba(42, 42, 42, 0.95);
   left: 1px;
   position: absolute;
   top: 2px;
+}
+.html5tooltip-pointer-bottom .html5tooltip-pi
+{
+  border-bottom-color: rgba(42, 42, 42, 0.95);
+}
+.html5tooltip-pointer-left .html5tooltip-pi
+{
+  border-left-color: rgba(42, 42, 42, 0.95);
+}
+.html5tooltip-pointer-right .html5tooltip-pi
+{
+  border-right-color: rgba(42, 42, 42, 0.95);
+}
+.html5tooltip-pointer-top .html5tooltip-pi
+{
+  border-top-color: rgba(42, 42, 42, 0.95);
 }

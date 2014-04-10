@@ -19,6 +19,7 @@ typeTooltipModel = {
   contentMore: "",
   disableAnimation: false,
   stickTo: "bottom",
+  stickDistance: 10,
   targetElements: [],
   targetSelector: "",
   targetXPath: "",
@@ -256,10 +257,41 @@ function Tooltip()
     // position depend on target and tt width
     targetRect = targetElement.getBoundingClientRect();
     ttRect = ttElement.getBoundingClientRect();
-    ttElement.style.left = targetRect.left + (targetRect.width - ttRect.width) / 2 + "px";
-    ttElement.style.top = targetRect.top + targetRect.height + 10 + "px";
+    pointerRect = elPointer.getBoundingClientRect();
 
-    elPointer.style.left = parseInt((ttRect.width - 12) / 2) + "px";
+    switch (ttModel.stickTo) {
+      case "bottom":
+        ttElement.style.left = targetRect.left + parseInt((targetRect.width - ttRect.width) / 2) + "px";
+        ttElement.style.top = targetRect.top + targetRect.height + parseInt(ttModel.stickDistance) + "px";
+        
+        elPointer.style.left = parseInt((ttRect.width - pointerRect.width) / 2) + "px";
+        elPointer.style.top = -1 * pointerRect.height - 1 + "px";
+        break;
+
+      case "left":
+        ttElement.style.left = targetRect.left - ttRect.width - parseInt(ttModel.stickDistance) + "px";
+        ttElement.style.top = targetRect.top + (targetRect.height - ttRect.height) / 2 + "px";
+        
+        elPointer.style.left = ttRect.width - 3 + "px";
+        elPointer.style.top = parseInt((ttRect.height - pointerRect.height) / 2) + "px";
+        break;
+
+      case "right":
+        ttElement.style.left = targetRect.left + targetRect.width + parseInt(ttModel.stickDistance) + "px";
+        ttElement.style.top = targetRect.top + (targetRect.height - ttRect.height) / 2 + "px";
+        
+        elPointer.style.left = -1 * pointerRect.width + "px";
+        elPointer.style.top = parseInt((ttRect.height - pointerRect.height) / 2) + "px";
+        break;
+
+      case "top":
+        ttElement.style.left = targetRect.left + (targetRect.width - ttRect.width) / 2 + "px";
+        ttElement.style.top = targetRect.top - ttRect.height - parseInt(ttModel.stickDistance) + "px";
+        
+        elPointer.style.left = parseInt((ttRect.width - pointerRect.width) / 2) + "px";
+        elPointer.style.top = ttRect.height - 3 + "px";
+        break;
+    }
   }
 
   function updateModel()
@@ -269,6 +301,9 @@ function Tooltip()
 
     // update animation
     toggleAnimation(!(options.disableAnimation ? options.disableAnimation : ttModel.disableAnimation));
+
+    // update pointer
+    elPointer.className = "html5tooltip-pointer-" + ttModel.stickTo;
   }
 
   init();
