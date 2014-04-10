@@ -19,7 +19,9 @@ typeTooltipModel = {
   contentMore: "",
   stickTo: "bottom",
   targetElements: [],
-  targetXPath: ""
+  targetSelector: "",
+  targetXPath: "",
+  maxWidth: "auto"
 },
 
 template = {
@@ -222,7 +224,7 @@ function Tooltip()
     // update width
     ttElement.style.width = "auto";
     ttRect = ttElement.getBoundingClientRect();
-    if (ttModel.maxWidth)
+    if (ttModel.maxWidth !== "auto")
       ttElement.style.width = ttRect.width > ttModel.maxWidth ? ttModel.maxWidth + "px" : "auto"; 
 
     // position depend on target and tt width
