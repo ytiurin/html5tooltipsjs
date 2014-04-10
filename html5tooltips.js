@@ -271,7 +271,7 @@ function Tooltip()
   {
     elText.innerHTML = ttModel.contentText ? ttModel.contentText : "";
     elMoreText.innerHTML = ttModel.contentMore ? ttModel.contentMore : "";
-    
+
     // update animation
     if (ttModel.disableAnimation)
       disableAnimation();
@@ -401,21 +401,28 @@ function completed() {
   init();
 }
 
-if (document.readyState === "complete")
+if (window.define) {
+  // AMD
   documentReady = true;
+  
+  define("html5tooltips", function () {
+    return html5tooltips;
+  });
 
-else {
-  document.addEventListener("DOMContentLoaded", completed, false);
-  window.addEventListener( "load", completed, false );
+} else {
+  // global object
+  if (document.readyState === "complete")
+    documentReady = true;
+
+  else {
+    document.addEventListener("DOMContentLoaded", completed, false);
+    window.addEventListener( "load", completed, false );
+  }
+
+  window.addEventListener( "scroll", scroll, false );
+
+  if (window.html5tooltips === undefined)
+    window.html5tooltips = html5tooltips;
 }
-
-window.addEventListener( "scroll", scroll, false );
-
-if (window.html5tooltips === undefined)
-  window.html5tooltips = html5tooltips;
-
-// define("html5tooltips", function () {
-//   return html5tooltips;
-// });
 
 })();
