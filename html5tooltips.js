@@ -209,9 +209,9 @@ function Tooltip()
       elMore.style.visibility = 'visible';
       elMore.style.height = '0px';
 
-      setTimeout(function() {
-        elMore.style.height = h > 0 ? h + 'px' : "auto";
-      }, 100);
+      // magic fix: refresh the animation queue
+      elMore.offsetWidth = elMore.offsetWidth;
+      elMore.style.height = h > 0 ? h + 'px' : "auto";
     }
 
     return this;
