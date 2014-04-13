@@ -119,6 +119,13 @@ function extend(targetObj)
   return targetObj;
 }
 
+function setTransition(el, value)
+{
+  ["t", "MozT", "MsT", "OT", "WebkitT"].forEach(function(pr) {
+    el.style[pr + "ransition"] = value;
+  });
+}
+
 function Tooltip()
 {
   var ttElement, ttModel, targetElement, elText, elMore, elMoreText, elPointer;
@@ -203,7 +210,13 @@ function Tooltip()
     else if (elMore.style.display !== 'block' && ttModel.contentMore) {
       elMore.style.display = 'block';
 
-      updatePos();
+      updateTooltipPos();
+
+      // animate pointer
+      elPointer.offsetWidth = elPointer.offsetWidth;
+      setTransition(elPointer, "top 0.3s");
+      updatePointerPos();
+      setTimeout(function() { setTransition(elPointer, ""); }, 300);
 
       var h = elMore.getBoundingClientRect().height;
       elMore.style.visibility = 'visible';
@@ -241,6 +254,46 @@ function Tooltip()
 
   function updatePos()
   {
+    updateTooltipPos()
+    updatePointerPos();    
+  }
+
+  function updatePointerPos()
+  {
+    var ttRect;
+
+    if (!targetElement)
+      return;
+
+    // position depend on target and tt width
+    ttRect = ttElement.getBoundingClientRect();
+    pointerRect = elPointer.getBoundingClientRect();
+
+    switch (ttModel.stickTo) {
+      case "bottom":
+        elPointer.style.left = parseInt((ttRect.width - pointerRect.width) / 2) + "px";
+        elPointer.style.top = -1 * pointerRect.height - 1 + "px";
+        break;
+
+      case "left":
+        elPointer.style.left = ttRect.width - 3 + "px";
+        elPointer.style.top = parseInt((ttRect.height - pointerRect.height) / 2) + "px";
+        break;
+
+      case "right":
+        elPointer.style.left = -1 * pointerRect.width + "px";
+        elPointer.style.top = parseInt((ttRect.height - pointerRect.height) / 2) + "px";
+        break;
+
+      case "top":
+        elPointer.style.left = parseInt((ttRect.width - pointerRect.width) / 2) + "px";
+        elPointer.style.top = ttRect.height - 3 + "px";
+        break;
+    }
+  }
+
+  function updateTooltipPos()
+  {
     var targetRect, ttRect;
 
     if (!targetElement)
@@ -257,39 +310,26 @@ function Tooltip()
     // position depend on target and tt width
     targetRect = targetElement.getBoundingClientRect();
     ttRect = ttElement.getBoundingClientRect();
-    pointerRect = elPointer.getBoundingClientRect();
 
     switch (ttModel.stickTo) {
       case "bottom":
         ttElement.style.left = targetRect.left + parseInt((targetRect.width - ttRect.width) / 2) + "px";
         ttElement.style.top = targetRect.top + targetRect.height + parseInt(ttModel.stickDistance) + "px";
-        
-        elPointer.style.left = parseInt((ttRect.width - pointerRect.width) / 2) + "px";
-        elPointer.style.top = -1 * pointerRect.height - 1 + "px";
         break;
 
       case "left":
         ttElement.style.left = targetRect.left - ttRect.width - parseInt(ttModel.stickDistance) + "px";
         ttElement.style.top = targetRect.top + (targetRect.height - ttRect.height) / 2 + "px";
-        
-        elPointer.style.left = ttRect.width - 3 + "px";
-        elPointer.style.top = parseInt((ttRect.height - pointerRect.height) / 2) + "px";
         break;
 
       case "right":
         ttElement.style.left = targetRect.left + targetRect.width + parseInt(ttModel.stickDistance) + "px";
         ttElement.style.top = targetRect.top + (targetRect.height - ttRect.height) / 2 + "px";
-        
-        elPointer.style.left = -1 * pointerRect.width + "px";
-        elPointer.style.top = parseInt((ttRect.height - pointerRect.height) / 2) + "px";
         break;
 
       case "top":
         ttElement.style.left = targetRect.left + (targetRect.width - ttRect.width) / 2 + "px";
         ttElement.style.top = targetRect.top - ttRect.height - parseInt(ttModel.stickDistance) + "px";
-        
-        elPointer.style.left = parseInt((ttRect.width - pointerRect.width) / 2) + "px";
-        elPointer.style.top = ttRect.height - 3 + "px";
         break;
     }
   }
