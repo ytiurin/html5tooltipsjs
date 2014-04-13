@@ -1,10 +1,10 @@
 html5tooltips.js
 ===============
-Light and clean tooltips, written in pure javascript with CSS3 animation.
+Light and clean tooltips, written in pure javascript with CSS3 animation. No framework dependency.
 
 ###Quick introduction
 
-html5tooltips.js create a number of hidden text boxes in your web UI, showing up only when user needs some hints or explanation on specific UI elements. You could see this kind of tooltips, when using Google Mail or Github. It's an intuitive and inconspicuous way to keep users calm and confident in your website environment.
+html5tooltips.js create a number of hidden tooltips in your web UI, showing up only when user needs some hints or explanation on specific UI elements. You could see this kind of tooltips, when using Google Mail, Facebook or Github. It's an intuitive and inconspicuous way to keep users calm and confident in your website environment.
 
 ###Simple usage
 
@@ -46,7 +46,7 @@ html5tooltips({
 });
 ```
 
-Multiple tooltip definition is supported
+Multiple tooltip definition is possible
 
 ```javascript
 html5tooltips([
@@ -68,3 +68,8 @@ html5tooltips([
   }
 ]);
 ```
+
+###Browser compatibility
+
+Animation works in:
+Chrome 1.0, Firefox 2.0, Internet Explorer 10, Opera 10.5, Safari 3.2
