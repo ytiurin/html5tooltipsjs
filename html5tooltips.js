@@ -244,10 +244,8 @@ function Tooltip()
 
   function toggleAnimation(on)
   {
-    ["t", "MozT", "MsT", "OT", "WebkitT"].forEach(function(pr) {
-      ttElement.style[pr + "ransition"] = on ? "opacity 0.3s" : "";
-      elMore.style[pr + "ransition"] = on ? "height 0.3s" : "";
-    });
+    setTransition(ttElement, (on ? "opacity 0.3s" : ""));
+    setTransition(elMore, (on ? "height 0.3s" : ""));
 
     return this;
   }
