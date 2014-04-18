@@ -119,13 +119,6 @@ function extend(targetObj)
   return targetObj;
 }
 
-function setTransition(el, value)
-{
-  ["t", "MozT", "MsT", "OT", "WebkitT"].forEach(function(pr) {
-    el.style[pr + "ransition"] = value;
-  });
-}
-
 function Tooltip()
 {
   var ttElement, ttModel, targetElement, elText, elMore, elMoreText, elPointer;
@@ -185,9 +178,18 @@ function Tooltip()
 
   function showBrief()
   {
-    if (ttElement.style.visibility !== 'visible')
+    if (ttElement.style.visibility !== 'visible') {
       ttElement.style.visibility = 'visible';
-      ttElement.style.opacity = '1';
+
+      if (!ttModel.disableAnimation) {
+        ttElement.offsetWidth = ttElement.offsetWidth;
+        ttElement.classList.add("animated");
+        ttElement.style.opacity = '1';
+        setTimeout(function() { ttElement.classList.remove("animated"); }, 300);
+      }
+      else
+        ttElement.style.opacity = '1';
+    }
 
     updatePos();
 
@@ -198,7 +200,15 @@ function Tooltip()
   {
     if (ttElement.style.visibility !== 'visible') {
       ttElement.style.visibility = 'visible';
-      ttElement.style.opacity = '1';
+      
+      if (!ttModel.disableAnimation) {
+        ttElement.offsetWidth = ttElement.offsetWidth;
+        ttElement.classList.add("animated");
+        ttElement.style.opacity = '1';
+        setTimeout(function() { ttElement.classList.remove("animated"); }, 300);
+      }
+      else
+        ttElement.style.opacity = '1';
 
       if (ttModel.contentMore) {
         elMore.style.display = 'block';
@@ -213,18 +223,28 @@ function Tooltip()
       updateTooltipPos();
 
       // animate pointer
-      elPointer.offsetWidth = elPointer.offsetWidth;
-      setTransition(elPointer, "top 0.3s");
-      updatePointerPos();
-      setTimeout(function() { setTransition(elPointer, ""); }, 300);
+      if (!ttModel.disableAnimation) {
+        elPointer.offsetWidth = elPointer.offsetWidth;
+        elPointer.classList.add("animated");
+        updatePointerPos();
+        setTimeout(function() { elPointer.classList.remove("animated"); }, 300);
+      } 
+      else
+        updatePointerPos();
 
       var h = elMore.getBoundingClientRect().height;
       elMore.style.visibility = 'visible';
       elMore.style.height = '0px';
 
       // magic fix: refresh the animation queue
-      elMore.offsetWidth = elMore.offsetWidth;
-      elMore.style.height = h > 0 ? h + 'px' : "auto";
+      if (!ttModel.disableAnimation) {
+        elMore.offsetWidth = elMore.offsetWidth;
+        elMore.classList.add("animated");
+        elMore.style.height = h > 0 ? h + 'px' : "auto";
+        setTimeout(function() { elMore.classList.remove("animated"); }, 300);
+      }
+      else
+        elMore.style.height = h > 0 ? h + 'px' : "auto";
     }
 
     return this;
@@ -238,14 +258,6 @@ function Tooltip()
     if (targetElement !== userTargetElement) {
       targetElement = userTargetElement;
     }
-
-    return this;
-  }
-
-  function toggleAnimation(on)
-  {
-    setTransition(ttElement, (on ? "opacity 0.3s" : ""));
-    setTransition(elMore, (on ? "height 0.3s" : ""));
 
     return this;
   }
@@ -338,7 +350,7 @@ function Tooltip()
     elMoreText.innerHTML = ttModel.contentMore ? ttModel.contentMore : "";
 
     // update animation
-    toggleAnimation(!(options.disableAnimation ? options.disableAnimation : ttModel.disableAnimation));
+    ttModel.disableAnimation = options.disableAnimation ? options.disableAnimation : ttModel.disableAnimation;
 
     // update pointer
     elPointer.className = "html5tooltip-pointer-" + ttModel.stickTo;

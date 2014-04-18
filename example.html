@@ -4,6 +4,7 @@
 <title>HTML5 Tooltips example</title>
 
 <link rel="stylesheet" type="text/css" href="./html5tooltips.css" />
+<link rel="stylesheet" type="text/css" href="./html5tooltips.animation.css" />
 <script type="text/javascript" src="./html5tooltips.js"></script>
 
 <style type="text/css">
@@ -105,16 +106,19 @@ html5tooltips([
     contentText: "Short and easy to remember",
     contentMore: "Should <span style='text-decoration:underline;'>not</span> contain white spaces or special characters",
     targetSelector: "#name",
+    stickTo: "top",
     maxWidth: 180
   },
   {
     contentText: "Not less then 8 characters",
     contentMore: "May contain d<span style='color:red;'>1</span>g<span style='color:red;'>1</span>ts and sp<span style='color:red;'>3</span>c<span style='color:red;'>!</span>al sym<span style='color:red;'>6</span>ols",
     targetSelector: "#password",
+    stickTo: "left",
     maxWidth: 180
   },
   {
     contentText: "To ensure you remember it",
+    stickTo: "right",
     targetSelector: "#password2"
   },
   {
@@ -140,6 +144,8 @@ html5tooltips([
 html5tooltips({
   contentText: "Click to focus the field",
   targetSelector: "label",
+},
+{
 });
 
 </script>
