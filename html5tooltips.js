@@ -356,7 +356,7 @@ function Tooltip()
     ttModel.disableAnimation = options.disableAnimation ? options.disableAnimation : ttModel.disableAnimation;
 
     // update pointer
-    elPointer.className = "html5tooltip-pointer-" + ttModel.stickTo;
+    elPointer.className = template.hookClasses.tooltipPointer + "-" + ttModel.stickTo;
   }
 
   init();
