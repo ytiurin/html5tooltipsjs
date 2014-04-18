@@ -15,6 +15,7 @@
 var tt, tModels, options, activeElements, documentReady,
 
 typeTooltipModel = {
+  animateDuration: 300,
   contentText: "",
   contentMore: "",
   disableAnimation: false,
@@ -27,6 +28,7 @@ typeTooltipModel = {
 },
 
 defaultOptions = {
+  animateDuration: 300,
   HTMLTemplate: null,
   disableAnimation: null,
   stickTo: null,
@@ -185,7 +187,7 @@ function Tooltip()
         ttElement.offsetWidth = ttElement.offsetWidth;
         ttElement.classList.add("animated");
         ttElement.style.opacity = '1';
-        setTimeout(function() { ttElement.classList.remove("animated"); }, 300);
+        setTimeout(function() { ttElement.classList.remove("animated"); }, ttModel.animateDuration);
       }
       else
         ttElement.style.opacity = '1';
@@ -205,7 +207,7 @@ function Tooltip()
         ttElement.offsetWidth = ttElement.offsetWidth;
         ttElement.classList.add("animated");
         ttElement.style.opacity = '1';
-        setTimeout(function() { ttElement.classList.remove("animated"); }, 300);
+        setTimeout(function() { ttElement.classList.remove("animated"); }, ttModel.animateDuration);
       }
       else
         ttElement.style.opacity = '1';
@@ -227,7 +229,7 @@ function Tooltip()
         elPointer.offsetWidth = elPointer.offsetWidth;
         elPointer.classList.add("animated");
         updatePointerPos();
-        setTimeout(function() { elPointer.classList.remove("animated"); }, 300);
+        setTimeout(function() { elPointer.classList.remove("animated"); }, ttModel.animateDuration);
       } 
       else
         updatePointerPos();
@@ -241,7 +243,7 @@ function Tooltip()
         elMore.offsetWidth = elMore.offsetWidth;
         elMore.classList.add("animated");
         elMore.style.height = h > 0 ? h + 'px' : "auto";
-        setTimeout(function() { elMore.classList.remove("animated"); }, 300);
+        setTimeout(function() { elMore.classList.remove("animated"); }, ttModel.animateDuration);
       }
       else
         elMore.style.height = h > 0 ? h + 'px' : "auto";
@@ -350,6 +352,7 @@ function Tooltip()
     elMoreText.innerHTML = ttModel.contentMore ? ttModel.contentMore : "";
 
     // update animation
+    ttModel.animateDuration = options.animateDuration ? options.animateDuration : ttModel.animateDuration;
     ttModel.disableAnimation = options.disableAnimation ? options.disableAnimation : ttModel.disableAnimation;
 
     // update pointer
