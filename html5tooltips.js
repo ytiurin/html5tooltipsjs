@@ -255,7 +255,7 @@ function Tooltip()
 
   function updatePos()
   {
-    updateTooltipPos()
+    updateTooltipPos();
     updatePointerPos();    
   }
 
