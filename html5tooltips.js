@@ -369,11 +369,21 @@ function pickDocumentDataTargets()
   var pickedElements = getElementsByAttribute("data-tooltip-text");
 
   pickedElements.forEach(function(elTarget) {
-    tModels.push(extend({}, typeTooltipModel, {
+    var tm = {
       contentText: elTarget.getAttribute("data-tooltip-text"),
-      contentMore: elTarget.getAttribute("data-tooltip-more"),
       targetElements: [elTarget]
-    }));
+    };
+
+    if (elTarget.getAttribute("data-tooltip-more") !== null)
+      tm.contentMore = elTarget.getAttribute("data-tooltip-more");
+
+    if (elTarget.getAttribute("data-tooltip-stickto") !== null)
+      tm.stickTo = elTarget.getAttribute("data-tooltip-stickto");
+
+    if (elTarget.getAttribute("data-tooltip-maxwidth") !== null)
+      tm.maxWidth = elTarget.getAttribute("data-tooltip-maxwidth");
+      
+    tModels.push(extend({}, typeTooltipModel, tm));
   });
 }
 
