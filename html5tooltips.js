@@ -7,7 +7,7 @@
 * The MIT License (MIT)
 * http://opensource.org/licenses/MIT
 *
-* April 10, 2014
+* April 19, 2014
 **/
 
 (function() {
@@ -414,7 +414,8 @@ function tieTooltips()
       });
 
       el.addEventListener("focus", function() {
-        if (["INPUT", "TEXTAREA"].indexOf(this.tagName) === -1)
+        if (["INPUT", "TEXTAREA"].indexOf(this.tagName) === -1 &&
+          this.getAttribute("contenteditable") === null)
           return;
 
         activeElements.focused = this;
