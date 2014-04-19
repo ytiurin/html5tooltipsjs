@@ -1,7 +1,7 @@
 /**
 * html5tooltips.js v1.0
 * Light and clean tooltips.
-* https://github.com/yevhentiurin/html5tooltipsjs
+* https://github.com/ytiurin/html5tooltipsjs
 *
 * Yevhen Tiurin <yevhentiurin@gmail.com>
 * The MIT License (MIT)

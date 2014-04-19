@@ -1,3 +1,15 @@
+/**
+* html5tooltips.js
+* Light and clean tooltips.
+* https://github.com/ytiurin/html5tooltipsjs
+*
+* Yevhen Tiurin <yevhentiurin@gmail.com>
+* The MIT License (MIT)
+* http://opensource.org/licenses/MIT
+*
+* April 19, 2014
+**/
+
 .html5tooltip.animated
 {
   -moz-transition: opacity 0.3s;
