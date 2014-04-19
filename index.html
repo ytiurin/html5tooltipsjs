@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html><head>
+
+<title>html5tooltips.js Light and clean tooltips</title>
+
+<link rel="stylesheet" type="text/css" href="./styles/styles.css" />
+
+<link rel="stylesheet" type="text/css" href="./html5tooltips.css" />
+<link rel="stylesheet" type="text/css" href="./html5tooltips.animation.css" />
+<script type="text/javascript" src="./html5tooltips.js"></script>
+
+<script type="text/javascript">
+
+function windowScroll(e)
+{
+  var htmlCol = document.getElementsByClassName('parallax'),
+    bgTop;
+
+  for (var i = 0; i < htmlCol.length; i++)
+  {
+    bgTop = parseInt((window.scrollY+window.innerHeight) / document.body.scrollHeight * 100);
+    htmlCol.item(i).style.backgroundPosition = "center "+bgTop+"%";
+  }
+}
+
+window.addEventListener( "scroll", windowScroll, false );
+
+</script>
+
+</head><body>
+
+
+<div class="section full-height c1">
+  <div class="box">
+    <div id="header-group">
+      <div class="page-title">html5tooltips.js</div>
+      <div class="page-brief">Tooltips for controls and input fields<br>with CSS3 animation, no framework required.</div>
+      <!-- <div style="position: absolute;" class="html5tooltip demo-tooltip"><div class="html5tooltip-text">Small & helpfull</div><div class="html5tooltip-pointer-bottom"><div class="html5tooltip-po"></div><div class="html5tooltip-pi"></div></div></div> -->
+      <div id="tooltip-example1" data-tooltip-text="Here it is" contenteditable="true">Move mouse here</div>
+    </div>
+    
+    <div class="page-scroll-down"></div>
+  </div>
+</div>
+
+<div class="section i1 parallax height-60">
+  <div class="box">
+    <div class="textbox-1">
+      Attention to details is a clue to a winning desing.<br>Users should have an ability to do hard things in a simple way.
+    </div>
+  </div>
+</div>
+
+<div class="section height-80 c2">
+  <div class="box">
+    <div class="demo-text1">Tooltips are quite a usefull detail to apply with buttons and input fields</div>
+
+    <div id="demo-group">
+      <div class="button1 icon-trash" data-tooltip-text="Delete"></div>
+      <div class="button1 icon-coffee" data-tooltip-text="Build"></div>
+      <div class="button1 icon-cloud" data-tooltip-text="Send to cloud"></div>
+      <div class="textfield" contenteditable="true" data-tooltip-text="Search phrase"></div>
+      <div class="clearboth"></div>
+    </div>
+
+    <div class="demo-text2">It gives an impression of solid UI design</div>
+  </div>
+</div>
+
+<div class="section i2 parallax height-60">
+  <div class="box">
+    <div class="textbox-1">
+      Pure HTML5<br>MIT license
+    </div>
+  </div>
+</div>
+
+<div class="section full-height c5">
+  <div class="box">
+    <div id="get-group">
+      <div class="split-50"><a class="get-github" href="#">Fork on github</a></div>
+      <div class="split-50"><a class="get-direct" href="#">Direct download</a></div>
+      <div class="clearboth"></div>
+    </div>
+    <div id="compat-group">
+      <div class="split-20"><div class="compat-chrome">1+</div></div>
+      <div class="split-20"><div class="compat-firefox">2+</div></div>
+      <div class="split-20"><div class="compat-opera">10.5+</div></div>
+      <div class="split-20"><div class="compat-ie">10+</div></div>
+      <div class="split-20"><div class="compat-safari">3.2+</div></div>
+      <div class="clearboth"></div>
+    </div>
+  </div>
+</div>
+
+</body></html>

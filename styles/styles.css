@@ -1,0 +1,233 @@
+@font-face {
+    font-family: 'GeometriaLight';
+    src: url('Geometria-Light-webfont.eot');
+    src: url('Geometria-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Geometria-Light-webfont.woff') format('woff'),
+         url('Geometria-Light-webfont.ttf') format('truetype'),
+         url('Geometria-Light-webfont.svg#CallunaRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'VollkornItalic';
+  src: url('Vollkorn-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* { -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html { height: 100%; }
+body
+{
+  color: white;
+  font-family: 'VollkornItalic', Arial, sans-serif;
+  font-size: 26px;
+  margin: 0;
+}
+
+.split-20{ float: left; width: 20%; }
+.split-50{ float: left; width: 50%; }
+.clearboth { display: block; clear: both; }
+
+.section.c1 { background-color: #F0A30A; }
+.section.c2 { background-color: #00ABA9; }
+.section.c5 { background-color: #A20025; }
+
+.section.i1,
+.section.i2,
+.section.i3 { background-position: center 50%; background-size: cover; background-attachment: fixed; }
+.section.i1 { background-image: url('13540318445_701c3cd92d_h.jpg'); }
+.section.i2 { background-image: url('1231231.jpg'); }
+
+.full-height { height: 100%; }
+.height-80 { height: 80%; }
+.box
+{
+  height: 100%;
+  margin: 0 auto;
+  padding: 1px 0;
+  position: relative;
+  width: 960px;
+}
+
+/* Text box */
+.textbox-1
+{
+  margin: 180px 0;
+  text-align: center;
+}
+
+/* Slide 1 */
+#header-group
+{
+  margin-top: -230px;
+  position: relative;
+  top: 50%;
+}
+.page-title
+{
+  font-size: 80px;
+  text-align: center;
+}
+.page-brief
+{
+  font-size: 28px;
+  margin-top: 40px;
+  text-align: center;
+}
+.demo-tooltip
+{
+  left: 428px;
+  top: 310px;
+}
+.demo-tooltip .html5tooltip-pointer-bottom
+{
+  left: 47px;
+  top: -13px;
+}
+.page-scroll-down
+{
+  background: url('Arrowhead-Down-128.png') scroll 0 -36px;
+  height: 64px;
+  width: 128px;
+  position: absolute;
+  left: 416px;
+  bottom: 0;
+}
+#tooltip-example1
+{
+  border: 6px dashed rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  font-size: 24px;
+  margin: 60px auto 0;
+  overflow: hidden;
+  padding: 16px 0;
+  text-align: center;
+  white-space: nowrap;
+  width: 230px;
+}
+#tooltip-example1:focus
+{
+  background-color: #FFFFFF;
+  border-color: rgba(0,0,0,0);
+  border-radius: 0;
+  color: black;
+}
+
+/* Slide 2 */
+#demo-group
+{
+  margin: -65px auto 0;
+  position: relative;
+  top: 50%;
+  text-align: center;
+  width: 490px;
+}
+#demo-group > .button1,
+#demo-group > .textfield
+{
+  float: left;
+  margin: 0 10px;
+}
+.button1
+{
+  background-color: #222;
+  cursor: pointer;
+  margin: 0 10px;
+  height: 60px;
+  width: 60px;
+}
+.icon-cloud
+{
+  background-image: url('Cloud-32.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.icon-coffee
+{
+  background-image: url('Mug-32.png');
+  background-position: 11px center;
+  background-repeat: no-repeat;
+}
+.icon-trash
+{
+  background-image: url('Garbage-Open-32.png');
+  background-position: 17px center;
+  background-repeat: no-repeat;
+}
+.textfield
+{
+  background-color: white;
+  color: black;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 10px;
+  text-align: left;
+  width: 230px;
+}
+.demo-text1
+{
+  position: relative;
+  text-align: center;
+  top: 20%;
+}
+.demo-text2
+{
+  bottom: 20%;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+/* Slide last */
+#get-group
+{
+  margin-top: -100px;
+  position: relative;
+  top: 50%;
+}
+.get-github,
+.get-direct
+{
+  background-position: center 20px;
+  background-repeat: no-repeat;
+  color: white;
+  display: block;
+  font-family: 'GeometriaLight';
+  font-size: 24px;
+  margin: 0 auto;
+  padding-top: 160px;
+  text-align: center;
+  text-decoration: none;
+  width: 200px;
+}
+.get-github { background-image: url('GitHub-Mark-Light-120px-plus.png');}
+.get-direct { background-image: url('Download-128.png'); }
+#compat-group
+{
+  bottom: 20px;
+  left: 50%;
+  margin-left: -290px;
+  position: absolute;
+  width: 580px;
+}
+.compat-chrome,
+.compat-firefox,
+.compat-opera,
+.compat-ie,
+.compat-safari
+{
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  color: white;
+  font-size: 24px;
+  margin: 0 auto;
+  padding-top: 48px;
+  text-align: center;
+  width: 48px;
+}
+.compat-chrome { background-image: url('Google Chrome-48.png'); }
+.compat-firefox { background-image: url('Firefox-48.png'); }
+.compat-opera { background-image: url('Opera-48.png'); }
+.compat-ie { background-image: url('Internet Explorer-48.png'); }
+.compat-safari { background-image: url('safari48.png'); }
