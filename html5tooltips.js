@@ -12,7 +12,7 @@
 
 (function() {
 
-var tt, tModels, options, activeElements, documentReady,
+var tt, tModels, options, activeElements,
 
 typeTooltipModel = {
   animateDuration: 300,
@@ -165,9 +165,7 @@ function Tooltip()
     var tmplNode = document.createElement("div");
     tmplNode.innerHTML = options.HTMLTemplate ? options.HTMLTemplate : template.HTML;
     ttElement = tmplNode.firstChild;
-    document.body.appendChild(ttElement);
 
-    // ttElement = document.getElementsByClassName(template.hookClasses.tooltip)[0];
     elText = ttElement.getElementsByClassName(template.hookClasses.tooltipText)[0];
     elMore = ttElement.getElementsByClassName(template.hookClasses.tooltipMore)[0];
     elMoreText = elMore.getElementsByClassName(template.hookClasses.tooltipMoreText)[0];
@@ -348,6 +346,9 @@ function Tooltip()
 
     // update pointer
     elPointer.className = template.hookClasses.tooltipPointer + "-" + ttModel.stickTo;
+
+    if (document.body && ttElement.parentNode !== document.body)
+      document.body.appendChild(ttElement);
   }
 
   init();
@@ -376,22 +377,8 @@ function pickDocumentDataTargets()
   });
 }
 
-function scroll()
+function tieTooltips()
 {
-  tt.updatePos();
-}
-
-function init()
-{
-  tt = Tooltip();
-
-  activeElements = {
-    focused: null,
-    hovered: null
-  };
-
-  pickDocumentDataTargets();
-
   tModels.forEach(function(tModel, i) {
     tModel = extend({}, typeTooltipModel, tModel);
 
@@ -446,11 +433,22 @@ function init()
   });
 }
 
-function html5tooltips(userTModels, userOptions)
+function init()
 {
-  if (!tModels)
+  if (!tt) {
+    options = {};
+    tt = Tooltip();
     tModels = [];
+  }
 
+  activeElements = {
+    focused: null,
+    hovered: null
+  };
+}
+
+function html5tooltipsGlobal(userTModels, userOptions)
+{
   if (userTModels.length)
     // merge arrays
     Array.prototype.push.apply(tModels, userTModels);
@@ -458,42 +456,52 @@ function html5tooltips(userTModels, userOptions)
   else if (typeof userTModels === "object")
     tModels.push(userTModels);
 
-  options = userOptions ? extend({}, userOptions) : {};
+  options = userOptions ? extend({}, userOptions) : options;
 
-  if (documentReady)
-    init();
+  tieTooltips();
 }
 
-function completed() {
-  document.removeEventListener( "DOMContentLoaded", completed, false );
-  window.removeEventListener( "load", completed, false );
-  documentReady = true;
-  
+function html5tooltipsAMD(userTModels, userOptions)
+{
   init();
+
+  html5tooltipsGlobal(userTModels, userOptions);
+}
+
+function documentReadyHandler()
+{
+  document.removeEventListener("DOMContentLoaded", documentReadyHandler, false);
+  window.removeEventListener("load", documentReadyHandler, false);
+  
+  pickDocumentDataTargets();
+  tieTooltips();
 }
 
 if (window.define) {
   // AMD
-  documentReady = true;
-
   define("html5tooltips", function () {
-    return html5tooltips;
+    return html5tooltipsAMD;
   });
 
 } else {
   // global object
-  if (document.readyState === "complete")
-    documentReady = true;
+  init();
 
-  else {
-    document.addEventListener("DOMContentLoaded", completed, false);
-    window.addEventListener( "load", completed, false );
+  if (document.readyState === "complete") {
+    documentReadyHandler();
+
+  } else {
+    document.addEventListener("DOMContentLoaded", documentReadyHandler, false);
+    window.addEventListener( "load", documentReadyHandler, false );
   }
 
-  window.addEventListener( "scroll", scroll, false );
-
   if (window.html5tooltips === undefined)
-    window.html5tooltips = html5tooltips;
+    window.html5tooltips = html5tooltipsGlobal;
 }
+
+window.addEventListener("scroll", function()
+{
+  tt.updatePos();
+}, false );
 
 })();
