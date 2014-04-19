@@ -106,6 +106,14 @@ body
   white-space: nowrap;
   width: 230px;
 }
+#tooltip-example1:before
+{
+  content: 'Move mouse here';
+}
+#tooltip-example1:hover:before
+{
+  content: 'Now click';
+}
 #tooltip-example1:focus
 {
   background-color: #FFFFFF;
