@@ -7,10 +7,10 @@
 * The MIT License (MIT)
 * http://opensource.org/licenses/MIT
 *
-* April 19, 2014
+* April 20, 2014
 **/
 
-.html5tooltip
+.html5tooltip-box
 {
   background-color: rgba(42, 42, 42, 0.95);
   border: 1px solid rgba(255, 255, 255, 0);
@@ -27,10 +27,7 @@
 {
   height: 7px;
 }
-.html5tooltip-pointer-bottom,
-.html5tooltip-pointer-left,
-.html5tooltip-pointer-right,
-.html5tooltip-pointer-top
+.html5tooltip-pointer
 {
   height: 12px;
   position: absolute;
@@ -48,19 +45,19 @@
   position: absolute;
   top: 2px;
 }
-.html5tooltip-pointer-bottom .html5tooltip-pi
+.html5tooltip-bottom .html5tooltip-pointer .html5tooltip-pi
 {
   border-bottom-color: rgba(42, 42, 42, 0.95);
 }
-.html5tooltip-pointer-left .html5tooltip-pi
+.html5tooltip-left .html5tooltip-pointer .html5tooltip-pi
 {
   border-left-color: rgba(42, 42, 42, 0.95);
 }
-.html5tooltip-pointer-right .html5tooltip-pi
+.html5tooltip-right .html5tooltip-pointer .html5tooltip-pi
 {
   border-right-color: rgba(42, 42, 42, 0.95);
 }
-.html5tooltip-pointer-top .html5tooltip-pi
+.html5tooltip-top .html5tooltip-pointer .html5tooltip-pi
 {
   border-top-color: rgba(42, 42, 42, 0.95);
 }

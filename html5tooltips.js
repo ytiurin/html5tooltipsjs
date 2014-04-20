@@ -7,7 +7,7 @@
 * The MIT License (MIT)
 * http://opensource.org/licenses/MIT
 *
-* April 19, 2014
+* April 20, 2014
 **/
 
 (function() {
@@ -35,20 +35,27 @@ defaultOptions = {
   maxWidth: null
 },
 
+animationPresets = {
+
+},
+
 template = {
   HTML: [
     "<div class='html5tooltip' style='box-sizing:border-box;position:fixed;'>",
-      "<div class='html5tooltip-text'></div>",
-      "<div class='html5tooltip-more' style='overflow:hidden;'>",
-        "<div class='html5tooltip-hr'></div>",
+      "<div class='html5tooltip-box'>",
         "<div class='html5tooltip-text'></div>",
+        "<div class='html5tooltip-more' style='overflow:hidden;'>",
+          "<div class='html5tooltip-hr'></div>",
+          "<div class='html5tooltip-text'></div>",
+        "</div>",
+        "<div class='html5tooltip-pointer'><div class='html5tooltip-po'></div><div class='html5tooltip-pi'></div></div>",
       "</div>",
-      "<div class='html5tooltip-pointer'><div class='html5tooltip-po'></div><div class='html5tooltip-pi'></div></div>",
     "</div>"
   ].join(""),
 
   hookClasses: {
     tooltip: 'html5tooltip',
+    tooltipBox: 'html5tooltip-box',
     tooltipText: 'html5tooltip-text',
     tooltipMore: 'html5tooltip-more',
     tooltipMoreText: 'html5tooltip-text',
@@ -123,16 +130,16 @@ function extend(targetObj)
 
 function Tooltip()
 {
-  var ttElement, ttModel, targetElement, elText, elMore, elMoreText, elPointer;
+  var ttElement, ttModel, targetElement, elBox, elText, elMore, elMoreText, elPointer;
 
   function animateElementClass(el, updateHandler)
   {
     if (!ttModel.disableAnimation) {
       // magic fix: refresh the animation queue
       el.offsetWidth = el.offsetWidth;
-      el.classList.add("animated");
+      el.classList.add("animating");
       updateHandler();
-      setTimeout(function() { el.classList.remove("animated"); }, ttModel.animateDuration);
+      setTimeout(function() { el.classList.remove("animating"); }, ttModel.animateDuration);
     }
     else
       updateHandler();
@@ -147,7 +154,6 @@ function Tooltip()
   {
     if (ttElement.style.visibility !== 'collapse')
       ttElement.style.visibility = 'collapse';
-      ttElement.style.opacity = '0';
       ttElement.style.left = '-9999px';
       ttElement.style.top = '-9999px';
 
@@ -166,6 +172,7 @@ function Tooltip()
     tmplNode.innerHTML = options.HTMLTemplate ? options.HTMLTemplate : template.HTML;
     ttElement = tmplNode.firstChild;
 
+    elBox = ttElement.getElementsByClassName(template.hookClasses.tooltipBox)[0];
     elText = ttElement.getElementsByClassName(template.hookClasses.tooltipText)[0];
     elMore = ttElement.getElementsByClassName(template.hookClasses.tooltipMore)[0];
     elMoreText = elMore.getElementsByClassName(template.hookClasses.tooltipMoreText)[0];
@@ -194,12 +201,13 @@ function Tooltip()
     if (ttElement.style.visibility !== 'visible') {
       ttElement.style.visibility = 'visible';
 
-      animateElementClass(ttElement, function() {
-        ttElement.style.opacity = '1';
+      updatePos();
+
+      elBox.style.opacity = '0';
+      animateElementClass(elBox, function() {
+        elBox.style.opacity = '1';
       });
     }
-
-    updatePos();
 
     return this;
   }
@@ -209,8 +217,9 @@ function Tooltip()
     if (ttElement.style.visibility !== 'visible') {
       ttElement.style.visibility = 'visible';
       
-      animateElementClass(ttElement, function() {
-        ttElement.style.opacity = '1';
+      elBox.style.opacity = '0';
+      animateElementClass(elBox, function() {
+        elBox.style.opacity = '1';
       }); 
 
       if (ttModel.contentMore) {
@@ -273,22 +282,22 @@ function Tooltip()
     switch (ttModel.stickTo) {
       case "bottom":
         elPointer.style.left = parseInt((ttRect.width - pointerRect.width) / 2) + "px";
-        elPointer.style.top = -1 * pointerRect.height - 1 + "px";
+        elPointer.style.top = -1 * pointerRect.height + "px";
         break;
 
       case "left":
-        elPointer.style.left = ttRect.width - 3 + "px";
+        elPointer.style.left = ttRect.width - 2 + "px";
         elPointer.style.top = parseInt((ttRect.height - pointerRect.height) / 2) + "px";
         break;
 
       case "right":
-        elPointer.style.left = -1 * pointerRect.width + "px";
+        elPointer.style.left = -1 * pointerRect.width + 1 + "px";
         elPointer.style.top = parseInt((ttRect.height - pointerRect.height) / 2) + "px";
         break;
 
       case "top":
         elPointer.style.left = parseInt((ttRect.width - pointerRect.width) / 2) + "px";
-        elPointer.style.top = ttRect.height - 3 + "px";
+        elPointer.style.top = ttRect.height - 2 + "px";
         break;
     }
   }
@@ -345,7 +354,7 @@ function Tooltip()
     ttModel.disableAnimation = options.disableAnimation ? options.disableAnimation : ttModel.disableAnimation;
 
     // update pointer
-    elPointer.className = template.hookClasses.tooltipPointer + "-" + ttModel.stickTo;
+    ttElement.className = template.hookClasses.tooltip + "-" + ttModel.stickTo;
 
     if (document.body && ttElement.parentNode !== document.body)
       document.body.appendChild(ttElement);
