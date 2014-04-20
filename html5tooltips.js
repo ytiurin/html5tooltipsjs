@@ -14,12 +14,25 @@
 
 var tt, tModels, options, activeElements,
 
+html5tooltipsPredefined = {
+  animateFunction: {
+    fadeIn: "fadein"
+  },
+  stickTo: {
+    bottom: "bottom",
+    left: "left",
+    right: "right",
+    top: "top"
+  }
+},
+
 typeTooltipModel = {
   animateDuration: 300,
+  animateFunction: html5tooltipsPredefined.animateFunction.fadeIn,
   contentText: "",
   contentMore: "",
   disableAnimation: false,
-  stickTo: "bottom",
+  stickTo: html5tooltipsPredefined.stickTo.bottom,
   stickDistance: 10,
   targetElements: [],
   targetSelector: "",
@@ -28,15 +41,12 @@ typeTooltipModel = {
 },
 
 defaultOptions = {
-  animateDuration: 300,
+  animateDuration: null,
+  animateFunction: null,
   HTMLTemplate: null,
   disableAnimation: null,
   stickTo: null,
   maxWidth: null
-},
-
-animationPresets = {
-
 },
 
 template = {
@@ -203,9 +213,11 @@ function Tooltip()
 
       updatePos();
 
-      elBox.style.opacity = '0';
+      elBox.classList.remove(ttModel.animateFunction + "-to");
+      elBox.classList.add(ttModel.animateFunction + "-from");
       animateElementClass(elBox, function() {
-        elBox.style.opacity = '1';
+        elBox.classList.remove(ttModel.animateFunction + "-from");
+        elBox.classList.add(ttModel.animateFunction + "-to");
       });
     }
 
@@ -217,9 +229,11 @@ function Tooltip()
     if (ttElement.style.visibility !== 'visible') {
       ttElement.style.visibility = 'visible';
       
-      elBox.style.opacity = '0';
+      elBox.classList.remove(ttModel.animateFunction + "-to");
+      elBox.classList.add(ttModel.animateFunction + "-from");
       animateElementClass(elBox, function() {
-        elBox.style.opacity = '1';
+        elBox.classList.remove(ttModel.animateFunction + "-from");
+        elBox.classList.add(ttModel.animateFunction + "-to");
       }); 
 
       if (ttModel.contentMore) {
@@ -280,22 +294,22 @@ function Tooltip()
     pointerRect = elPointer.getBoundingClientRect();
 
     switch (ttModel.stickTo) {
-      case "bottom":
+      case html5tooltipsPredefined.stickTo.bottom:
         elPointer.style.left = parseInt((ttRect.width - pointerRect.width) / 2) + "px";
         elPointer.style.top = -1 * pointerRect.height + "px";
         break;
 
-      case "left":
+      case html5tooltipsPredefined.stickTo.left:
         elPointer.style.left = ttRect.width - 2 + "px";
         elPointer.style.top = parseInt((ttRect.height - pointerRect.height) / 2) + "px";
         break;
 
-      case "right":
+      case html5tooltipsPredefined.stickTo.right:
         elPointer.style.left = -1 * pointerRect.width + 1 + "px";
         elPointer.style.top = parseInt((ttRect.height - pointerRect.height) / 2) + "px";
         break;
 
-      case "top":
+      case html5tooltipsPredefined.stickTo.top:
         elPointer.style.left = parseInt((ttRect.width - pointerRect.width) / 2) + "px";
         elPointer.style.top = ttRect.height - 2 + "px";
         break;
@@ -322,22 +336,22 @@ function Tooltip()
     ttRect = ttElement.getBoundingClientRect();
 
     switch (ttModel.stickTo) {
-      case "bottom":
+      case html5tooltipsPredefined.stickTo.bottom:
         ttElement.style.left = targetRect.left + parseInt((targetRect.width - ttRect.width) / 2) + "px";
         ttElement.style.top = targetRect.top + targetRect.height + parseInt(ttModel.stickDistance) + "px";
         break;
 
-      case "left":
+      case html5tooltipsPredefined.stickTo.left:
         ttElement.style.left = targetRect.left - ttRect.width - parseInt(ttModel.stickDistance) + "px";
         ttElement.style.top = targetRect.top + (targetRect.height - ttRect.height) / 2 + "px";
         break;
 
-      case "right":
+      case html5tooltipsPredefined.stickTo.right:
         ttElement.style.left = targetRect.left + targetRect.width + parseInt(ttModel.stickDistance) + "px";
         ttElement.style.top = targetRect.top + (targetRect.height - ttRect.height) / 2 + "px";
         break;
 
-      case "top":
+      case html5tooltipsPredefined.stickTo.top:
         ttElement.style.left = targetRect.left + (targetRect.width - ttRect.width) / 2 + "px";
         ttElement.style.top = targetRect.top - ttRect.height - parseInt(ttModel.stickDistance) + "px";
         break;
@@ -351,6 +365,7 @@ function Tooltip()
 
     // update animation
     ttModel.animateDuration = options.animateDuration ? options.animateDuration : ttModel.animateDuration;
+    ttModel.animateFunction = options.animateFunction ? options.animateFunction : ttModel.animateFunction;
     ttModel.disableAnimation = options.disableAnimation ? options.disableAnimation : ttModel.disableAnimation;
 
     // update pointer
@@ -515,8 +530,10 @@ if (window.define) {
     window.addEventListener( "load", documentReadyHandler, false );
   }
 
-  if (window.html5tooltips === undefined)
+  if (window.html5tooltips === undefined) {
+    window.html5tooltipsPredefined = html5tooltipsPredefined;
     window.html5tooltips = html5tooltipsGlobal;
+  }
 }
 
 window.addEventListener("scroll", function()

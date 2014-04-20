@@ -10,6 +10,18 @@
 * April 20, 2014
 **/
 
+.html5tooltip-bottom,
+.html5tooltip-left,
+.html5tooltip-right,
+.html5tooltip-top
+{
+  -moz-perspective: 300px;
+  -ms-perspective: 300px;
+  -o-perspective: 300px;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+}
+
 .html5tooltip-box.animating
 {
   -moz-transition: opacity 0.3s, -moz-transform 0.3s;
@@ -17,6 +29,10 @@
   -o-transition: opacity 0.3s, -o-transform 0.3s;
   -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
   transition: opacity 0.3s, transform 0.3s;
+}
+.html5tooltip-left .html5tooltip-box.animating
+{
+  transform-origin: right center;
 }
 
 .html5tooltip-more.animating
@@ -36,3 +52,7 @@
   -webkit-transition: top 0.3s;
   transition: top 0.3s;
 }
+
+/* Fadein */
+.fadein-from { opacity: 0; }
+.fadein-to { opacity: 1; }
