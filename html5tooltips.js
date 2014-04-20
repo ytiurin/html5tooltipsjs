@@ -16,7 +16,10 @@ var tt, tModels, options, activeElements,
 
 html5tooltipsPredefined = {
   animateFunction: {
-    fadeIn: "fadein"
+    fadeIn: "fadein",
+    foldIn: "foldin",
+    foldOut: "foldout",
+    slideIn: "slidein"
   },
   stickTo: {
     bottom: "bottom",
