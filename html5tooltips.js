@@ -19,7 +19,9 @@ html5tooltipsPredefined = {
     fadeIn: "fadein",
     foldIn: "foldin",
     foldOut: "foldout",
-    slideIn: "slidein"
+    slideIn: "roll",
+    slideIn: "slidein",
+    slideIn: "spin"
   },
   stickTo: {
     bottom: "bottom",
