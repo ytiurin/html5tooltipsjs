@@ -53,6 +53,16 @@
 .fadein-from { opacity: 0; }
 .fadein-to { opacity: 1; }
 
+.fadein-from,
+.fadein-to 
+{
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
 /* Fold */
 .foldin-from,
 .foldout-from { opacity: 0; }
