@@ -69,6 +69,28 @@ html5tooltips([
 ]);
 ```
 
+###List of possible parameters
+
+**animateFunction** one of available animate functions: ``fadein``, ``foldin``, ``foldout``, ``"roll``, ``slidein``, ``spin``  
+**color** one of available predefined colors: ``daffodil``, ``daisy``, ``mustard``, ``citrus-zest``, ``pumpkin``, ``tangerine``, ``salmon``, ``persimmon``, ``rouge``, ``scarlet``, ``hot-pink``, ``princess``, ``petal``, ``lilac``, ``lavender``, ``violet``, ``cloud``, ``dream``, ``gulf``, ``turquoise``, ``indigo``, ``navy``, ``sea-foam``, ``teal``, ``peacock``, ``ceadon``, ``olive``, ``bamboo``, ``grass``, ``kelly``, ``forrest``, ``chocolate``, ``terra-cotta``, ``camel``, ``linen``, ``stone``, ``smoke``, ``steel``, ``slate``, ``charcoal``, ``black``, ``white``, ``metalic-silver``, ``metalic-gold``, ``metalic-copper``; or any CSS color  
+**contentText** text for a tooltip; html may be applied  
+**contentMore** text for expanded version of tooltip which showup whenn focus on target element; html may be applied  
+**disableAnimation** disable the animation ``true`` or ``false``  
+**stickTo** one of available stick values: ``bottom``, ``left``, ``right``, ``top``  
+**stickDistance** a ``number`` of pixels that represent the distance between tooltip and target element  
+**targetSelector** css selector which is used to catch a target element in the document  
+**targetXPath** xPath value which is used to catch a target element in the document  
+**maxWidth** maximum width of expanded version of tooltip
+
+###List of possible data-* attributes
+
+**data-tooltip-animate-function** value for **animateFunction** parameter  
+**data-tooltip-color** value for **color** parameter  
+**data-tooltip-more** value for **contentMore** parameter  
+**data-tooltip-stickto** value for **stickTo** parameter  
+**data-tooltip-text** value for **contentText** parameter  
+**data-tooltip-maxwidth** value for **maxWidth** parameter  
+
 ###Browser compatibility
 
 Animation works in:
