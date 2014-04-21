@@ -425,8 +425,12 @@ function Tooltip()
     
     // update color
     ttModel.color = options.color ? options.color : ttModel.color;
-    elBox.style.backgroundColor = "rgba(" + ttModel.color.r + ", " + ttModel.color.g + ", " + ttModel.color.b + ", " + ttModel.color.a + ")";
-    elPointer.style.borderColor = elBox.style.backgroundColor;
+    if (html5tooltipsPredefined.color[ttModel.color]) {
+      ttModel.color = html5tooltipsPredefined.color[ttModel.color];
+      ttModel.color = "rgba(" + ttModel.color.r + ", " + ttModel.color.g + ", " + ttModel.color.b + ", " + ttModel.color.a + ")";
+    }
+    elBox.style.backgroundColor = ttModel.color;
+    elPointer.style.borderColor = ttModel.color;
 
     // update pointer
     ttElement.className = template.hookClasses.tooltip + "-" + ttModel.stickTo;
@@ -457,6 +461,12 @@ function pickDocumentDataTargets()
       contentText: elTarget.getAttribute("data-tooltip-text"),
       targetElements: [elTarget]
     };
+
+    if (elTarget.getAttribute("data-tooltip-animate-function") !== null)
+      tm.animateFunction = elTarget.getAttribute("data-tooltip-animate-function");
+
+    if (elTarget.getAttribute("data-tooltip-color") !== null)
+      tm.color = elTarget.getAttribute("data-tooltip-color");
 
     if (elTarget.getAttribute("data-tooltip-more") !== null)
       tm.contentMore = elTarget.getAttribute("data-tooltip-more");
