@@ -29,6 +29,7 @@
 }
 .html5tooltip-pointer
 {
+  border-color: rgba(42, 42, 42, 0.95);
   height: 12px;
   position: absolute;
   width: 12px;
@@ -47,17 +48,17 @@
 }
 .html5tooltip-bottom .html5tooltip-pointer .html5tooltip-pi
 {
-  border-bottom-color: rgba(42, 42, 42, 0.95);
+  border-bottom-color: inherit;
 }
 .html5tooltip-left .html5tooltip-pointer .html5tooltip-pi
 {
-  border-left-color: rgba(42, 42, 42, 0.95);
+  border-left-color: inherit;
 }
 .html5tooltip-right .html5tooltip-pointer .html5tooltip-pi
 {
-  border-right-color: rgba(42, 42, 42, 0.95);
+  border-right-color: inherit;
 }
 .html5tooltip-top .html5tooltip-pointer .html5tooltip-pi
 {
-  border-top-color: rgba(42, 42, 42, 0.95);
+  border-top-color: inherit;
 }
