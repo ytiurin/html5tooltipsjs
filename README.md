@@ -71,7 +71,7 @@ html5tooltips([
 
 ###List of possible parameters
 
-**animateFunction** one of available animate functions: ``fadein``, ``foldin``, ``foldout``, ``"roll``, ``scalein``, ``slidein``, ``spin``  
+**animateFunction** one of available animate functions: ``fadein``, ``foldin``, ``foldout``, ``roll``, ``scalein``, ``slidein``, ``spin``  
 **color** one of available predefined colors: ``daffodil``, ``daisy``, ``mustard``, ``citrus-zest``, ``pumpkin``, ``tangerine``, ``salmon``, ``persimmon``, ``rouge``, ``scarlet``, ``hot-pink``, ``princess``, ``petal``, ``lilac``, ``lavender``, ``violet``, ``cloud``, ``dream``, ``gulf``, ``turquoise``, ``indigo``, ``navy``, ``sea-foam``, ``teal``, ``peacock``, ``ceadon``, ``olive``, ``bamboo``, ``grass``, ``kelly``, ``forrest``, ``chocolate``, ``terra-cotta``, ``camel``, ``linen``, ``stone``, ``smoke``, ``steel``, ``slate``, ``charcoal``, ``black``, ``white``, ``metalic-silver``, ``metalic-gold``, ``metalic-copper``; or any CSS color  
 **contentText** text for a tooltip; html may be applied  
 **contentMore** text for expanded version of tooltip which showup whenn focus on target element; html may be applied  
