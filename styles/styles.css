@@ -266,10 +266,10 @@ body
   -webkit-transform: scale(1);
   transform: scale(1);
   
-  -moz-transition: transform 0.1s;
-  -ms-transition: transform 0.1s;
-  -o-transition: transform 0.1s;
-  -webkit-transition: transform 0.1s;
+  -moz-transition: -moz-transform 0.1s;
+  -ms-transition: -ms-transform 0.1s;
+  -o-transition: -o-transform 0.1s;
+  -webkit-transition: -webkit-transform 0.1s;
   transition: transform 0.1s;
 }
 .get-github { background-image: url('GitHub-Mark-Light-120px-plus.png');}
