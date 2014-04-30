@@ -7,7 +7,7 @@
 * The MIT License (MIT)
 * http://opensource.org/licenses/MIT
 *
-* April 21, 2014
+* April 30, 2014
 **/
 
 (function() {
@@ -23,6 +23,7 @@ html5tooltipsPredefined = {
     slideIn: "slidein",
     slideIn: "spin"
   },
+
   color: {
     daffodil: {r: 255, g: 230, b: 23, a: 0.95},
     daisy: {r: 250, g: 211, b: 28, a: 0.95},
@@ -71,6 +72,7 @@ html5tooltipsPredefined = {
     metalicGold: {r: 159, g: 135, b: 89, a: 0.95},
     metalicCopper: {r: 140, g: 102, b: 65, a: 0.95}
   },
+
   stickTo: {
     bottom: "bottom",
     left: "left",
@@ -210,6 +212,31 @@ function Tooltip()
       updateHandler();
   }
 
+  function applyAnimationClass(el, fromClass, toClass, updateHandler)
+  {
+    if (!ttModel.disableAnimation) {
+      el.classList.add(fromClass);
+
+      // magic fix: refresh the animation queue
+      el.offsetWidth = el.offsetWidth;
+      
+      el.classList.add("animating");
+      el.classList.remove(fromClass);
+      el.classList.add(toClass);
+
+      if (updateHandler)
+        updateHandler();
+      
+      setTimeout(function() {
+        el.classList.remove("animating");
+        el.classList.remove(toClass);
+      }, ttModel.animateDuration);
+    }
+    else
+      if (updateHandler)
+        updateHandler();
+  }
+
   function destroy()
   {
     document.removeChild(ttElement);
@@ -268,12 +295,8 @@ function Tooltip()
 
       updatePos();
 
-      elBox.classList.remove(ttModel.animateFunction + "-to");
-      elBox.classList.add(ttModel.animateFunction + "-from");
-      animateElementClass(elBox, function() {
-        elBox.classList.remove(ttModel.animateFunction + "-from");
-        elBox.classList.add(ttModel.animateFunction + "-to");
-      });
+      applyAnimationClass(elBox, ttModel.animateFunction + "-from",
+        ttModel.animateFunction + "-to");
     }
 
     return this;
@@ -284,12 +307,8 @@ function Tooltip()
     if (ttElement.style.visibility !== 'visible') {
       ttElement.style.visibility = 'visible';
       
-      elBox.classList.remove(ttModel.animateFunction + "-to");
-      elBox.classList.add(ttModel.animateFunction + "-from");
-      animateElementClass(elBox, function() {
-        elBox.classList.remove(ttModel.animateFunction + "-from");
-        elBox.classList.add(ttModel.animateFunction + "-to");
-      }); 
+      applyAnimationClass(elBox, ttModel.animateFunction + "-from",
+        ttModel.animateFunction + "-to");
 
       if (ttModel.contentMore) {
         elMore.style.display = 'block';
