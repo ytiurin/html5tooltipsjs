@@ -3,8 +3,8 @@
 
 <title>html5tooltips.js Light and clean tooltips</title>
 
-<link rel="stylesheet" type="text/css" href="./html5tooltips.1.2.min.css" />
-<script type="text/javascript" src="./html5tooltips.1.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./html5tooltips.1.2.1.min.css" />
+<script type="text/javascript" src="./html5tooltips.1.2.1.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
 
@@ -17,7 +17,8 @@ function windowScroll(e)
 
   for (var i = 0; i < htmlCol.length; i++)
   {
-    bgTop = parseInt((window.scrollY+window.innerHeight) / document.body.scrollHeight * 100);
+    // bgTop = parseInt((window.scrollY+window.innerHeight) / document.body.scrollHeight * 100);
+    bgTop = parseInt((window.scrollY / window.scrollMaxY) * 100);
     htmlCol.item(i).style.backgroundPosition = "center "+bgTop+"%";
   }
 }
@@ -54,7 +55,7 @@ window.addEventListener( "scroll", windowScroll, false );
     <div class="demo-text1">Tooltips are a quite usefull detail when used with buttons and input fields.</div>
 
     <div id="demo-group">
-      <div class="button1 icon-trash" data-tooltip-text="Delete" data-tooltip-stickto="left" data-tooltip-animate-function="spin"></div>
+      <div class="button1 icon-trash" data-tooltip-text="Delete" data-tooltip-stickto="left" data-tooltip-animate-function="scalein"></div>
       <div class="button1 icon-coffee" data-tooltip-text="Build" data-tooltip-stickto="top" data-tooltip-animate-function="spin"></div>
       <div class="button1 icon-cloud" data-tooltip-text="Send to cloud" data-tooltip-stickto="bottom" data-tooltip-animate-function="roll"></div>
       <div class="textfield" contenteditable="true" data-tooltip-text="Search phrase" data-tooltip-more="You may put several words here as a search phrase" data-tooltip-stickto="right" data-tooltip-maxwidth="200" data-tooltip-animate-function="foldin"></div>
@@ -147,7 +148,7 @@ window.addEventListener( "scroll", windowScroll, false );
   <div class="box">
     <div id="get-group">
       <div class="split-50"><a class="get-github" href="https://github.com/ytiurin/html5tooltipsjs">Fork on github</a></div>
-      <div class="split-50"><a class="get-direct" href="https://raw.githubusercontent.com/ytiurin/html5tooltipsjs/master/versions/html5tooltips.1.2.min.js">Direct download</a></div>
+      <div class="split-50"><a class="get-direct" href="https://raw.githubusercontent.com/ytiurin/html5tooltipsjs/master/versions/html5tooltips.1.2.1.min.js">Direct download</a></div>
       <div class="clearboth"></div>
     </div>
     <div id="compat-group">
