@@ -4,11 +4,11 @@ Light and clean tooltips, written in pure javascript with CSS3 animation. No fra
 
 ###Quick introduction
 
-html5tooltips.js create a number of hidden tooltips in your web UI, showing up only when user needs some hints or explanation on specific UI elements. You could see this kind of tooltips, when using Google Mail, Facebook or Github. It's an intuitive and inconspicuous way to keep users calm and confident in your website environment.
+html5tooltips.js create a number of hidden tooltips in your website, showing up only when user needs some hints or explanation on specific UI elements. You see tooltips, when using Google Mail, Facebook or Github. It's an intuitive and inconspicuous way to keep users calm and confident in your website environment.
 
 ###Simple usage
 
-So, you need to tie a tooltip text to a specific UI element. You can do this by simply adding data-* attribute to an element HTML representation.
+The simple way to tie a tooltip text to a specific UI element is by adding data-* attribute to an element HTML representation.
 
 ```html
 <span id="refresh" data-tooltip-text="Refresh"></span>
