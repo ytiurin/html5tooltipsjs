@@ -11,7 +11,7 @@ html5tooltips.js create a number of hidden tooltips in your website, showing up 
 The simple way to tie a tooltip text to a specific UI element is by adding data-* attribute to an element HTML representation.
 
 ```html
-<span id="refresh" data-tooltip-text="Refresh"></span>
+<span id="refresh" data-tooltip="Refresh"></span>
 ```
 
 ###Advanced usage
@@ -84,11 +84,11 @@ html5tooltips([
 
 ###List of possible data-* attributes
 
+**data-tooltip** value for **contentText** parameter  
 **data-tooltip-animate-function** value for **animateFunction** parameter  
 **data-tooltip-color** value for **color** parameter  
 **data-tooltip-more** value for **contentMore** parameter  
 **data-tooltip-stickto** value for **stickTo** parameter  
-**data-tooltip-text** value for **contentText** parameter  
 **data-tooltip-maxwidth** value for **maxWidth** parameter  
 
 ###Browser compatibility

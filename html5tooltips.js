@@ -473,11 +473,11 @@ function Tooltip()
 
 function pickDocumentDataTargets()
 {
-  var pickedElements = getElementsByAttribute("data-tooltip-text");
+  var pickedElements = getElementsByAttribute("data-tooltip");
 
   pickedElements.forEach(function(elTarget) {
     var tm = {
-      contentText: elTarget.getAttribute("data-tooltip-text"),
+      contentText: elTarget.getAttribute("data-tooltip"),
       targetElements: [elTarget]
     };
 
