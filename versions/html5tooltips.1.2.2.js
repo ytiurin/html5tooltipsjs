@@ -1,5 +1,5 @@
 /**
-* html5tooltips.js
+* html5tooltips.js 1.2.2
 * Light and clean tooltips with CSS3 animation.
 * https://github.com/ytiurin/html5tooltipsjs
 *
