@@ -7,13 +7,17 @@
 * The MIT License (MIT)
 * http://opensource.org/licenses/MIT
 *
-* May 7, 2014
+* May 14, 2014
 **/
 
 .html5tooltip-box
 {
+  -moz-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0);
+  -ms-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0);
+  -o-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0);
+  -webkit-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0);
   background-color: rgba(42, 42, 42, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0);
   color: #FFFFFF;
   padding: 7px 9px;
 }
