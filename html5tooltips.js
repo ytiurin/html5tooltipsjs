@@ -603,7 +603,7 @@ function documentReadyHandler()
 
 if (window.define) {
   // AMD
-  define("html5tooltips", function () {
+  define(function () {
     return html5tooltipsAMD;
   });
 
