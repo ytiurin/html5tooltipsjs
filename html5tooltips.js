@@ -7,7 +7,7 @@
 * The MIT License (MIT)
 * http://opensource.org/licenses/MIT
 *
-* May 14, 2014
+* June 7, 2014
 **/
 
 (function() {
@@ -19,9 +19,9 @@ html5tooltipsPredefined = {
     fadeIn: "fadein",
     foldIn: "foldin",
     foldOut: "foldout",
-    slideIn: "roll",
+    roll: "roll",
     slideIn: "slidein",
-    slideIn: "spin"
+    spin: "spin"
   },
 
   color: {
@@ -631,3 +631,4 @@ window.addEventListener("scroll", function()
 }, false );
 
 })();
+                                    
