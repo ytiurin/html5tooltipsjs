@@ -585,11 +585,18 @@ function html5tooltipsGlobal(userTModels, userOptions)
   tieTooltips();
 }
 
-function html5tooltipsAMD(userTModels, userOptions)
+var html5tooltipsAMD=function(userTModels, userOptions)
 {
   init();
 
   html5tooltipsGlobal(userTModels, userOptions);
+};
+
+//Provides html property reading for AMD
+html5tooltipsAMD.autoinit=function(){
+	init();
+	pickDocumentDataTargets();
+	tieTooltips();
 }
 
 function documentReadyHandler()

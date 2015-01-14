@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html><head>
+
+<title>HTML5 Tooltips example</title>
+
+<link rel="stylesheet" type="text/css" href="./html5tooltips.css" />
+<link rel="stylesheet" type="text/css" href="./html5tooltips.animation.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<style type="text/css">
+
+body {
+  width: 35em;
+  margin: 0 auto;
+  font-family: Tahoma, Verdana, Arial, sans-serif;
+}
+
+</style>
+
+</head><body>
+
+<form action="#" method="post">
+
+  <h3>Register new customer</h3>
+
+  <fieldset>
+    <legend>Login and password</legend>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <label for="name">Login name</label>
+          </td>
+          <td>
+            <input id="name" type="text" data-tooltip="your name" data-tooltip-stickto="right"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="password">Password</label>
+          </td>
+          <td>
+            <input id="password" type="password" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="password2">Repeat password</label>
+          </td>
+          <td>
+            <input id="password2" type="password" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+
+  <br>
+
+  <fieldset>
+    <legend>Contact information</legend>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <label for="fullname">Full name</label>
+          </td>
+          <td>
+            <input id="fullname" type="text" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="email">Email</label>
+          </td>
+          <td>
+            <input id="email" type="text" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="phone">Phone</label>
+          </td>
+          <td>
+            <input id="phone" type="text" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="address">Address</label>
+          </td>
+          <td>
+            <textarea id="address"></textarea>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</form>
+
+<script type="text/javascript">
+
+require(['html5tooltips'],function(html5tooltips){
+  $(function(){
+    html5tooltips.autoinit();
+  });
+});
+
+</script>
+
+</body></html>
