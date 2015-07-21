@@ -43,7 +43,7 @@ body {
           <td>
             <input id="password" type="password" />
           </td>
-        </tr> 
+        </tr>
         <tr>
           <td>
             <label for="password2">Repeat password</label>
@@ -51,7 +51,7 @@ body {
           <td>
             <input id="password2" type="password" />
           </td>
-        </tr> 
+        </tr>
       </tbody>
     </table>
   </fieldset>
@@ -77,7 +77,7 @@ body {
           <td>
             <input id="email" type="text" />
           </td>
-        </tr> 
+        </tr>
         <tr>
           <td>
             <label for="phone">Phone</label>
@@ -85,7 +85,7 @@ body {
           <td>
             <input id="phone" type="text" />
           </td>
-        </tr> 
+        </tr>
         <tr>
           <td>
             <label for="address">Address</label>
@@ -93,7 +93,7 @@ body {
           <td>
             <textarea id="address"></textarea>
           </td>
-        </tr> 
+        </tr>
       </tbody>
     </table>
   </fieldset>
@@ -113,29 +113,33 @@ html5tooltips([
     contentText: "Not less then 8 characters",
     contentMore: "May contain d<span style='color:red;'>1</span>g<span style='color:red;'>1</span>ts and sp<span style='color:red;'>3</span>c<span style='color:red;'>!</span>al sym<span style='color:red;'>6</span>ols",
     targetSelector: "#password",
-    stickTo: "left",
+    stickTo: "right",
+    color:'metalic silver',
     maxWidth: 180
   },
   {
     contentText: "To ensure you remember it",
-    stickTo: "right",
     targetSelector: "#password2"
   },
   {
     contentText: "Your first and second name",
+    stickTo: "right",
     targetSelector: "#fullname"
   },
   {
     contentText: "It would be used to restore your password",
+    stickTo: "right",
     targetSelector: "#email"
   },
   {
     contentText: "We may call you to verify your identity",
+    stickTo: "right",
     targetSelector: "#phone"
   },
   {
     contentText: "For post delivery",
     contentMore: "It should contain zip code and country name",
+    stickTo: "right",
     targetSelector: "#address",
     maxWidth: 180
   }
