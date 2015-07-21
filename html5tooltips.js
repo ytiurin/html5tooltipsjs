@@ -25,52 +25,52 @@ html5tooltipsPredefined = {
   },
 
   color: {
-    daffodil: {r: 255, g: 230, b: 23, a: 0.95},
-    daisy: {r: 250, g: 211, b: 28, a: 0.95},
-    mustard: {r: 253, g: 183, b: 23, a: 0.95},
-    citrusZest: {r: 250, g: 170, b: 33, a: 0.95},
-    pumpkin: {r: 241, g: 117, b: 63, a: 0.95},
-    tangerine: {r: 237, g: 87, b: 36, a: 0.95},
-    salmon: {r: 240, g: 70, b: 57, a: 0.95},
-    persimmon: {r: 234, g: 40, b: 48, a: 0.95},
-    rouge: {r: 188, g: 35, b: 38, a: 0.95},
-    scarlet: {r: 140, g: 12, b: 3, a: 0.95},
-    hotPink: {r: 229, g: 24, b: 93, a: 0.95},
-    princess: {r: 243, g: 132, b: 174, a: 0.95},
-    petal: {r: 250, g: 198, b: 210, a: 0.95},
-    lilac: {r: 178, g: 150, b: 199, a: 0.95},
-    lavender: {r: 123, g: 103, b: 174, a: 0.95},
-    violet: {r: 95, g: 53, b: 119, a: 0.95},
-    cloud: {r: 195, g: 222, b: 241, a: 0.95},
-    dream: {r: 85, g: 190, b: 237, a: 0.95},
-    gulf: {r: 49, g: 168, b: 224, a: 0.95},
-    turquoise: {r: 35, g: 138, b: 204, a: 0.95},
-    sky: {r: 13, g: 96, b: 174, a: 0.95},
-    indigo: {r: 20, g: 59, b: 134, a: 0.95},
-    navy: {r: 0, g: 27, b: 74, a: 0.95},
-    seaFoam: {r: 125, g: 205, b: 194, a: 0.95},
-    teal: {r: 0, g: 168, b: 168, a: 0.95},
-    peacock: {r: 18, g: 149, b: 159, a: 0.95},
-    ceadon: {r: 193, g: 209, b: 138, a: 0.95},
-    olive: {r: 121, g: 145, b: 85, a: 0.95},
-    bamboo: {r: 128, g: 188, b: 66, a: 0.95},
-    grass: {r: 74, g: 160, b: 63, a: 0.95},
-    kelly: {r: 22, g: 136, b: 74, a: 0.95},
-    forrest: {r: 0, g: 63, b: 46, a: 0.95},
-    chocolate: {r: 56, g: 30, b: 17, a: 0.95},
-    terraCotta: {r: 192, g: 92, b: 32, a: 0.95},
-    camel: {r: 191, g: 155, b: 107, a: 0.95},
-    linen: {r: 233, g: 212, b: 167, a: 0.95},
-    stone: {r: 231, g: 230, b: 225, a: 0.95},
-    smoke: {r: 207, g: 208, b: 210, a: 0.95},
-    steel: {r: 138, g: 139, b: 143, a: 0.95},
-    slate: {r: 119, g: 133, b: 144, a: 0.95},
-    charcoal: {r: 71, g: 77, b: 77, a: 0.95},
-    black: {r: 5, g: 6, b: 8, a: 0.95},
-    white: {r: 255, g: 255, b: 255, a: 0.95},
-    metalicSilver: {r: 152, g: 162, b: 171, a: 0.95},
-    metalicGold: {r: 159, g: 135, b: 89, a: 0.95},
-    metalicCopper: {r: 140, g: 102, b: 65, a: 0.95}
+    "daffodil": {r: 255, g: 230, b: 23, a: 0.95},
+    "daisy": {r: 250, g: 211, b: 28, a: 0.95},
+    "mustard": {r: 253, g: 183, b: 23, a: 0.95},
+    "citrus zest": {r: 250, g: 170, b: 33, a: 0.95},
+    "pumpkin": {r: 241, g: 117, b: 63, a: 0.95},
+    "tangerine": {r: 237, g: 87, b: 36, a: 0.95},
+    "salmon": {r: 240, g: 70, b: 57, a: 0.95},
+    "persimmon": {r: 234, g: 40, b: 48, a: 0.95},
+    "rouge": {r: 188, g: 35, b: 38, a: 0.95},
+    "scarlet": {r: 140, g: 12, b: 3, a: 0.95},
+    "hot pink": {r: 229, g: 24, b: 93, a: 0.95},
+    "princess": {r: 243, g: 132, b: 174, a: 0.95},
+    "petal": {r: 250, g: 198, b: 210, a: 0.95},
+    "lilac": {r: 178, g: 150, b: 199, a: 0.95},
+    "lavender": {r: 123, g: 103, b: 174, a: 0.95},
+    "violet": {r: 95, g: 53, b: 119, a: 0.95},
+    "cloud": {r: 195, g: 222, b: 241, a: 0.95},
+    "dream": {r: 85, g: 190, b: 237, a: 0.95},
+    "gulf": {r: 49, g: 168, b: 224, a: 0.95},
+    "turquoise": {r: 35, g: 138, b: 204, a: 0.95},
+    "sky": {r: 13, g: 96, b: 174, a: 0.95},
+    "indigo": {r: 20, g: 59, b: 134, a: 0.95},
+    "navy": {r: 0, g: 27, b: 74, a: 0.95},
+    "sea foam": {r: 125, g: 205, b: 194, a: 0.95},
+    "teal": {r: 0, g: 168, b: 168, a: 0.95},
+    "peacock": {r: 18, g: 149, b: 159, a: 0.95},
+    "ceadon": {r: 193, g: 209, b: 138, a: 0.95},
+    "olive": {r: 121, g: 145, b: 85, a: 0.95},
+    "bamboo": {r: 128, g: 188, b: 66, a: 0.95},
+    "grass": {r: 74, g: 160, b: 63, a: 0.95},
+    "kelly": {r: 22, g: 136, b: 74, a: 0.95},
+    "forrest": {r: 0, g: 63, b: 46, a: 0.95},
+    "chocolate": {r: 56, g: 30, b: 17, a: 0.95},
+    "terra cotta": {r: 192, g: 92, b: 32, a: 0.95},
+    "camel": {r: 191, g: 155, b: 107, a: 0.95},
+    "linen": {r: 233, g: 212, b: 167, a: 0.95},
+    "stone": {r: 231, g: 230, b: 225, a: 0.95},
+    "smoke": {r: 207, g: 208, b: 210, a: 0.95},
+    "steel": {r: 138, g: 139, b: 143, a: 0.95},
+    "slate": {r: 119, g: 133, b: 144, a: 0.95},
+    "charcoal": {r: 71, g: 77, b: 77, a: 0.95},
+    "black": {r: 5, g: 6, b: 8, a: 0.95},
+    "white": {r: 255, g: 255, b: 255, a: 0.95},
+    "metalic silver": {r: 152, g: 162, b: 171, a: 0.95},
+    "metalic gold": {r: 159, g: 135, b: 89, a: 0.95},
+    "metalic copper": {r: 140, g: 102, b: 65, a: 0.95}
   },
 
   stickTo: {
@@ -140,7 +140,7 @@ function getElementsByXPath(xpath, context)
   var nodes = [];
 
   try {
-    var result = document.evaluate(xpath, (context || document), null, 
+    var result = document.evaluate(xpath, (context || document), null,
       XPathResult.ANY_TYPE, null);
 
     for (var item = result.iterateNext(); item; item = result.iterateNext())
@@ -167,13 +167,13 @@ function getElementsBySelector(selector, context)
   return nodes;
 }
 
-function getElementsByAttribute(attr, context) 
+function getElementsByAttribute(attr, context)
 {
   var nodeList = (context || document).getElementsByTagName('*'),
     nodes = [];
 
   for (var i = 0, node; node = nodeList[i]; i++) {
-    if ( node.getAttribute(attr) ) 
+    if ( node.getAttribute(attr) )
       nodes.push(node);
   }
 
@@ -219,14 +219,14 @@ function Tooltip()
 
       // magic fix: refresh the animation queue
       el.offsetWidth = el.offsetWidth;
-      
+
       el.classList.add("animating");
       el.classList.remove(fromClass);
       el.classList.add(toClass);
 
       if (updateHandler)
         updateHandler();
-      
+
       setTimeout(function() {
         el.classList.remove("animating");
         el.classList.remove(toClass);
@@ -282,7 +282,7 @@ function Tooltip()
 
     if (ttModel !== userTTModel) {
       ttModel = extend({}, typeTooltipModel, userTTModel);
-      updateModel(); 
+      updateModel();
     }
 
     return this;
@@ -306,7 +306,7 @@ function Tooltip()
   {
     if (ttElement.style.visibility !== 'visible') {
       ttElement.style.visibility = 'visible';
-      
+
       applyAnimationClass(elBox, ttModel.animateFunction + "-from",
         ttModel.animateFunction + "-to");
 
@@ -314,7 +314,7 @@ function Tooltip()
         elMore.style.display = 'block';
         elMore.style.visibility = 'visible';
       }
-      
+
       updatePos();
     }
     else if (elMore.style.display !== 'block' && ttModel.contentMore) {
@@ -332,7 +332,7 @@ function Tooltip()
       // animate more content
       animateElementClass(elMore, function() {
         elMore.style.height = h > 0 ? h + 'px' : "auto";
-      }); 
+      });
     }
 
     return this;
@@ -353,7 +353,7 @@ function Tooltip()
   function updatePos()
   {
     updateTooltipPos();
-    updatePointerPos();    
+    updatePointerPos();
   }
 
   function updatePointerPos()
@@ -441,7 +441,7 @@ function Tooltip()
     ttModel.animateDuration = options.animateDuration ? options.animateDuration : ttModel.animateDuration;
     ttModel.animateFunction = options.animateFunction ? options.animateFunction : ttModel.animateFunction;
     ttModel.disableAnimation = options.disableAnimation ? options.disableAnimation : ttModel.disableAnimation;
-    
+
     // update color
     ttModel.color = options.color ? options.color : ttModel.color;
     if (html5tooltipsPredefined.color[ttModel.color]) {
@@ -495,7 +495,7 @@ function pickDocumentDataTargets()
 
     if (elTarget.getAttribute("data-tooltip-maxwidth") !== null)
       tm.maxWidth = elTarget.getAttribute("data-tooltip-maxwidth");
-      
+
     tModels.push(extend({}, typeTooltipModel, tm));
   });
 }
@@ -603,7 +603,7 @@ function documentReadyHandler()
 {
   document.removeEventListener("DOMContentLoaded", documentReadyHandler, false);
   window.removeEventListener("load", documentReadyHandler, false);
-  
+
   pickDocumentDataTargets();
   tieTooltips();
 }
@@ -638,4 +638,4 @@ window.addEventListener("scroll", function()
 }, false );
 
 })();
-                                    
+
