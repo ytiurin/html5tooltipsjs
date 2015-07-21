@@ -1,6 +1,6 @@
 html5tooltips.js
 ===============
-Light and clean tooltips, written in pure javascript with CSS3 animation. No framework dependency.
+Light and clean tooltips written in pure javascript with CSS3 animation and no framework dependency. [http://ytiurin.github.io/html5tooltipsjs](http://ytiurin.github.io/html5tooltipsjs)
 
 ###Quick introduction
 
