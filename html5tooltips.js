@@ -84,7 +84,7 @@ html5tooltipsPredefined = {
 typeTooltipModel = {
   animateDuration: 300,
   animateFunction: html5tooltipsPredefined.animateFunction.fadeIn,
-  color: html5tooltipsPredefined.color.black,
+  color: null,
   contentText: "",
   contentMore: "",
   disableAnimation: false,
@@ -448,8 +448,8 @@ function Tooltip()
       ttModel.color = html5tooltipsPredefined.color[ttModel.color];
       ttModel.color = "rgba(" + ttModel.color.r + ", " + ttModel.color.g + ", " + ttModel.color.b + ", " + ttModel.color.a + ")";
     }
-    elBox.style.backgroundColor = ttModel.color;
-    elPointer.style.borderColor = ttModel.color;
+    elBox.style.backgroundColor = ttModel.color||'';
+    elPointer.style.borderColor = ttModel.color||'';
 
     // update pointer
     ttElement.className = template.hookClasses.tooltip + "-" + ttModel.stickTo;
