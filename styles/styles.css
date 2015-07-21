@@ -1,49 +1,32 @@
 @font-face {
-    font-family: 'GeometriaLight';
-    src: url('Geometria-Light-webfont.eot');
-    src: url('Geometria-Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('Geometria-Light-webfont.woff') format('woff'),
-         url('Geometria-Light-webfont.ttf') format('truetype'),
-         url('Geometria-Light-webfont.svg#CallunaRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'source_sans_proregular';
-    src: url('sourcesanspro-regular-webfont.eot');
-    src: url('sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('sourcesanspro-regular-webfont.woff') format('woff'),
-         url('sourcesanspro-regular-webfont.ttf') format('truetype'),
-         url('sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
   font-family: 'VollkornItalic';
   src: url('Vollkorn-Italic.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+@font-face{font-family:'4';src:url('OpenSans-Light.ttf')}
+@font-face{font-family:'5';src:url('OpenSans-CondLight.ttf')}
 
 * { -moz-box-sizing: border-box; box-sizing: border-box; }
 body, html { height: 100%; }
 body
 {
+  background-color:#BCBFA3;
   color: white;
-  font-family: 'source_sans_proregular', Arial, sans-serif;
+  font-family: '4', Arial, sans-serif;
   margin: 0;
 }
+a{outline:none}
 
 .split-20{ float: left; width: 20%; }
 .split-25{ float: left; width: 25%; }
 .split-50{ float: left; width: 50%; }
 .clearboth { display: block; clear: both; }
 
-.section.c1 { background-color: #F0A30A; }
-.section.c2 { background-color: #00ABA9; }
+.section.c2 { background-color: #89B399; }
 .section.c3 { background-color: #F7F7F7; }
-.section.c4 { background-color: #60A917; }
-.section.c5 { background-color: #A20025; }
+.section.c4 { background-color: #E39B7D; }
+.section.c5 { background-color: #6E6460; }
 
 .section.i1,
 .section.i2,
@@ -53,17 +36,16 @@ body
   background-attachment: fixed;
   background-position: center 50%;
   background-size: cover;
-  font-family: 'VollkornItalic';
-  font-size: 26px;
+  font-family:'4';
+  font-size: 28px;
 }
-.section.i1 { background-image: url('13540318445_701c3cd92d_h.jpg'); }
-.section.i2 { background-image: url('1231231.jpg'); }
-.section.i3 { background-image: url('345345345.jpg'); }
-.section.i4 { background-image: url('982374982374.jpg'); }
-.shading { background-color: rgba(0,0,0,0.35); height: 100%; }
+.section.i1 { background-image: url(934ru93vn0jm348f9348f84uf3948cf39.jpg); }
+.section.i2 { background-image: url(ei02cm9e0cmc9icm923m90c.jpg); }
+.section.i3 { background-image: url(jc23892dc9389c2349cmweijdcp348j.jpg); }
+.section.i4 { background-image: url(239crj3qwcmodj3902dj0d2309.jpg); }
 
 .full-height { height: 100%; }
-.height-80 { height: 80%; }
+.height-80 { height: 90%; }
 .box
 {
   height: 100%;
@@ -81,27 +63,28 @@ body
   top: 50%;
   position: absolute;
   text-align: center;
+  text-shadow:1px 1px 0 rgba(0,0,0,.3);
   width: 100%;
 }
 
 /* Slide 1 */
 #header-group
 {
-  margin-top: -230px;
+  margin-top: -130px;
   position: relative;
   top: 50%;
 }
 .page-title
 {
-  font-family: 'VollkornItalic';
-  font-size: 80px;
+  font-family: '5';
+  font-size: 120px;
   text-align: center;
+  text-shadow:2px 2px 3px rgba(0, 0, 0, 0.3);
 }
 .page-brief
 {
-  font-size: 26px;
-  margin-top: 40px;
   text-align: center;
+  text-shadow:1px 1px 0 rgba(0,0,0,.3);
 }
 .demo-tooltip
 {
@@ -112,43 +95,6 @@ body
 {
   left: 47px;
   top: -13px;
-}
-.page-scroll-down
-{
-  background: url('Arrowhead-Down-128.png') scroll 0 -36px;
-  height: 64px;
-  width: 128px;
-  position: absolute;
-  left: 416px;
-  bottom: 0;
-}
-#tooltip-example1
-{
-  border: 6px dashed rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
-  font-family: 'VollkornItalic';
-  font-size: 24px;
-  margin: 60px auto 0;
-  overflow: hidden;
-  padding: 16px 0;
-  text-align: center;
-  white-space: nowrap;
-  width: 230px;
-}
-#tooltip-example1:before
-{
-  content: 'Move mouse here';
-}
-#tooltip-example1:hover:before
-{
-  content: 'Now click';
-}
-#tooltip-example1:focus
-{
-  background-color: #FFFFFF;
-  border-color: rgba(0,0,0,0);
-  border-radius: 0;
-  color: black;
 }
 
 /* Slide 2 */
@@ -235,7 +181,7 @@ body
 {
   border-radius: 50px;
   background: white;
-  color: #406E0D;
+  color: #666;
   cursor: default;
   font-family: 'VollkornItalic';
   font-size: 24px;
@@ -295,44 +241,20 @@ body
   position: relative;
   top: 50%;
 }
-.get-github,
-.get-direct
+.get-github
 {
   background-position: center 20px;
   background-repeat: no-repeat;
   color: white;
   display: block;
-  font-family: 'GeometriaLight';
   font-size: 24px;
   margin: 0 auto;
   padding-top: 160px;
   text-align: center;
   text-decoration: none;
   width: 200px;
-
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  
-  -moz-transition: -moz-transform 0.1s;
-  -ms-transition: -ms-transform 0.1s;
-  -o-transition: -o-transform 0.1s;
-  -webkit-transition: -webkit-transform 0.1s;
-  transition: transform 0.1s;
 }
 .get-github { background-image: url('GitHub-Mark-Light-120px-plus.png');}
-.get-direct { background-image: url('Download-128.png'); }
-.get-github:hover,
-.get-direct:hover
-{
-  -moz-transform: scale(1.3);
-  -ms-transform: scale(1.3);
-  -o-transform: scale(1.3);
-  -webkit-transform: scale(1.3);
-  transform: scale(1.3);
-}
 #compat-group
 {
   bottom: 20px;

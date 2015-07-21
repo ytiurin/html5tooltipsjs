@@ -1,97 +1,59 @@
 <!DOCTYPE html>
 <html><head>
 
-<title>html5tooltips.js - Javascript tooltips with CSS3 animation</title>
-<meta name="description" content="html5tooltips.js is a javascript library that makes use of HTML5 technology for creating tooltips on your website.">
-
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+<title>html5tooltips.js</title>
+<meta name="description" content="Javascript tooltips with CSS3 animation">
+<meta name="keywords" content="html5, tooltips, javascript, css3, ui, animation">
 
 <link rel="stylesheet" type="text/css" href="./html5tooltips.1.2.3.min.css" />
 <script type="text/javascript" src="./html5tooltips.1.2.3.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
-<!-- 
-<script type="text/javascript">
-
-function windowScroll(e)
-{
-  var htmlCol = document.getElementsByClassName('parallax'),
-    bgTop;
-
-  for (var i = 0; i < htmlCol.length; i++)
-  {
-    // bgTop = parseInt((window.scrollY+window.innerHeight) / document.body.scrollHeight * 100);
-    bgTop = parseInt((window.scrollY / window.scrollMaxY) * 100);
-    htmlCol.item(i).style.backgroundPosition = "center "+bgTop+"%";
-  }
-}
-
-window.addEventListener( "scroll", windowScroll, false );
-
-</script>
- -->
 </head><body>
 
-<div class="section full-height c1">
+<div class="section i1 parallax full-height">
   <div class="box">
     <div id="header-group">
       <div class="page-title">html5tooltips.js</div>
-      <div class="page-brief">Light and clean tooltips with CSS3 animation.<br>No framework required.</div>
-      <!-- <div style="position: absolute;" class="html5tooltip demo-tooltip"><div class="html5tooltip-text">Small & helpfull</div><div class="html5tooltip-pointer-bottom"><div class="html5tooltip-po"></div><div class="html5tooltip-pi"></div></div></div> -->
-      <div id="tooltip-example1" data-tooltip="Did you notice this small tooltip?" data-tooltip-more="It would give some helpfull hints on user interface controls." data-tooltip-maxwidth="250" data-tooltip-animate-function="fadein" contenteditable="true"></div>
-    </div>
-    
-    <div class="page-scroll-down"></div>
-  </div>
-</div>
-
-<div class="section i1 parallax height-80">
-  <div class="shading">
-    <div class="box">
-      <div class="textbox-1">
-        Attention to details is a clue to a winning design.<br>People should have an ability to do hard things in a simple way.
-      </div>
+      <div class="page-brief">Light and clean tooltips with CSS3 animation<br>No framework required</div>
     </div>
   </div>
 </div>
 
 <div class="section height-80 c2">
   <div class="box">
-    <div class="demo-text1">Good old tooltips fit the modern UI wave.</div>
+    <div class="demo-text1">Good old tooltips fit the modern UI wave</div>
 
     <div id="demo-group">
-      <div class="button1 icon-trash" data-tooltip="Delete"></div>
-      <div class="button1 icon-coffee" data-tooltip="Build"></div>
-      <div class="button1 icon-cloud" data-tooltip="Send to cloud"></div>
-      <div class="textfield" contenteditable="true" data-tooltip="Search phrase" data-tooltip-more="You may put several words here as a search phrase" data-tooltip-stickto="right" data-tooltip-maxwidth="200"></div>
+      <div class="button1 icon-trash" data-tooltip="Delete" data-tooltip-animate-function="spin"></div>
+      <div class="button1 icon-coffee" data-tooltip="Build" data-tooltip-animate-function="spin"></div>
+      <div class="button1 icon-cloud" data-tooltip="Send to cloud" data-tooltip-animate-function="spin"></div>
+      <div class="textfield" contenteditable="true" data-tooltip="Search phrase" data-tooltip-more="You may put several words here as a search phrase" data-tooltip-stickto="right" data-tooltip-maxwidth="200" data-tooltip-animate-function="foldin"></div>
       <div class="clearboth"></div>
     </div>
 
-    <div class="demo-text2">Tooltip is a quite usefull detail when used with buttons and input fields.<br>It gives an impression of solid UI design.</div>
+    <div class="demo-text2">Tooltips are very usefull detail that gives an impression of solid UI design.</div>
   </div>
 </div>
 
-<div class="section i4 parallax height-80">
-  <div class="shading">
+<div class="section i4 parallax full-height">
     <div class="box">
       <div class="textbox-1">
-        Animation is an important part of good design.<br>It makes things look natural and complete.
+        Animation makes things look natural and complete
       </div>
     </div>
-  </div>
 </div>
 
 <div class="section height-80 c4">
   <div class="box">
-    <div class="anim-text1">A collection of animation presets is included.</div>
+    <div class="anim-text1">Animation presets are available</div>
 
     <div id="anim-group">
-      <div class="anim-item item1" data-tooltip="Sliding" data-tooltip-animate-function="slidein" data-tooltip-stickto="left">Slide</div>
-      <div class="anim-item item2" data-tooltip="Scaling" data-tooltip-animate-function="scalein">Scale</div>
-      <div class="anim-item item3" data-tooltip="Rolling" data-tooltip-animate-function="roll">Roll</div>
-      <div class="anim-item item4" data-tooltip="Spinning" data-tooltip-animate-function="spin" data-tooltip-stickto="top">Spin</div>
-      <div class="anim-item item5" data-tooltip="Folding" data-tooltip-animate-function="foldin" data-tooltip-stickto="right">Fold</div>
+      <div class="anim-item item1" data-tooltip="Sliding" data-tooltip-animate-function="slidein" data-tooltip-stickto="left" data-tooltip-color="slate">Slide</div>
+      <div class="anim-item item2" data-tooltip="Scaling" data-tooltip-animate-function="scalein" data-tooltip-color="peacock">Scale</div>
+      <div class="anim-item item3" data-tooltip="Rolling" data-tooltip-animate-function="roll" data-tooltip-color="rouge">Roll</div>
+      <div class="anim-item item4" data-tooltip="Spinning" data-tooltip-animate-function="spin" data-tooltip-stickto="top" data-tooltip-color="chocolate">Spin</div>
+      <div class="anim-item item5" data-tooltip="Folding" data-tooltip-animate-function="foldin" data-tooltip-stickto="right" data-tooltip-color="pumpkin">Fold</div>
       <div class="clearboth"></div>
     </div>
 
@@ -99,19 +61,17 @@ window.addEventListener( "scroll", windowScroll, false );
   </div>
 </div>
 
-<div class="section i3 parallax height-80">
-  <div class="shading">
+<div class="section i3 parallax full-height">
     <div class="box">
       <div class="textbox-1">
-        Customization is important. Good style is everything.<br>Fit the right design by just.. picking the right color :) 
+        Every unique case requires unique color
       </div>
     </div>
-  </div>
 </div>
 
 <div class="section c3">
   <div class="box">
-    <div class="customization-text1">A palette of predefined colors is available.</div>
+    <div class="customization-text1">A palette of predefined colors</div>
 
     <div id="customization-group">
       <div class="split-25">
@@ -171,22 +131,18 @@ window.addEventListener( "scroll", windowScroll, false );
   </div>
 </div>
 
-<div class="section i2 parallax height-80">
-  <div class="shading">
+<div class="section i2 parallax full-height">
     <div class="box">
       <div class="textbox-1">
-        HTML5 usage brings smooth animation, lightness and<br>framework independency.
+        Smooth animation, lightness and framework independency
       </div>
     </div>
-  </div>
 </div>
 
 <div class="section full-height c5">
   <div class="box">
     <div id="get-group">
-      <div class="split-50"><a class="get-github" href="https://github.com/ytiurin/html5tooltipsjs">Fork on GitHub</a></div>
-      <div class="split-50"><a class="get-direct" href="https://raw.githubusercontent.com/ytiurin/html5tooltipsjs/master/versions/html5tooltips.1.3.min.js">Download now</a></div>
-      <div class="clearboth"></div>
+      <a class="get-github" href="https://github.com/ytiurin/html5tooltipsjs" target="_blank" data-tooltip="Fork on GitHub" data-tooltip-animate-function="spin" data-tooltip-color="slate"></a>
     </div>
     <div id="compat-group">
       <div class="split-20"><div class="compat-chrome">1+</div></div>
@@ -200,13 +156,58 @@ window.addEventListener( "scroll", windowScroll, false );
 </div>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-2810014-7', 'ytiurin.github.io');
-  ga('send', 'pageview');
+/*
+* https://github.com/ytiurin/parallax-background.js
+* https://github.com/ytiurin/parallax-background.js/raw/master/LICENSE
+*/
+!function(p,r,l,x){
+  function v(b,c,k,g,n,d)
+  {
+    if((-1*b.top)>b.height||b.top>k)
+      return;
+
+    d=0;
+    b.top<0&&
+      (d=-1*b.top/2);
+
+    n=b.top+b.height;
+    n>k&&
+      (d=-1*(n-k)/2);
+
+    c[l[0]]=(c[l[0]].split(' ')[0]||'50%')+' '+d+'px';
+    c[l[1]]!=='scroll'&&
+      (c[l[1]]='scroll')
+  }
+
+  function w(i)
+  {
+    for(i=x.length;i--;)
+      v(x[i].getBoundingClientRect(),x[i].style,r.innerHeight)
+  }
+
+  r=window,l=['backgroundPosition','backgroundAttachment','addEventListener',
+    'console'],x=document.querySelectorAll(p);
+
+  r[l[3]]&&(r[l[3]].log('https://github.com/ytiurin/parallax-background.js')||
+    r[l[3]].log(x));
+
+  if(x.length){
+    r[l[2]]('scroll',w);
+    r[l[2]]('resize',w);
+    w()
+  }
+}
+('.parallax')
+
+//GA
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-2810014-7', 'ytiurin.github.io');
+ga('send', 'pageview');
 
 </script>
 
