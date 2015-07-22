@@ -7,7 +7,7 @@
 * The MIT License (MIT)
 * http://opensource.org/licenses/MIT
 *
-* May 7, 2014
+* July 22, 2015
 **/
 
 .html5tooltip-bottom,
@@ -54,34 +54,34 @@
 .fadein-to { opacity: 1; }
 
 .fadein-from,
-.fadein-to 
+.fadein-to
 {
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 /* Scalein */
 .scalein-from
 {
   opacity: 0;
-  -moz-transform: scale(0.7);
-  -ms-transform: scale(0.7);
-  -o-transform: scale(0.7);
-  -webkit-transform: scale(0.7);
-  transform: scale(0.7);
+  -moz-transform: scale3d(0.7,0.7,0.7);
+  -ms-transform: scale3d(0.7,0.7,0.7);
+  -o-transform: scale3d(0.7,0.7,0.7);
+  -webkit-transform: scale3d(0.7,0.7,0.7);
+  transform: scale3d(0.7,0.7,0.7);
 }
 
 .scalein-to
 {
   opacity: 1;
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  -webkit-transform: scale(1);
-  transform: scale(1);
+  -moz-transform: scale3d(1,1,1);
+  -ms-transform: scale3d(1,1,1);
+  -o-transform: scale3d(1,1,1);
+  -webkit-transform: scale3d(1,1,1);
+  transform: scale3d(1,1,1);
 }
 
 .html5tooltip-bottom .scalein-to
@@ -128,21 +128,21 @@
 .foldout-to
 {
   opacity: 1;
-  -moz-transform: rotateX(0) rotateY(0);
-  -ms-transform: rotateX(0) rotateY(0);
-  -o-transform: rotateX(0) rotateY(0);
-  -webkit-transform: rotateX(0) rotateY(0);
-  transform: rotateX(0) rotateY(0);
+  -moz-transform: rotate3d(0,0,0,0);
+  -ms-transform: rotate3d(0,0,0,0);
+  -o-transform: rotate3d(0,0,0,0);
+  -webkit-transform: rotate3d(0,0,0,0);
+  transform: rotate3d(0,0,0,0);
 }
 
 .html5tooltip-bottom .foldin-from,
 .html5tooltip-top .foldout-from
 {
-  -moz-transform: rotateX(-90deg);
-  -ms-transform: rotateX(-90deg);
-  -o-transform: rotateX(-90deg);
-  -webkit-transform: rotateX(-90deg);
-  transform: rotateX(-90deg);
+  -moz-transform: rotate3d(1,0,0,-90deg);
+  -ms-transform: rotate3d(1,0,0,-90deg);
+  -o-transform: rotate3d(1,0,0,-90deg);
+  -webkit-transform: rotate3d(1,0,0,-90deg);
+  transform: rotate3d(1,0,0,-90deg);
 }
 
 .html5tooltip-bottom .foldin-to,
@@ -158,11 +158,11 @@
 .html5tooltip-left .foldin-from,
 .html5tooltip-right .foldout-from
 {
-  -moz-transform: rotateY(-90deg);
-  -ms-transform: rotateY(-90deg);
-  -o-transform: rotateY(-90deg);
-  -webkit-transform: rotateY(-90deg);
-  transform: rotateY(-90deg);
+  -moz-transform: rotate3d(0,1,0,-90deg);
+  -ms-transform: rotate3d(0,1,0,-90deg);
+  -o-transform: rotate3d(0,1,0,-90deg);
+  -webkit-transform: rotate3d(0,1,0,-90deg);
+  transform: rotate3d(0,1,0,-90deg);
 }
 
 .html5tooltip-left .foldin-to,
@@ -178,11 +178,11 @@
 .html5tooltip-right .foldin-from,
 .html5tooltip-left .foldout-from
 {
-  -moz-transform: rotateY(90deg);
-  -ms-transform: rotateY(90deg);
-  -o-transform: rotateY(90deg);
-  -webkit-transform: rotateY(90deg);
-  transform: rotateY(90deg);
+  -moz-transform: rotate3d(0,1,0,90deg);
+  -ms-transform: rotate3d(0,1,0,90deg);
+  -o-transform: rotate3d(0,1,0,90deg);
+  -webkit-transform: rotate3d(0,1,0,90deg);
+  transform: rotate3d(0,1,0,90deg);
 }
 
 .html5tooltip-right .foldin-to,
@@ -198,11 +198,11 @@
 .html5tooltip-top .foldin-from,
 .html5tooltip-bottom .foldout-from
 {
-  -moz-transform: rotateX(90deg);
-  -ms-transform: rotateX(90deg);
-  -o-transform: rotateX(90deg);
-  -webkit-transform: rotateX(90deg);
-  transform: rotateX(90deg);
+  -moz-transform: rotate3d(1,0,0,90deg);
+  -ms-transform: rotate3d(1,0,0,90deg);
+  -o-transform: rotate3d(1,0,0,90deg);
+  -webkit-transform: rotate3d(1,0,0,90deg);
+  transform: rotate3d(1,0,0,90deg);
 }
 
 .html5tooltip-top .foldin-to,
@@ -221,47 +221,47 @@
 .slidein-to
 {
   opacity: 1;
-  -moz-transform: translateX(0) translateY(0);
-  -ms-transform: translateX(0) translateY(0);
-  -o-transform: translateX(0) translateY(0);
-  -webkit-transform: translateX(0) translateY(0);
-  transform: translateX(0) translateY(0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .html5tooltip-bottom .slidein-from
 {
-  -moz-transform: translateY(20px);
-  -ms-transform: translateY(20px);
-  -o-transform: translateY(20px);
-  -webkit-transform: translateY(20px);
-  transform: translateY(20px);
+  -moz-transform: translate3d(0,20px,0);
+  -ms-transform: translate3d(0,20px,0);
+  -o-transform: translate3d(0,20px,0);
+  -webkit-transform: translate3d(0,20px,0);
+  transform: translate3d(0,20px,0);
 }
 
 .html5tooltip-left .slidein-from
 {
-  -moz-transform:  translateX(-20px);
-  -ms-transform: translateX(-20px);
-  -o-transform: translateX(-20px);
-  -webkit-transform: translateX(-20px);
-  transform: translateX(-20px);
+  -moz-transform:  translate3d(-20px,0,0);
+  -ms-transform: translate3d(-20px,0,0);
+  -o-transform: translate3d(-20px,0,0);
+  -webkit-transform: translate3d(-20px,0,0);
+  transform: translate3d(-20px,0,0);
 }
 
 .html5tooltip-right .slidein-from
 {
-  -moz-transform:  translateX(20px);
-  -ms-transform: translateX(20px);
-  -o-transform: translateX(20px);
-  -webkit-transform: translateX(20px);
-  transform: translateX(20px);
+  -moz-transform:  translate3d(20px,0,0);
+  -ms-transform: translate3d(20px,0,0);
+  -o-transform: translate3d(20px,0,0);
+  -webkit-transform: translate3d(20px,0,0);
+  transform: translate3d(20px,0,0);
 }
 
 .html5tooltip-top .slidein-from
 {
-  -moz-transform: translateY(-20px);
-  -ms-transform: translateY(-20px);
-  -o-transform: translateY(-20px);
-  -webkit-transform: translateY(-20px);
-  transform: translateY(-20px);
+  -moz-transform: translate3d(0,-20px,0);
+  -ms-transform: translate3d(0,-20px,0);
+  -o-transform: translate3d(0,-20px,0);
+  -webkit-transform: translate3d(0,-20px,0);
+  transform: translate3d(0,-20px,0);
 }
 
 /* Roll */
@@ -270,20 +270,20 @@
 .roll-to
 {
   opacity: 1;
-  -moz-transform: rotateZ(0);
-  -ms-transform: rotateZ(0);
-  -o-transform: rotateZ(0);
-  -webkit-transform: rotateZ(0);
-  transform: rotateZ(0);
+  -moz-transform: rotate3d(0,0,0,0);
+  -ms-transform: rotate3d(0,0,0,0);
+  -o-transform: rotate3d(0,0,0,0);
+  -webkit-transform: rotate3d(0,0,0,0);
+  transform: rotate3d(0,0,0,0);
 }
 
 .html5tooltip-bottom .roll-from
 {
-  -moz-transform: rotateZ(-30deg);
-  -ms-transform: rotateZ(-30deg);
-  -o-transform: rotateZ(-30deg);
-  -webkit-transform: rotateZ(-30deg);
-  transform: rotateZ(-30deg);
+  -moz-transform: rotate3d(0,0,1,-30deg);
+  -ms-transform: rotate3d(0,0,1,-30deg);
+  -o-transform: rotate3d(0,0,1,-30deg);
+  -webkit-transform: rotate3d(0,0,1,-30deg);
+  transform: rotate3d(0,0,1,-30deg);
 }
 
 .html5tooltip-bottom .roll-to
@@ -297,11 +297,11 @@
 
 .html5tooltip-left .roll-from
 {
-  -moz-transform: rotateZ(30deg);
-  -ms-transform: rotateZ(30deg);
-  -o-transform: rotateZ(30deg);
-  -webkit-transform: rotateZ(30deg);
-  transform: rotateZ(30deg);
+  -moz-transform: rotate3d(0,0,1,30deg);
+  -ms-transform: rotate3d(0,0,1,30deg);
+  -o-transform: rotate3d(0,0,1,30deg);
+  -webkit-transform: rotate3d(0,0,1,30deg);
+  transform: rotate3d(0,0,1,30deg);
 }
 
 .html5tooltip-left .roll-to
@@ -315,11 +315,11 @@
 
 .html5tooltip-right .roll-from
 {
-  -moz-transform: rotateZ(-30deg);
-  -ms-transform: rotateZ(-30deg);
-  -o-transform: rotateZ(-30deg);
-  -webkit-transform: rotateZ(-30deg);
-  transform: rotateZ(-30deg);
+  -moz-transform: rotate3d(0,0,1,-30deg);
+  -ms-transform: rotate3d(0,0,1,-30deg);
+  -o-transform: rotate3d(0,0,1,-30deg);
+  -webkit-transform: rotate3d(0,0,1,-30deg);
+  transform: rotate3d(0,0,1,-30deg);
 }
 
 .html5tooltip-right .roll-to
@@ -333,11 +333,11 @@
 
 .html5tooltip-top .roll-from
 {
-  -moz-transform: rotateZ(30deg);
-  -ms-transform: rotateZ(30deg);
-  -o-transform: rotateZ(30deg);
-  -webkit-transform: rotateZ(30deg);
-  transform: rotateZ(30deg);
+  -moz-transform: rotate3d(0,0,1,30deg);
+  -ms-transform: rotate3d(0,0,1,30deg);
+  -o-transform: rotate3d(0,0,1,30deg);
+  -webkit-transform: rotate3d(0,0,1,30deg);
+  transform: rotate3d(0,0,1,30deg);
 }
 
 .html5tooltip-top .roll-to
@@ -355,45 +355,45 @@
 .spin-to
 {
   opacity: 1;
-  -moz-transform: rotateX(0) rotateY(0) translateX(0) translateY(0);
-  -ms-transform: rotateX(0) rotateY(0) translateX(0) translateY(0);
-  -o-transform: rotateX(0) rotateY(0) translateX(0) translateY(0);
-  -webkit-transform: rotateX(0) rotateY(0) translateX(0) translateY(0);
-  transform: rotateX(0) rotateY(0) translateX(0) translateY(0);
+  -moz-transform: rotate3d(0,0,0,0) translate3d(0,0,0);
+  -ms-transform: rotate3d(0,0,0,0) translate3d(0,0,0);
+  -o-transform: rotate3d(0,0,0,0) translate3d(0,0,0);
+  -webkit-transform: rotate3d(0,0,0,0) translate3d(0,0,0);
+  transform: rotate3d(0,0,0,0) translate3d(0,0,0);
 }
 
 .html5tooltip-bottom .spin-from
 {
-  -moz-transform: rotateY(90deg) translateY(20px);
-  -ms-transform: rotateY(90deg) translateY(20px);
-  -o-transform: rotateY(90deg) translateY(20px);
-  -webkit-transform: rotateY(90deg) translateY(20px);
-  transform: rotateY(90deg) translateY(20px);
+  -moz-transform: rotate3d(0,1,0,90deg) translate3d(0,20px,0);
+  -ms-transform: rotate3d(0,1,0,90deg) translate3d(0,20px,0);
+  -o-transform: rotate3d(0,1,0,90deg) translate3d(0,20px,0);
+  -webkit-transform: rotate3d(0,1,0,90deg) translate3d(0,20px,0);
+  transform: rotate3d(0,1,0,90deg) translate3d(0,20px,0);
 }
 
 .html5tooltip-left .spin-from
 {
-  -moz-transform: rotateX(-90deg) translateX(-20px);
-  -ms-transform: rotateX(-90deg) translateX(-20px);
-  -o-transform: rotateX(-90deg) translateX(-20px);
-  -webkit-transform: rotateX(-90deg) translateX(-20px);
-  transform: rotateX(-90deg) translateX(-20px);
+  -moz-transform: rotate3d(1,0,0,-90deg) translate3d(-20px,0,0);
+  -ms-transform: rotate3d(1,0,0,-90deg) translate3d(-20px,0,0);
+  -o-transform: rotate3d(1,0,0,-90deg) translate3d(-20px,0,0);
+  -webkit-transform: rotate3d(1,0,0,-90deg) translate3d(-20px,0,0);
+  transform: rotate3d(1,0,0,-90deg) translate3d(-20px,0,0);
 }
 
 .html5tooltip-right .spin-from
 {
-  -moz-transform: rotateX(-90deg) translateX(20px);
-  -ms-transform: rotateX(-90deg) translateX(20px);
-  -o-transform: rotateX(-90deg) translateX(20px);
-  -webkit-transform: rotateX(-90deg) translateX(20px);
-  transform: rotateX(-90deg) translateX(20px);
+  -moz-transform: rotate3d(1,0,0,-90deg) translate3d(20px,0,0);
+  -ms-transform: rotate3d(1,0,0,-90deg) translate3d(20px,0,0);
+  -o-transform: rotate3d(1,0,0,-90deg) translate3d(20px,0,0);
+  -webkit-transform: rotate3d(1,0,0,-90deg) translate3d(20px,0,0);
+  transform: rotate3d(1,0,0,-90deg) translate3d(20px,0,0);
 }
 
 .html5tooltip-top .spin-from
 {
-  -moz-transform: rotateY(90deg) translateY(-20px);
-  -ms-transform: rotateY(90deg) translateY(-20px);
-  -o-transform: rotateY(90deg) translateY(-20px);
-  -webkit-transform: rotateY(90deg) translateY(-20px);
-  transform: rotateY(90deg) translateY(-20px);
+  -moz-transform: rotate3d(0,1,0,90deg) translate3d(0,-20px,0);
+  -ms-transform: rotate3d(0,1,0,90deg) translate3d(0,-20px,0);
+  -o-transform: rotate3d(0,1,0,90deg) translate3d(0,-20px,0);
+  -webkit-transform: rotate3d(0,1,0,90deg) translate3d(0,-20px,0);
+  transform: rotate3d(0,1,0,90deg) translate3d(0,-20px,0);
 }

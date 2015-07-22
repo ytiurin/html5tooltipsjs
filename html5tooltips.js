@@ -7,7 +7,7 @@
 * The MIT License (MIT)
 * http://opensource.org/licenses/MIT
 *
-* June 7, 2014
+* July 22, 2015
 **/
 
 (function() {
@@ -20,6 +20,7 @@ html5tooltipsPredefined = {
     foldIn: "foldin",
     foldOut: "foldout",
     roll: "roll",
+    scaleIn: "scalein",
     slideIn: "slidein",
     spin: "spin"
   },
