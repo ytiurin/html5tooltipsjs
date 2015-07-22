@@ -1,10 +1,6 @@
 html5tooltips.js
 ===============
-Light and clean tooltips, written in pure javascript with CSS3 animation. No framework dependency.
-
-###Quick introduction
-
-html5tooltips.js create a number of hidden tooltips in your website, showing up only when user needs some hints or explanation on specific UI elements. You see tooltips, when using Google Mail, Facebook or Github. It's an intuitive and inconspicuous way to keep users calm and confident in your website environment.
+Light and clean tooltips written in pure javascript with CSS3 animation and no framework dependency. [http://ytiurin.github.io/html5tooltipsjs](http://ytiurin.github.io/html5tooltipsjs)
 
 ###Simple usage
 
@@ -16,7 +12,7 @@ The simple way to tie a tooltip text to a specific UI element is by adding data-
 
 ###Advanced usage
 
-You may use a javascript constructor itself. It's more flexible and configurable way to use a tool
+You may use a javascript constructor. It's more flexible and configurable way.
 
 ```javascript
 html5tooltips({
@@ -25,7 +21,7 @@ html5tooltips({
 });
 ```
 
-Use CSS selectors to tie tooltips to different DOM elements. You can make a tooltip stick to any side of the target element
+Use CSS selectors to tie tooltips to DOM elements. You can make a tooltip stick to any side of the target element.
 
 ```javascript
 html5tooltips({
@@ -35,7 +31,7 @@ html5tooltips({
 });
 ```
 
-You can add even more explanation text to a tooltip, which shows up only when user focus on a target element. This feature is designed to explain text input fields and content editable areas. You can even use html formatting
+You can add explanation text to a tooltip, which shows up when user focus on a target element. This feature is designed to explain text input fields and editable elements. You can use HTML formatting.
 
 ```javascript
 html5tooltips({
@@ -46,7 +42,7 @@ html5tooltips({
 });
 ```
 
-Multiple tooltip definition is possible
+Multiple tooltip definition.
 
 ```javascript
 html5tooltips([
