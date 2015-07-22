@@ -598,7 +598,7 @@ html5tooltipsAMD.autoinit=function(){
 	init();
 	pickDocumentDataTargets();
 	tieTooltips();
-}
+};
 
 function documentReadyHandler()
 {
@@ -639,4 +639,3 @@ window.addEventListener("scroll", function()
 }, false );
 
 })();
-
