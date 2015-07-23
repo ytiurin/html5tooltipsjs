@@ -39,10 +39,10 @@ a{outline:none}
   font-family:'4';
   font-size: 28px;
 }
-.section.i1 { background-image: url(13.jpg); }
-.section.i2 { background-image: url(12.jpg); }
-.section.i3 { background-image: url(15.jpg); }
-.section.i4 { background-image: url(14.jpg); }
+.section.i1 { background-image: url(04.jpg); }
+.section.i2 { background-image: url(03.jpg); }
+.section.i3 { background-image: url(02.jpg); }
+.section.i4 { background-image: url(01.jpg); }
 
 .full-height { height: 100%; }
 .height-80 { height: 90%; }
