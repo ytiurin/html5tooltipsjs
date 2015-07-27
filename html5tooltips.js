@@ -3,16 +3,23 @@
 * Light and clean tooltips with CSS3 animation.
 * https://github.com/ytiurin/html5tooltipsjs
 *
+* Contributors:
+* https://github.com/nomiad
+* https://github.com/Dignifiedquire
+* https://github.com/arendjr
+* https://github.com/Peripheral1994
+* https://github.com/brunowego
+*
 * Yevhen Tiurin <yevhentiurin@gmail.com>
 * The MIT License (MIT)
 * http://opensource.org/licenses/MIT
 *
-* July 22, 2015
+* July 28, 2015
 **/
 
 (function() {
 
-var tt, tModels, options, activeElements,
+var tt, tModels, options, activeElements, untieTooltips, safeTModels,
 
 html5tooltipsPredefined = {
   animateFunction: {
@@ -475,6 +482,7 @@ function Tooltip()
 function pickDocumentDataTargets()
 {
   var pickedElements = getElementsByAttribute("data-tooltip");
+  tModels=safeTModels.slice();
 
   pickedElements.forEach(function(elTarget) {
     var tm = {
@@ -503,8 +511,53 @@ function pickDocumentDataTargets()
 
 function tieTooltips()
 {
+  var destrStack=[];
+
   tModels.forEach(function(tModel, i) {
-    tModel = extend({}, typeTooltipModel, tModel);
+
+    function targetMousemove()
+    {
+      if (activeElements.hovered === this || activeElements.focused !== null)
+        return;
+
+      activeElements.hovered = this;
+      tt.target(this).model(tModel);
+
+      setTimeout(function() {
+        if (activeElements.hovered === this)
+          tt.showBrief();
+      }.bind(this), 300);
+    }
+
+    function targetMouseout()
+    {
+      activeElements.hovered = null;
+
+      if (activeElements.focused !== null)
+        return;
+
+      tt.hideAll();
+    }
+
+    function targetFocus()
+    {
+      if (["INPUT", "TEXTAREA"].indexOf(this.tagName) === -1 &&
+        this.getAttribute("contenteditable") === null)
+        return;
+
+      activeElements.focused = this;
+
+      tt.target(this).model(tModel);
+      tt.showAll();
+    }
+
+    function targetBlur()
+    {
+      activeElements.focused = null;
+      tt.hideAll();
+    }
+
+    tModels[i] = tModel = extend({}, typeTooltipModel, tModel);
 
     if (!tModel.targetElements.length && tModel.targetSelector)
       tModel.targetElements = getElementsBySelector(tModel.targetSelector);
@@ -513,49 +566,24 @@ function tieTooltips()
       tModel.targetElements = getElementsByXPath(tModel.targetXPath);
 
     tModel.targetElements.forEach(function(el) {
-      el.addEventListener("mouseover", function() {
-        var hoverTarget = this;
-
-        if (activeElements.hovered === hoverTarget || activeElements.focused !== null)
-          return;
-
-        activeElements.hovered = hoverTarget;
-        tt.target(this).model(tModel);
-
-        setTimeout(function() {
-          if (activeElements.hovered === hoverTarget)
-            tt.showBrief();
-        }, 300);
+      destrStack.push(function(){
+        el.removeEventListener("mouseover",targetMousemove);
+        el.removeEventListener("mouseout",targetMouseout);
+        el.removeEventListener("focus",targetFocus);
+        el.removeEventListener("blur",targetBlur);
       });
 
-      el.addEventListener("mouseout", function() {
-        activeElements.hovered = null;
-
-        if (activeElements.focused !== null)
-          return;
-
-        tt.hideAll();
-      });
-
-      el.addEventListener("focus", function() {
-        if (["INPUT", "TEXTAREA"].indexOf(this.tagName) === -1 &&
-          this.getAttribute("contenteditable") === null)
-          return;
-
-        activeElements.focused = this;
-
-        tt.target(this).model(tModel);
-        tt.showAll();
-      });
-
-      el.addEventListener("blur", function() {
-        activeElements.focused = null;
-        tt.hideAll();
-      });
+      el.addEventListener("mouseover",targetMousemove);
+      el.addEventListener("mouseout",targetMouseout);
+      el.addEventListener("focus",targetFocus);
+      el.addEventListener("blur",targetBlur);
     });
-
-    tModels[i] = tModel;
   });
+
+  return function(){
+    for(var i=destrStack.length;i--;)
+      destrStack[i]();
+  }
 }
 
 function init()
@@ -563,6 +591,7 @@ function init()
   if (!tt) {
     options = {};
     tt = Tooltip();
+    safeTModels=[];
     tModels = [];
   }
 
@@ -572,32 +601,39 @@ function init()
   };
 }
 
-function html5tooltipsGlobal(userTModels, userOptions)
+var html5tooltipsGlobal=function(userTModels, userOptions)
 {
   if (userTModels.length)
     // merge arrays
-    Array.prototype.push.apply(tModels, userTModels);
+    Array.prototype.push.apply(safeTModels, userTModels);
 
   else if (typeof userTModels === "object")
-    tModels.push(userTModels);
+    safeTModels.push(userTModels);
 
   options = userOptions ? extend({}, userOptions) : options;
 
-  tieTooltips();
+  Array.prototype.push.apply(tModels,safeTModels);
+  untieTooltips&&untieTooltips();
+  untieTooltips=tieTooltips();
 }
 
 var html5tooltipsModule=function(userTModels, userOptions)
 {
   init();
-
   html5tooltipsGlobal(userTModels, userOptions);
 };
 
 //Provides html property reading for AMD and CommonJS
 html5tooltipsModule.autoinit=function(){
-	init();
-	pickDocumentDataTargets();
-	tieTooltips();
+  init();
+  html5tooltipsModule.refresh();
+};
+
+html5tooltipsGlobal.refresh=
+html5tooltipsModule.refresh=function(){
+  pickDocumentDataTargets();
+  untieTooltips&&untieTooltips();
+  untieTooltips=tieTooltips();
 };
 
 function documentReadyHandler()
@@ -606,7 +642,8 @@ function documentReadyHandler()
   window.removeEventListener("load", documentReadyHandler, false);
 
   pickDocumentDataTargets();
-  tieTooltips();
+  untieTooltips&&untieTooltips();
+  untieTooltips=tieTooltips();
 }
 
 if (typeof exports === "object" && exports &&
