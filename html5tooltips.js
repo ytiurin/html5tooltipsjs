@@ -203,8 +203,8 @@ function Tooltip()
   function animateElementClass(el, updateHandler)
   {
     if (!ttModel.disableAnimation) {
-      // magic fix: refresh the animation queue
-      el.offsetWidth = el.offsetWidth;
+      // getBoundingClientRect refreshes element render box
+      el.getBoundingClientRect();
       el.classList.add("animating");
       updateHandler();
       setTimeout(function() { el.classList.remove("animating"); }, ttModel.animateDuration);
@@ -218,8 +218,8 @@ function Tooltip()
     if (!ttModel.disableAnimation) {
       el.classList.add(fromClass);
 
-      // magic fix: refresh the animation queue
-      el.offsetWidth = el.offsetWidth;
+      // getBoundingClientRect refreshes element render box
+      el.getBoundingClientRect();
 
       el.classList.add("animating");
       el.classList.remove(fromClass);
@@ -359,7 +359,7 @@ function Tooltip()
 
   function updatePointerPos()
   {
-    var ttRect;
+    var ttRect,pointerRect;
 
     if (!targetElement)
       return;
