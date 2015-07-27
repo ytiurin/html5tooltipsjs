@@ -586,15 +586,15 @@ function html5tooltipsGlobal(userTModels, userOptions)
   tieTooltips();
 }
 
-var html5tooltipsAMD=function(userTModels, userOptions)
+var html5tooltipsModule=function(userTModels, userOptions)
 {
   init();
 
   html5tooltipsGlobal(userTModels, userOptions);
 };
 
-//Provides html property reading for AMD
-html5tooltipsAMD.autoinit=function(){
+//Provides html property reading for AMD and CommonJS
+html5tooltipsModule.autoinit=function(){
 	init();
 	pickDocumentDataTargets();
 	tieTooltips();
@@ -609,10 +609,14 @@ function documentReadyHandler()
   tieTooltips();
 }
 
-if (window.define) {
+if (typeof exports === "object" && exports &&
+    typeof module === "object" && module && module.exports === exports) {
+  // CommonJS (Browserify)
+  module.exports = html5tooltipsModule;
+} else if (window.define) {
   // AMD
   define(function () {
-    return html5tooltipsAMD;
+    return html5tooltipsModule;
   });
 
 } else {
