@@ -67,27 +67,26 @@ html5tooltips([
 
 ###List of possible parameters
 
-**animateFunction** - Choose one of the available animate functions: ``fadein``, ``foldin``, ``foldout``, ``roll``, ``scalein``, ``slidein``, ``spin``
-**color** - Choose one of the available predefined colors: ``daffodil``, ``daisy``, ``mustard``, ``citrus-zest``, ``pumpkin``, ``tangerine``, ``salmon``, ``persimmon``, ``rouge``, ``scarlet``, ``hot-pink``, ``princess``, ``petal``, ``lilac``, ``lavender``, ``violet``, ``cloud``, ``dream``, ``gulf``, ``turquoise``, ``indigo``, ``navy``, ``sea-foam``, ``teal``, ``peacock``, ``ceadon``, ``olive``, ``bamboo``, ``grass``, ``kelly``, ``forrest``, ``chocolate``, ``terra-cotta``, ``camel``, ``linen``, ``stone``, ``smoke``, ``steel``, ``slate``, ``charcoal``, ``black``, ``white``, ``metalic-silver``, ``metalic-gold``, ``metalic-copper``; or any CSS color.
-**contentText** - Text for a tooltip; HTML may be applied.
-**contentMore** - Text for the expanded version of a tooltip which shows up when focused on a target element; HTML may be applied.
-**disableAnimation** - Disable the animation: ``true`` or ``false``
-**stickTo** - Choose one of the available stick values: ``bottom``, ``left``, ``right``, ``top``
-**stickDistance** - The ``number`` of pixels that represent the distance between the tooltip and a target element.
-**targetSelector** - A CSS selector which is used to catch a target element in the document.
-**targetXPath** - An xPath value which is used to catch a target element in the document.
-**maxWidth** - The maximum width of the expanded version of the tooltip.
+- **animateFunction** - Choose one of the available animate functions: ``fadein``, ``foldin``, ``foldout``, ``roll``, ``scalein``, ``slidein``, ``spin``
+- **color** - Choose one of the available predefined colors: ``daffodil``, ``daisy``, ``mustard``, ``citrus-zest``, ``pumpkin``, ``tangerine``, ``salmon``, ``persimmon``, ``rouge``, ``scarlet``, ``hot-pink``, ``princess``, ``petal``, ``lilac``, ``lavender``, ``violet``, ``cloud``, ``dream``, ``gulf``, ``turquoise``, ``indigo``, ``navy``, ``sea-foam``, ``teal``, ``peacock``, ``ceadon``, ``olive``, ``bamboo``, ``grass``, ``kelly``, ``forrest``, ``chocolate``, ``terra-cotta``, ``camel``, ``linen``, ``stone``, ``smoke``, ``steel``, ``slate``, ``charcoal``, ``black``, ``white``, ``metalic-silver``, ``metalic-gold``, ``metalic-copper``; or any CSS color.
+- **contentText** - Text for a tooltip; HTML may be applied.
+- **contentMore** - Text for the expanded version of a tooltip which shows up when focused on a target element; HTML may be applied.
+- **disableAnimation** - Disable the animation: ``true`` or ``false``
+- **stickTo** - Choose one of the available stick values: ``bottom``, ``left``, ``right``, ``top``
+- **stickDistance** - The ``number`` of pixels that represent the distance between the tooltip and a target element.
+- **targetSelector** - A CSS selector which is used to catch a target element in the document.
+- **targetXPath** - An xPath value which is used to catch a target element in the document.
+- **maxWidth** - The maximum width of the expanded version of the tooltip.
 
 ###List of possible data-* attributes
 
-**data-tooltip** - Value for the **contentText** parameter.
-**data-tooltip-animate-function** - Value for the **animateFunction** parameter.
-**data-tooltip-color** - Value for the **color** parameter.
-**data-tooltip-more** - Value for **contentMore** parameter.
-**data-tooltip-stickto** - Value for **stickTo** parameter.
-**data-tooltip-maxwidth** - Value for **maxWidth** parameter.
+- **data-tooltip** - Value for the **contentText** parameter.
+- **data-tooltip-animate-function** - Value for the **animateFunction** parameter.
+- **data-tooltip-color** - Value for the **color** parameter.
+- **data-tooltip-more** - Value for **contentMore** parameter.
+- **data-tooltip-stickto** - Value for **stickTo** parameter.
+- **data-tooltip-maxwidth** - Value for **maxWidth** parameter.
 
 ###Browser compatibility
 
-Animation works in:
-Chrome 1.0, Firefox 2.0, Internet Explorer 10, Opera 10.5, Safari 3.2
+Tooltips are compatible with old browsers including IE7. Animation works in Chrome 1.0, Firefox 2.0, Internet Explorer 10, Opera 10.5, Safari 3.2.
