@@ -615,7 +615,7 @@ var html5tooltipsGlobal=function(userTModels, userOptions)
   Array.prototype.push.apply(tModels,safeTModels);
   untieTooltips&&untieTooltips();
   untieTooltips=tieTooltips();
-}
+};
 
 var html5tooltipsModule=function(userTModels, userOptions)
 {
