@@ -21,7 +21,7 @@ html5tooltips({
 });
 ```
 
-You can use CSS selectors to tie tooltips to DOM elements. You can make a tooltip stick to any side of the target element.
+Use CSS selectors to tie tooltips to DOM elements. You can make a tooltip stick to any side of the target element.
 
 ```javascript
 html5tooltips({
@@ -31,7 +31,7 @@ html5tooltips({
 });
 ```
 
-You can add explanation text to a tooltip, which shows up when a user focuses on a target element. This feature is designed to explain text input fields and editable elements. You can use HTML formatting.
+Add explanation text to a tooltip, which shows up when a user focuses on a target element. This feature is designed to explain text input fields and editable elements. You can use HTML formatting.
 
 ```javascript
 html5tooltips({
@@ -42,7 +42,7 @@ html5tooltips({
 });
 ```
 
-You can define multiple tooltips by submitting each tooltip as an object in a parameter array.
+Define multiple tooltips by submitting each tooltip as an object in a parameter array.
 
 ```javascript
 html5tooltips([
@@ -63,6 +63,12 @@ html5tooltips([
     targetSelector: "#username"
   }
 ]);
+```
+
+Refresh tooltips when you update declarative announcement of tooltips or when DOM change.
+
+```javascript
+html5tooltips.refresh();
 ```
 
 ###List of possible parameters
