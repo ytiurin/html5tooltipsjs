@@ -65,7 +65,7 @@ html5tooltips([
 ]);
 ```
 
-Refresh tooltips when you update declarative announcement of tooltips or when DOM change.
+Refresh tooltips when you update declarative announcement of tooltips or when DOM change, affecting tooltips target elements.
 
 ```javascript
 html5tooltips.refresh();
