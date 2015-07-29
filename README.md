@@ -65,6 +65,8 @@ html5tooltips([
 ]);
 ```
 
+###For Single Page Applications
+
 Refresh tooltips when you update declarative announcement of tooltips or when DOM change, affecting tooltips target elements.
 
 ```javascript
