@@ -49,11 +49,10 @@ a{outline:none}
 .box
 {
   height: 100%;
-  margin: 0 auto;
   padding: 1px 0;
   position: relative;
   overflow: hidden;
-  width: 960px;
+  width: 100%;
 }
 
 /* Text box */
