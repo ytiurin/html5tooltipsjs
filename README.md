@@ -7,31 +7,24 @@ Light and clean tooltips written in pure JavaScript with CSS3 animation and no f
 The simplest way to tie tooltip text to a specific UI element is by adding the data-* attribute to an HTML element.
 
 ```html
-<span id="refresh" data-tooltip="Refresh"></span>
+<span data-tooltip="Refresh"></span>
 ```
 
 ###Advanced usage
 
-You may use a JavaScript constructor. By doing it this way, you have access to a far more flexible and configurable approach.
+You may use a JavaScript constructor. By doing it this way, you have access to a far more flexible and configurable approach. You can make a tooltip stick to any side of the target element, apply animation function or background color.
 
 ```javascript
 html5tooltips({
-  contentText: "Refresh",
-  targetSelector: "#refresh"
-});
-```
-
-Use CSS selectors to tie tooltips to DOM elements. You can make a tooltip stick to any side of the target element.
-
-```javascript
-html5tooltips({
+  animateFunction: "spin",
+  color: "bamboo",
   contentText: "Refresh",
   stickTo: "right",
   targetSelector: "#refresh"
 });
 ```
 
-Add explanation text to a tooltip, which shows up when a user focuses on a target element. This feature is designed to explain text input fields and editable elements. You can use HTML formatting.
+There is an extra feature in html5tooltips.js that allows to show extended text in the tooltip, when user focuses on input field and editable element. You can use plain text or HTML formatting.
 
 ```javascript
 html5tooltips({
@@ -47,12 +40,10 @@ Define multiple tooltips by submitting each tooltip as an object in a parameter 
 ```javascript
 html5tooltips([
   {
-    contentText: "Delete",
-    targetSelector: "#delete"
-  },
-  {
+    animateFunction: "spin",
+    color: "#FF0000",
     contentText: "Refresh",
-    stickTo: "top",
+    stickTo: "right",
     targetSelector: "#refresh"
   },
   {
@@ -76,7 +67,7 @@ html5tooltips.refresh();
 ###List of possible parameters
 
 - **animateFunction** - Choose one of the available animate functions: ``fadein``, ``foldin``, ``foldout``, ``roll``, ``scalein``, ``slidein``, ``spin``
-- **color** - Choose one of the available predefined colors: ``daffodil``, ``daisy``, ``mustard``, ``citrus-zest``, ``pumpkin``, ``tangerine``, ``salmon``, ``persimmon``, ``rouge``, ``scarlet``, ``hot-pink``, ``princess``, ``petal``, ``lilac``, ``lavender``, ``violet``, ``cloud``, ``dream``, ``gulf``, ``turquoise``, ``indigo``, ``navy``, ``sea-foam``, ``teal``, ``peacock``, ``ceadon``, ``olive``, ``bamboo``, ``grass``, ``kelly``, ``forrest``, ``chocolate``, ``terra-cotta``, ``camel``, ``linen``, ``stone``, ``smoke``, ``steel``, ``slate``, ``charcoal``, ``black``, ``white``, ``metalic-silver``, ``metalic-gold``, ``metalic-copper``; or any CSS color.
+- **color** - Any CSS color or one of the available predefined colors: ``daffodil``, ``daisy``, ``mustard``, ``citrus-zest``, ``pumpkin``, ``tangerine``, ``salmon``, ``persimmon``, ``rouge``, ``scarlet``, ``hot-pink``, ``princess``, ``petal``, ``lilac``, ``lavender``, ``violet``, ``cloud``, ``dream``, ``gulf``, ``turquoise``, ``indigo``, ``navy``, ``sea-foam``, ``teal``, ``peacock``, ``ceadon``, ``olive``, ``bamboo``, ``grass``, ``kelly``, ``forrest``, ``chocolate``, ``terra-cotta``, ``camel``, ``linen``, ``stone``, ``smoke``, ``steel``, ``slate``, ``charcoal``, ``black``, ``white``, ``metalic-silver``, ``metalic-gold``, ``metalic-copper``.
 - **contentText** - Text for a tooltip; HTML may be applied.
 - **contentMore** - Text for the expanded version of a tooltip which shows up when focused on a target element; HTML may be applied.
 - **disableAnimation** - Disable the animation: ``true`` or ``false``
