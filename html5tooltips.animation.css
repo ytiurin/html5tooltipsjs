@@ -1,13 +1,13 @@
 /**
 * html5tooltips.js
-* Light and clean tooltips with CSS3 animation.
+* Tooltips with smooth 3D animation.
 * https://github.com/ytiurin/html5tooltipsjs
 *
 * Yevhen Tiurin <yevhentiurin@gmail.com>
 * The MIT License (MIT)
-* http://opensource.org/licenses/MIT
+* https://github.com/ytiurin/html5tooltipsjs/raw/master/LICENSE
 *
-* July 22, 2015
+* Aug 5, 2015
 **/
 
 .html5tooltip-bottom,
@@ -22,37 +22,36 @@
   perspective: 300px;
 }
 
+.html5tooltip-bottom.animating,
+.html5tooltip-left.animating,
+.html5tooltip-right.animating,
+.html5tooltip-top.animating
+{
+  transition: top .3s;
+}
+
 .html5tooltip-box.animating
 {
-  -moz-transition: opacity 0.3s, -moz-transform 0.3s;
-  -ms-transition: opacity 0.3s, -ms-transform 0.3s;
-  -o-transition: opacity 0.3s, -o-transform 0.3s;
-  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-  transition: opacity 0.3s, transform 0.3s;
+  -moz-transition: opacity .3s, -moz-transform .3s;
+  -ms-transition: opacity .3s, -ms-transform .3s;
+  -o-transition: opacity .3s, -o-transform .3s;
+  -webkit-transition: opacity .3s, -webkit-transform .3s;
+  transition: opacity .3s, transform .3s;
 }
 
 .html5tooltip-more.animating
 {
-  -moz-transition: height 0.3s;
-  -ms-transition: height 0.3s;
-  -o-transition: height 0.3s;
-  -webkit-transition: height 0.3s;
-  transition: height 0.3s;
-}
-
-.html5tooltip-pointer.animating
-{
-  -moz-transition: top 0.3s;
-  -ms-transition: top 0.3s;
-  -o-transition: top 0.3s;
-  -webkit-transition: top 0.3s;
-  transition: top 0.3s;
+  -moz-transition: height .3s;
+  -ms-transition: height .3s;
+  -o-transition: height .3s;
+  -webkit-transition: height .3s;
+  transition: height .3s;
 }
 
 /* Fadein */
 .fadein-from { opacity: 0; }
 .fadein-to { opacity: 1; }
-
+/*
 .fadein-from,
 .fadein-to
 {
@@ -62,16 +61,16 @@
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
-
+*/
 /* Scalein */
 .scalein-from
 {
   opacity: 0;
-  -moz-transform: scale3d(0.7,0.7,0.7);
-  -ms-transform: scale3d(0.7,0.7,0.7);
-  -o-transform: scale3d(0.7,0.7,0.7);
-  -webkit-transform: scale3d(0.7,0.7,0.7);
-  transform: scale3d(0.7,0.7,0.7);
+  -moz-transform: scale3d(.7,.7,.7);
+  -ms-transform: scale3d(.7,.7,.7);
+  -o-transform: scale3d(.7,.7,.7);
+  -webkit-transform: scale3d(.7,.7,.7);
+  transform: scale3d(.7,.7,.7);
 }
 
 .scalein-to

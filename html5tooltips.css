@@ -1,68 +1,74 @@
 /**
 * html5tooltips.js
-* Light and clean tooltips with CSS3 animation.
+* Tooltips with smooth 3D animation.
 * https://github.com/ytiurin/html5tooltipsjs
 *
 * Yevhen Tiurin <yevhentiurin@gmail.com>
 * The MIT License (MIT)
-* http://opensource.org/licenses/MIT
+* https://github.com/ytiurin/html5tooltipsjs/raw/master/LICENSE
 *
-* May 14, 2014
+* Aug 5, 2015
 **/
 
 .html5tooltip-box
 {
-  -moz-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0);
-  -ms-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0);
-  -o-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0);
-  -webkit-box-shadow: 0 0 0 1px rgba(255, 255, 255, 0);
-  background-color: rgba(42, 42, 42, 0.95);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0);
-  color: #FFFFFF;
-  padding: 7px 9px;
-}
-.html5tooltip-text
-{
+  background-color: #2A2A2A;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.35), 0 0 3px rgba(255,255,255,.35), 0 0 10px rgba(255,255,255,.15);
+  color: #F7F7F7;
   font-family: arial,sans-serif;
   font-size: 11px;
   font-weight: bold;
 }
-.html5tooltip-hr
-{
-  height: 7px;
-}
 .html5tooltip-pointer
 {
-  border-color: rgba(42, 42, 42, 0.95);
+  background-color: inherit;
+  box-shadow: inherit;
   height: 12px;
   position: absolute;
   width: 12px;
+  transform: translate3d(-6px, -6px, 0) rotate3d(0, 0, 1, 45deg);
+  left: 10px;
+  top: 10px;
 }
-.html5tooltip-po
+.html5tooltip-text
 {
-  border: 6px solid rgba(255, 255, 255, 0);
-  position: absolute;
+  background-color: inherit;
+  border-radius: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 7px 9px;
+  position: relative;
 }
-.html5tooltip-pi
+.html5tooltip-more
 {
-  border: 5px solid rgba(255, 255, 255, 0);
-  left: 1px;
-  position: absolute;
-  top: 2px;
+  background-color: inherit;
+  border-radius: inherit;
+  position: relative;
 }
-.html5tooltip-bottom .html5tooltip-pointer .html5tooltip-pi
+.html5tooltip-more .html5tooltip-text
 {
-  border-bottom-color: inherit;
+  margin-top:-7px;
 }
-.html5tooltip-left .html5tooltip-pointer .html5tooltip-pi
+.html5tooltip-bottom .html5tooltip-pointer
 {
-  border-left-color: inherit;
+  left: 50%;
+  top: 0px;
 }
-.html5tooltip-right .html5tooltip-pointer .html5tooltip-pi
+.html5tooltip-left .html5tooltip-pointer
 {
-  border-right-color: inherit;
+  left: 100%;
+  top: 50%;
 }
-.html5tooltip-top .html5tooltip-pointer .html5tooltip-pi
+.html5tooltip-right .html5tooltip-pointer
 {
-  border-top-color: inherit;
+  left: 0;
+  top: 50%;
+}
+.html5tooltip-top .html5tooltip-pointer
+{
+  left: 50%;
+  top: 100%;
 }

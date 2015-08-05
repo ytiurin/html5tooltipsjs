@@ -1,6 +1,6 @@
 /**
 * html5tooltips.js
-* Light and clean tooltips with CSS3 animation.
+* Tooltips with smooth 3D animation.
 * https://github.com/ytiurin/html5tooltipsjs
 *
 * Yevhen Tiurin <yevhentiurin@gmail.com>
@@ -33,52 +33,52 @@ html5tooltipsPredefined = {
   },
 
   color: {
-    "daffodil": {r: 255, g: 230, b: 23, a: 0.95},
-    "daisy": {r: 250, g: 211, b: 28, a: 0.95},
-    "mustard": {r: 253, g: 183, b: 23, a: 0.95},
-    "citrus zest": {r: 250, g: 170, b: 33, a: 0.95},
-    "pumpkin": {r: 241, g: 117, b: 63, a: 0.95},
-    "tangerine": {r: 237, g: 87, b: 36, a: 0.95},
-    "salmon": {r: 240, g: 70, b: 57, a: 0.95},
-    "persimmon": {r: 234, g: 40, b: 48, a: 0.95},
-    "rouge": {r: 188, g: 35, b: 38, a: 0.95},
-    "scarlet": {r: 140, g: 12, b: 3, a: 0.95},
-    "hot pink": {r: 229, g: 24, b: 93, a: 0.95},
-    "princess": {r: 243, g: 132, b: 174, a: 0.95},
-    "petal": {r: 250, g: 198, b: 210, a: 0.95},
-    "lilac": {r: 178, g: 150, b: 199, a: 0.95},
-    "lavender": {r: 123, g: 103, b: 174, a: 0.95},
-    "violet": {r: 95, g: 53, b: 119, a: 0.95},
-    "cloud": {r: 195, g: 222, b: 241, a: 0.95},
-    "dream": {r: 85, g: 190, b: 237, a: 0.95},
-    "gulf": {r: 49, g: 168, b: 224, a: 0.95},
-    "turquoise": {r: 35, g: 138, b: 204, a: 0.95},
-    "sky": {r: 13, g: 96, b: 174, a: 0.95},
-    "indigo": {r: 20, g: 59, b: 134, a: 0.95},
-    "navy": {r: 0, g: 27, b: 74, a: 0.95},
-    "sea foam": {r: 125, g: 205, b: 194, a: 0.95},
-    "teal": {r: 0, g: 168, b: 168, a: 0.95},
-    "peacock": {r: 18, g: 149, b: 159, a: 0.95},
-    "ceadon": {r: 193, g: 209, b: 138, a: 0.95},
-    "olive": {r: 121, g: 145, b: 85, a: 0.95},
-    "bamboo": {r: 128, g: 188, b: 66, a: 0.95},
-    "grass": {r: 74, g: 160, b: 63, a: 0.95},
-    "kelly": {r: 22, g: 136, b: 74, a: 0.95},
-    "forrest": {r: 0, g: 63, b: 46, a: 0.95},
-    "chocolate": {r: 56, g: 30, b: 17, a: 0.95},
-    "terra cotta": {r: 192, g: 92, b: 32, a: 0.95},
-    "camel": {r: 191, g: 155, b: 107, a: 0.95},
-    "linen": {r: 233, g: 212, b: 167, a: 0.95},
-    "stone": {r: 231, g: 230, b: 225, a: 0.95},
-    "smoke": {r: 207, g: 208, b: 210, a: 0.95},
-    "steel": {r: 138, g: 139, b: 143, a: 0.95},
-    "slate": {r: 119, g: 133, b: 144, a: 0.95},
-    "charcoal": {r: 71, g: 77, b: 77, a: 0.95},
-    "black": {r: 5, g: 6, b: 8, a: 0.95},
-    "white": {r: 255, g: 255, b: 255, a: 0.95},
-    "metalic silver": {r: 152, g: 162, b: 171, a: 0.95},
-    "metalic gold": {r: 159, g: 135, b: 89, a: 0.95},
-    "metalic copper": {r: 140, g: 102, b: 65, a: 0.95}
+    "daffodil": {r: 255, g: 230, b: 23},
+    "daisy": {r: 250, g: 211, b: 28},
+    "mustard": {r: 253, g: 183, b: 23},
+    "citrus zest": {r: 250, g: 170, b: 33},
+    "pumpkin": {r: 241, g: 117, b: 63},
+    "tangerine": {r: 237, g: 87, b: 36},
+    "salmon": {r: 240, g: 70, b: 57},
+    "persimmon": {r: 234, g: 40, b: 48},
+    "rouge": {r: 188, g: 35, b: 38},
+    "scarlet": {r: 140, g: 12, b: 3},
+    "hot pink": {r: 229, g: 24, b: 93},
+    "princess": {r: 243, g: 132, b: 174},
+    "petal": {r: 250, g: 198, b: 210},
+    "lilac": {r: 178, g: 150, b: 199},
+    "lavender": {r: 123, g: 103, b: 174},
+    "violet": {r: 95, g: 53, b: 119},
+    "cloud": {r: 195, g: 222, b: 241},
+    "dream": {r: 85, g: 190, b: 237},
+    "gulf": {r: 49, g: 168, b: 224},
+    "turquoise": {r: 35, g: 138, b: 204},
+    "sky": {r: 13, g: 96, b: 174},
+    "indigo": {r: 20, g: 59, b: 134},
+    "navy": {r: 0, g: 27, b: 74},
+    "sea foam": {r: 125, g: 205, b: 194},
+    "teal": {r: 0, g: 168, b: 168},
+    "peacock": {r: 18, g: 149, b: 159},
+    "ceadon": {r: 193, g: 209, b: 138},
+    "olive": {r: 121, g: 145, b: 85},
+    "bamboo": {r: 128, g: 188, b: 66},
+    "grass": {r: 74, g: 160, b: 63},
+    "kelly": {r: 22, g: 136, b: 74},
+    "forrest": {r: 0, g: 63, b: 46},
+    "chocolate": {r: 56, g: 30, b: 17},
+    "terra cotta": {r: 192, g: 92, b: 32},
+    "camel": {r: 191, g: 155, b: 107},
+    "linen": {r: 233, g: 212, b: 167},
+    "stone": {r: 231, g: 230, b: 225},
+    "smoke": {r: 207, g: 208, b: 210},
+    "steel": {r: 138, g: 139, b: 143},
+    "slate": {r: 119, g: 133, b: 144},
+    "charcoal": {r: 71, g: 77, b: 77},
+    "black": {r: 5, g: 6, b: 8},
+    "white": {r: 255, g: 255, b: 255},
+    "metalic silver": {r: 152, g: 162, b: 171},
+    "metalic gold": {r: 159, g: 135, b: 89},
+    "metalic copper": {r: 140, g: 102, b: 65}
   },
 
   stickTo: {
@@ -118,12 +118,11 @@ template = {
   HTML: [
     "<div class='html5tooltip' style='box-sizing:border-box;position:fixed;'>",
       "<div class='html5tooltip-box'>",
+        "<div class='html5tooltip-pointer'></div>",
         "<div class='html5tooltip-text'></div>",
         "<div class='html5tooltip-more' style='overflow:hidden;'>",
-          "<div class='html5tooltip-hr'></div>",
           "<div class='html5tooltip-text'></div>",
         "</div>",
-        "<div class='html5tooltip-pointer'><div class='html5tooltip-po'></div><div class='html5tooltip-pi'></div></div>",
       "</div>",
     "</div>"
   ].join(""),
@@ -137,11 +136,6 @@ template = {
     tooltipPointer: 'html5tooltip-pointer'
   }
 };
-
-function toArray(obj)
-{
-  return Array.prototype.slice.call(obj);
-}
 
 function getElementsByXPath(xpath, context)
 {
@@ -168,7 +162,7 @@ function getElementsBySelector(selector, context)
   var nodes = [];
 
   try {
-    nodes = toArray((context || document).querySelectorAll(selector));
+    nodes = Array.prototype.slice.call((context || document).querySelectorAll(selector));
   }
   catch (exc) {}
 
@@ -205,7 +199,7 @@ function extend(targetObj)
 
 function Tooltip()
 {
-  var ttElement, ttModel, targetElement, elBox, elText, elMore, elMoreText, elPointer;
+  var ttElement, ttModel, targetElement, elBox, elText, elMore, elMoreText;
 
   function animateElementClass(el, updateHandler)
   {
@@ -213,7 +207,7 @@ function Tooltip()
       // getBoundingClientRect refreshes element render box
       el.getBoundingClientRect();
       el.classList.add("animating");
-      updateHandler();
+      updateHandler&&updateHandler();
       setTimeout(function() { el.classList.remove("animating"); }, ttModel.animateDuration);
     }
     else
@@ -276,7 +270,6 @@ function Tooltip()
     elText = ttElement.getElementsByClassName(template.hookClasses.tooltipText)[0];
     elMore = ttElement.getElementsByClassName(template.hookClasses.tooltipMore)[0];
     elMoreText = elMore.getElementsByClassName(template.hookClasses.tooltipMoreText)[0];
-    elPointer = ttElement.getElementsByClassName(template.hookClasses.tooltipPointer)[0];
 
     hideAll();
 
@@ -328,10 +321,8 @@ function Tooltip()
     else if (elMore.style.display !== 'block' && ttModel.contentMore) {
       elMore.style.display = 'block';
 
-      updateTooltipPos();
-
-      // animate pointer
-      animateElementClass(elPointer, updatePointerPos);
+      animateElementClass(ttElement);
+      updatePos();
 
       var h = elMore.getBoundingClientRect().height;
       elMore.style.visibility = 'visible';
@@ -359,46 +350,6 @@ function Tooltip()
   }
 
   function updatePos()
-  {
-    updateTooltipPos();
-    updatePointerPos();
-  }
-
-  function updatePointerPos()
-  {
-    var ttRect,pointerRect;
-
-    if (!targetElement)
-      return;
-
-    // position depend on target and tt width
-    ttRect = ttElement.getBoundingClientRect();
-    pointerRect = elPointer.getBoundingClientRect();
-
-    switch (ttModel.stickTo) {
-      case html5tooltipsPredefined.stickTo.bottom:
-        elPointer.style.left = parseInt((ttRect.width - pointerRect.width) / 2) + "px";
-        elPointer.style.top = -1 * pointerRect.height + "px";
-        break;
-
-      case html5tooltipsPredefined.stickTo.left:
-        elPointer.style.left = ttRect.width - 2 + "px";
-        elPointer.style.top = parseInt((ttRect.height - pointerRect.height) / 2) + "px";
-        break;
-
-      case html5tooltipsPredefined.stickTo.right:
-        elPointer.style.left = -1 * pointerRect.width + 1 + "px";
-        elPointer.style.top = parseInt((ttRect.height - pointerRect.height) / 2) + "px";
-        break;
-
-      case html5tooltipsPredefined.stickTo.top:
-        elPointer.style.left = parseInt((ttRect.width - pointerRect.width) / 2) + "px";
-        elPointer.style.top = ttRect.height - 2 + "px";
-        break;
-    }
-  }
-
-  function updateTooltipPos()
   {
     var targetRect, ttRect;
 
@@ -454,10 +405,9 @@ function Tooltip()
     ttModel.color = options.color ? options.color : ttModel.color;
     if (html5tooltipsPredefined.color[ttModel.color]) {
       ttModel.color = html5tooltipsPredefined.color[ttModel.color];
-      ttModel.color = "rgba(" + ttModel.color.r + ", " + ttModel.color.g + ", " + ttModel.color.b + ", " + ttModel.color.a + ")";
+      ttModel.color = "rgb(" + ttModel.color.r + ", " + ttModel.color.g + ", " + ttModel.color.b + ")";
     }
     elBox.style.backgroundColor = ttModel.color||'';
-    elPointer.style.borderColor = ttModel.color||'';
 
     // update pointer
     ttElement.className = template.hookClasses.tooltip + "-" + ttModel.stickTo;
