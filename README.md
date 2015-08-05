@@ -19,7 +19,7 @@ Add extra attributes to customize tooltip.
 
 ###Advanced usage
 
-You may use a JavaScript constructor as well in order to abstract from your view layer.
+You may use a JavaScript constructor to abstract from your view layer.
 
 ```javascript
 html5tooltips({
