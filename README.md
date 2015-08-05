@@ -13,7 +13,8 @@ The simplest way to tie tooltip to a specific UI element is by adding the data-*
 Add extra attributes to customize tooltip.
 
 ```html
-<span data-tooltip="Refresh" data-tooltip-stickto="right" data-tooltip-color="bamboo" data-tooltip-animate-function="foldin"></span>
+<span data-tooltip="Refresh" data-tooltip-stickto="right" data-tooltip-color="bamboo"
+  data-tooltip-animate-function="foldin"></span>
 ```
 
 ###Advanced usage
@@ -73,7 +74,7 @@ html5tooltips.refresh();
 ###List of possible parameters
 
 - **animateFunction** - Choose one of the available animate functions: ``fadein``, ``foldin``, ``foldout``, ``roll``, ``scalein``, ``slidein``, ``spin``
-- **color** - Any CSS color or one of the available predefined colors: ``daffodil``, ``daisy``, ``mustard``, ``citrus-zest``, ``pumpkin``, ``tangerine``, ``salmon``, ``persimmon``, ``rouge``, ``scarlet``, ``hot-pink``, ``princess``, ``petal``, ``lilac``, ``lavender``, ``violet``, ``cloud``, ``dream``, ``gulf``, ``turquoise``, ``indigo``, ``navy``, ``sea-foam``, ``teal``, ``peacock``, ``ceadon``, ``olive``, ``bamboo``, ``grass``, ``kelly``, ``forrest``, ``chocolate``, ``terra-cotta``, ``camel``, ``linen``, ``stone``, ``smoke``, ``steel``, ``slate``, ``charcoal``, ``black``, ``white``, ``metalic-silver``, ``metalic-gold``, ``metalic-copper``.
+- **color** - Any CSS color or one of the predefined colors: ``daffodil``, ``daisy``, ``mustard``, ``citrus-zest``, ``pumpkin``, ``tangerine``, ``salmon``, ``persimmon``, ``rouge``, ``scarlet``, ``hot-pink``, ``princess``, ``petal``, ``lilac``, ``lavender``, ``violet``, ``cloud``, ``dream``, ``gulf``, ``turquoise``, ``indigo``, ``navy``, ``sea-foam``, ``teal``, ``peacock``, ``ceadon``, ``olive``, ``bamboo``, ``grass``, ``kelly``, ``forrest``, ``chocolate``, ``terra-cotta``, ``camel``, ``linen``, ``stone``, ``smoke``, ``steel``, ``slate``, ``charcoal``, ``black``, ``white``, ``metalic-silver``, ``metalic-gold``, ``metalic-copper``.
 - **contentText** - Text for a tooltip; HTML may be applied.
 - **contentMore** - Text for the expanded version of a tooltip which shows up when focused on a target element; HTML may be applied.
 - **disableAnimation** - Disable the animation: ``true`` or ``false``
