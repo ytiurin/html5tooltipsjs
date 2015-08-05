@@ -1,18 +1,24 @@
 html5tooltips.js
 ===============
-Light and clean tooltips written in pure JavaScript with CSS3 animation and no framework dependencies. [http://ytiurin.github.io/html5tooltipsjs](http://ytiurin.github.io/html5tooltipsjs)
+Tooltips, written in pure JavaScript, with smooth 3D animation implemented in CSS. No framework dependencies. [http://ytiurin.github.io/html5tooltipsjs](http://ytiurin.github.io/html5tooltipsjs)
 
 ###Simple usage
 
-The simplest way to tie tooltip text to a specific UI element is by adding the data-* attribute to an HTML element.
+The simplest way to tie tooltip to a specific UI element is by adding the data-* attribute to an HTML element.
 
 ```html
 <span data-tooltip="Refresh"></span>
 ```
 
+Add extra attributes to customize tooltip.
+
+```html
+<span data-tooltip="Refresh" data-tooltip-stickto="right" data-tooltip-color="bamboo" data-tooltip-animate-function="foldin"></span>
+```
+
 ###Advanced usage
 
-You may use a JavaScript constructor. By doing it this way, you have access to a far more flexible and configurable approach. You can make a tooltip stick to any side of the target element, apply animation function or background color.
+You may use a JavaScript constructor as well in order to abstract from your view layer.
 
 ```javascript
 html5tooltips({
@@ -35,7 +41,7 @@ html5tooltips({
 });
 ```
 
-Define multiple tooltips by submitting each tooltip as an object in a parameter array.
+Define multiple tooltips by passing an array of tooltip objects to the Javascript constructor.
 
 ```javascript
 html5tooltips([
