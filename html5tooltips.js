@@ -519,14 +519,14 @@ function tieTooltips()
 
     tModel.targetElements.forEach(function(el) {
       destrStack.push(function(){
-        el.removeEventListener("mouseover",targetMousemove);
-        el.removeEventListener("mouseout",targetMouseout);
+        el.removeEventListener("mouseenter",targetMousemove);
+        el.removeEventListener("mouseleave",targetMouseout);
         el.removeEventListener("focus",targetFocus);
         el.removeEventListener("blur",targetBlur);
       });
 
-      el.addEventListener("mouseover",targetMousemove);
-      el.addEventListener("mouseout",targetMouseout);
+      el.addEventListener("mouseenter",targetMousemove);
+      el.addEventListener("mouseleave",targetMouseout);
       el.addEventListener("focus",targetFocus);
       el.addEventListener("blur",targetBlur);
     });
