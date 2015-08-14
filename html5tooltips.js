@@ -449,6 +449,9 @@ function pickDocumentDataTargets()
     if (elTarget.getAttribute("data-tooltip-color") !== null)
       tm.color = elTarget.getAttribute("data-tooltip-color");
 
+    if (elTarget.getAttribute("data-tooltip-delay") !== null)
+      tm.delay = elTarget.getAttribute("data-tooltip-delay");
+
     if (elTarget.getAttribute("data-tooltip-more") !== null)
       tm.contentMore = elTarget.getAttribute("data-tooltip-more");
 
