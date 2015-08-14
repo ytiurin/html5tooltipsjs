@@ -95,6 +95,7 @@ typeTooltipModel = {
   color: null,
   contentText: "",
   contentMore: "",
+  delay: 500,
   disableAnimation: false,
   stickTo: html5tooltipsPredefined.stickTo.bottom,
   stickDistance: 10,
@@ -109,6 +110,7 @@ defaultOptions = {
   animateFunction: null,
   color: null,
   HTMLTemplate: null,
+  delay: null,
   disableAnimation: null,
   stickTo: null,
   maxWidth: null
@@ -476,7 +478,7 @@ function tieTooltips()
       setTimeout(function() {
         if (activeElements.hovered === this)
           tt.showBrief();
-      }.bind(this), 300);
+      }.bind(this), tModel.delay);
     }
 
     function targetMouseout()
