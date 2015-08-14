@@ -1,7 +1,7 @@
 {
   "name": "html5tooltipsjs",
-  "version": "1.3.2",
-  "description": "Light and clean tooltips, written in pure javascript with CSS3 animation.",
+  "version": "1.4.1",
+  "description": "Tooltips, written in pure JavaScript, with smooth 3D animation implemented in CSS.",
   "main": "html5tooltips.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,8 +12,11 @@
   },
   "keywords": [
     "tooltips",
+    "tooltip",
+    "animation",
     "html5",
-    "tooltips"
+    "3d",
+    "ui"
   ],
   "author": "Yevhen Tiurin",
   "license": "MIT",
