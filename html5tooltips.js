@@ -13,8 +13,9 @@
 * Arend van Beelen jr. https://github.com/arendjr
 * Peter Richmond https://github.com/Peripheral1994
 * Bruno Wego https://github.com/brunowego
+* Kahmali Rose https://github.com/kahmali
 *
-* July 28, 2015
+* Aug 14, 2015
 **/
 
 (function() {
