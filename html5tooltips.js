@@ -363,7 +363,7 @@ function Tooltip()
     ttElement.style.width = "auto";
     ttRect = ttElement.getBoundingClientRect();
 
-    var maxWidth = ttModel.maxWidth || options.maxWidth;
+    var maxWidth = parseInt(ttModel.maxWidth) || options.maxWidth;
     if (maxWidth)
       ttElement.style.width = ttRect.width > maxWidth ? maxWidth + "px" : "auto";
 
