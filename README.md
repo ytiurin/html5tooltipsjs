@@ -63,6 +63,23 @@ html5tooltips([
 ]);
 ```
 
+###Styling
+
+To modify tooltip presentation, simply apply styling to it's root element `.html5tooltip-box`. `background-color, color, border-radius, box-shadow, font-family, font-size` will propogate to the tooltip text container and pointer.
+
+```css
+.html5tooltip-box
+{
+  background-color: #2A2A2A;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.15), 0 0 10px rgba(255,255,255,.15);
+  color: #F7F7F7;
+  font-family: arial,sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+}
+```
+
 ###For Single Page Applications
 
 Refresh tooltips when you update declarative announcement of tooltips or when DOM change, affecting tooltips target elements.
