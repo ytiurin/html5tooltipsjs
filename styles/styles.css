@@ -216,7 +216,11 @@ a{outline:none}
 /* Slide colors */
 #customization-group
 {
-  margin-bottom: 80px;
+  margin: 0 auto 80px;
+  max-width:980px;
+}
+#customization-group>div{
+  min-width:220px;
 }
 .customization-text1
 {
@@ -376,3 +380,8 @@ a{outline:none}
 .metalic-gold { background-color: rgba(159, 135, 89, 1); }
 .metalic-copper .html5tooltip-pointer { border-color: rgba(140, 102, 65, 1); }
 .metalic-copper { background-color: rgba(140, 102, 65, 1); }
+
+.html5tooltip-box{
+  font-family:'4';
+  font-size:12px;
+}
