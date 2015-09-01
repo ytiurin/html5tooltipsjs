@@ -15,7 +15,7 @@
 * Bruno Wego https://github.com/brunowego
 * Kahmali Rose https://github.com/kahmali
 *
-* Aug 14, 2015
+* Sep 1, 2015
 **/
 
 (function() {
@@ -121,7 +121,6 @@ template = {
   HTML: [
     "<div class='html5tooltip' style='box-sizing:border-box;position:fixed;'>",
       "<div class='html5tooltip-box'>",
-        "<div class='html5tooltip-pointer'></div>",
         "<div class='html5tooltip-text'></div>",
         "<div class='html5tooltip-more' style='overflow:hidden;'>",
           "<div class='html5tooltip-text'></div>",
@@ -135,8 +134,7 @@ template = {
     tooltipBox: 'html5tooltip-box',
     tooltipText: 'html5tooltip-text',
     tooltipMore: 'html5tooltip-more',
-    tooltipMoreText: 'html5tooltip-text',
-    tooltipPointer: 'html5tooltip-pointer'
+    tooltipMoreText: 'html5tooltip-text'
   }
 };
 

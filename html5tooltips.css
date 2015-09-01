@@ -7,7 +7,7 @@
 * The MIT License (MIT)
 * https://github.com/ytiurin/html5tooltipsjs/raw/master/LICENSE
 *
-* Aug 5, 2015
+* Sep 1, 2015
 **/
 
 .html5tooltip-box
@@ -20,10 +20,12 @@
   font-size: 11px;
   font-weight: bold;
 }
-.html5tooltip-pointer
+.html5tooltip-box:before
 {
   background-color: inherit;
   box-shadow: inherit;
+  content:'';
+  display:block;
   height: 12px;
   position: absolute;
   width: 12px;
@@ -52,22 +54,22 @@
 {
   margin-top:-7px;
 }
-.html5tooltip-bottom .html5tooltip-pointer
+.html5tooltip-bottom .html5tooltip-box:before
 {
   left: 50%;
   top: 0px;
 }
-.html5tooltip-left .html5tooltip-pointer
+.html5tooltip-left .html5tooltip-box:before
 {
   left: 100%;
   top: 50%;
 }
-.html5tooltip-right .html5tooltip-pointer
+.html5tooltip-right .html5tooltip-box:before
 {
   left: 0;
   top: 50%;
 }
-.html5tooltip-top .html5tooltip-pointer
+.html5tooltip-top .html5tooltip-box:before
 {
   left: 50%;
   top: 100%;
