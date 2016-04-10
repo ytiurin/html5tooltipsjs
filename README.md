@@ -99,7 +99,6 @@ html5tooltips.refresh();
 - **stickTo** - Choose one of the available stick values: ``bottom``, ``left``, ``right``, ``top``. Default value is ``bottom``.
 - **stickDistance** - The ``number`` of pixels that represent the distance between the tooltip and a target element.
 - **targetSelector** - A CSS selector which is used to catch a target element in the document.
-- **targetXPath** - An xPath value which is used to catch a target element in the document.
 - **maxWidth** - The maximum width of the expanded version of the tooltip.
 
 ###List of possible data-* attributes

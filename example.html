@@ -13,6 +13,7 @@ body {
   width: 35em;
   margin: 0 auto;
   font-family: Tahoma, Verdana, Arial, sans-serif;
+  height:9999px;
 }
 
 </style>
@@ -91,7 +92,7 @@ body {
             <label for="address">Address</label>
           </td>
           <td>
-            <textarea id="address"></textarea>
+            <textarea id="address" data-tooltip="For post delivery" data-tooltip-more="It should contain zip code and country name" data-tooltip-animate-function="spin" data-tooltip-color="bamboo" data-tooltip-delay="1000" data-tooltip-maxwidth="180" data-tooltip-stickto="right"></textarea>
           </td>
         </tr>
       </tbody>
@@ -101,56 +102,62 @@ body {
 
 <script type="text/javascript">
 
-html5tooltips([
-  {
-    contentText: "Short and easy to remember",
-    contentMore: "Should <span style='text-decoration:underline;'>not</span> contain white spaces or special characters",
-    targetSelector: "#name",
-    stickTo: "top",
-    maxWidth: 180
-  },
-  {
-    contentText: "Not less then 8 characters",
-    contentMore: "May contain d<span style='color:red;'>1</span>g<span style='color:red;'>1</span>ts and sp<span style='color:red;'>3</span>c<span style='color:red;'>!</span>al sym<span style='color:red;'>6</span>ols",
-    targetSelector: "#password",
-    stickTo: "right",
-    color:'metalic silver',
-    maxWidth: 180
-  },
-  {
-    contentText: "To ensure you remember it",
-    targetSelector: "#password2"
-  },
-  {
-    contentText: "Your first and second name",
-    stickTo: "right",
-    targetSelector: "#fullname"
-  },
-  {
-    contentText: "It would be used to restore your password",
-    stickTo: "right",
-    targetSelector: "#email"
-  },
-  {
-    contentText: "We may call you to verify your identity",
-    stickTo: "right",
-    targetSelector: "#phone"
-  },
-  {
-    contentText: "For post delivery",
-    contentMore: "It should contain zip code and country name",
-    stickTo: "right",
-    targetSelector: "#address",
-    maxWidth: 180
-  }
-]);
+for(var i=10;i--;)
+  html5tooltips([
+    {
+      contentText: "Short and easy to remember",
+      contentMore: "Should <span style='text-decoration:underline;'>not</span> contain white spaces or special characters",
+      targetSelector: "#name",
+      stickTo: "top",
+      color: "violet",
+      maxWidth: 180
+    },
+    {
+      contentText: "Not less then 8 characters",
+      contentMore: "May contain d<span style='color:red;'>1</span>g<span style='color:red;'>1</span>ts and sp<span style='color:red;'>3</span>c<span style='color:red;'>!</span>al sym<span style='color:red;'>6</span>ols",
+      targetSelector: "#password",
+      stickTo: "right",
+      color:'metalic silver',
+      maxWidth: 180
+    },
+    {
+      contentText: "To ensure you remember it",
+      color: "rouge",
+      targetSelector: "#password2"
+    },
+    {
+      contentText: "Your first and second name",
+      color: "indigo",
+      stickTo: "right",
+      targetSelector: "#fullname"
+    },
+    {
+      contentText: "It would be used to restore your password",
+      color: "kelly",
+      stickTo: "right",
+      targetSelector: "#email"
+    },
+    {
+      contentText: "We may call you to verify your identity",
+      color: "hot pink",
+      stickTo: "right",
+      targetSelector: "#phone"
+    }
+  ]);
 
-html5tooltips({
-  contentText: "Click to focus the field",
-  targetSelector: "label",
-},
-{
-});
+for(var i=10;i--;)
+  html5tooltips({
+    contentText: "Click to focus the field",
+    color: "peacock",
+    targetSelector: "label",
+  });
+
+for(var i=10;i--;)
+  html5tooltips.refresh();
+
+console.log(
+  html5tooltips.getTooltipByTarget(
+    document.getElementById('address')));
 
 </script>
 
