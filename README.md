@@ -88,6 +88,38 @@ Refresh tooltips when you update declarative announcement of tooltips or when DO
 html5tooltips.refresh();
 ```
 
+###HTML5Tooltip UI Component
+
+```javascript
+var tooltip = new HTML5TooltipUIComponent;
+var target = document.getElementById("refresh");
+
+tooltip.set({
+  animateFunction: "spin",
+  color: "bamboo",
+  contentText: "Refresh",
+  stickTo: "right",
+  target: target
+});
+
+document.body.appendChild(tooltip.elements[0]);
+
+target.addEventListener('mouseenter',function(){
+  tooltip.show();
+});
+
+target.addEventListener('mouseleave',function(){
+  tooltip.hide();
+});
+```
+
+###Get a tooltip by the target element
+
+```javascript
+var tooltip = html5tooltips.getTooltipByTarget(document.getElementById('myElement'));
+tooltip.destroy();
+```
+
 ###List of possible parameters
 
 - **animateFunction** - Choose one of the available animate functions: ``fadein``, ``foldin``, ``foldout``, ``roll``, ``scalein``, ``slidein``, ``spin``. Default value ``fadein``.
