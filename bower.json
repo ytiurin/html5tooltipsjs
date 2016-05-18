@@ -1,6 +1,5 @@
 {
   "name": "html5tooltipsjs",
-  "version": "1.5",
   "homepage": "https://github.com/ytiurin/html5tooltipsjs",
   "description": "Tooltips, written in pure JavaScript, with smooth 3D animation implemented in CSS.",
   "main": [

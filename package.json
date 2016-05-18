@@ -1,6 +1,6 @@
 {
   "name": "html5tooltipsjs",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Tooltips, written in pure JavaScript, with smooth 3D animation implemented in CSS.",
   "main": "html5tooltips.js",
   "scripts": {

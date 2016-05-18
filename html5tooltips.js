@@ -1,6 +1,6 @@
 /*
 * html5tooltips
-* 2016-05-08
+* 2016-05-18
 * (c) Eugene Tiurin; MIT license
 *
 * Tooltips with smooth 3D animation.
@@ -9,10 +9,8 @@
 * Peter Richmond, Bruno Wego, Kahmali Rose
 */
 
-// UNIVERSAL MODULE DEFINITION
 (function (root, factory) {
-  'use strict';
-
+    // UNIVERSAL MODULE DEFINITION
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
         define([], factory);
