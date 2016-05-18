@@ -33,7 +33,7 @@
   var
 
   tooltipHTML='\
-<div class="html5tooltip" style="box-sizing:border-box;position:fixed;">\
+<div class="html5tooltip" style="box-sizing:border-box;position:fixed;z-index:2147483647">\
   <div class="html5tooltip-box" box>\
     <div class="html5tooltip-text" text></div>\
       <div class="html5tooltip-more" style="overflow:hidden;" more>\
