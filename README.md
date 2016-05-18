@@ -1,6 +1,6 @@
 html5tooltips.js
 ===============
-Tooltips, written in pure JavaScript, with smooth 3D animation implemented in CSS. No framework dependencies. [http://ytiurin.github.io/html5tooltipsjs](http://ytiurin.github.io/html5tooltipsjs)
+Tooltips, written in pure JavaScript, with smooth 3D animation implemented in CSS. No framework required. [http://ytiurin.github.io/html5tooltipsjs](http://ytiurin.github.io/html5tooltipsjs)
 
 ###Simple usage
 
