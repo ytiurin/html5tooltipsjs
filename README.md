@@ -2,6 +2,15 @@ html5tooltips.js
 ===============
 Tooltips, written in pure JavaScript, with smooth 3D animation implemented in CSS. No framework required. [http://ytiurin.github.io/html5tooltipsjs](http://ytiurin.github.io/html5tooltipsjs)
 
+###Install
+```
+npm install html5tooltipsjs
+```
+or
+```
+bower install html5tooltipsjs
+```
+
 ###Simple usage
 
 The simplest way to tie tooltip to a specific UI element is by adding the data-* attribute to an HTML element.
