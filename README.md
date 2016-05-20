@@ -1,8 +1,11 @@
+[![npm](https://img.shields.io/npm/v/html5tooltipsjs.svg?maxAge=2592000)](https://www.npmjs.com/package/html5tooltipsjs)
+[![npm](https://img.shields.io/npm/dm/html5tooltipsjs.svg?maxAge=2592000)](https://www.npmjs.com/package/html5tooltipsjs)
+
 html5tooltips.js
 ===============
 Tooltips, written in pure JavaScript, with smooth 3D animation implemented in CSS. No framework required. [http://ytiurin.github.io/html5tooltipsjs](http://ytiurin.github.io/html5tooltipsjs)
 
-###Install
+##Install
 ```
 npm install html5tooltipsjs
 ```
@@ -11,7 +14,7 @@ or
 bower install html5tooltipsjs
 ```
 
-###Simple usage
+##Simple usage
 
 The simplest way to tie tooltip to a specific UI element is by adding the data-* attribute to an HTML element.
 
@@ -26,7 +29,7 @@ Add extra attributes to customize tooltip.
   data-tooltip-animate-function="foldin"></span>
 ```
 
-###Advanced usage
+##Advanced usage
 
 You may use a JavaScript constructor to abstract from your view layer.
 
@@ -72,7 +75,7 @@ html5tooltips([
 ]);
 ```
 
-###Styling
+##Styling
 
 To modify tooltip presentation, simply apply styling to it's root element `.html5tooltip-box`. `background-color, color, border-radius, box-shadow, font-family, font-size` will propogate to the tooltip text container and pointer.
 
@@ -89,7 +92,7 @@ To modify tooltip presentation, simply apply styling to it's root element `.html
 }
 ```
 
-###For Single Page Applications
+##For Single Page Applications
 
 Refresh tooltips when you update declarative announcement of tooltips or when DOM change, affecting tooltips target elements.
 
@@ -97,7 +100,7 @@ Refresh tooltips when you update declarative announcement of tooltips or when DO
 html5tooltips.refresh();
 ```
 
-###HTML5Tooltip UI Component
+##HTML5Tooltip UI Component
 
 ```javascript
 var tooltip = new HTML5TooltipUIComponent;
@@ -122,14 +125,14 @@ target.addEventListener('mouseleave',function(){
 });
 ```
 
-###Get a tooltip by the target element
+##Get a tooltip by the target element
 
 ```javascript
 var tooltip = html5tooltips.getTooltipByTarget(document.getElementById('myElement'));
 tooltip.destroy();
 ```
 
-###List of possible parameters
+##List of possible parameters
 
 - **animateFunction** - Choose one of the available animate functions: ``fadein``, ``foldin``, ``foldout``, ``roll``, ``scalein``, ``slidein``, ``spin``. Default value ``fadein``.
 - **color** - Any CSS color or one of the predefined colors: ``daffodil``, ``daisy``, ``mustard``, ``citrus-zest``, ``pumpkin``, ``tangerine``, ``salmon``, ``persimmon``, ``rouge``, ``scarlet``, ``hot-pink``, ``princess``, ``petal``, ``lilac``, ``lavender``, ``violet``, ``cloud``, ``dream``, ``gulf``, ``turquoise``, ``indigo``, ``navy``, ``sea-foam``, ``teal``, ``peacock``, ``ceadon``, ``olive``, ``bamboo``, ``grass``, ``kelly``, ``forrest``, ``chocolate``, ``terra-cotta``, ``camel``, ``linen``, ``stone``, ``smoke``, ``steel``, ``slate``, ``charcoal``, ``black``, ``white``, ``metalic-silver``, ``metalic-gold``, ``metalic-copper``.
@@ -142,7 +145,7 @@ tooltip.destroy();
 - **targetSelector** - A CSS selector which is used to catch a target element in the document.
 - **maxWidth** - The maximum width of the expanded version of the tooltip.
 
-###List of possible data-* attributes
+##List of possible data-* attributes
 
 - **data-tooltip** - Value for the **contentText** parameter.
 - **data-tooltip-animate-function** - Value for the **animateFunction** parameter.
@@ -152,6 +155,6 @@ tooltip.destroy();
 - **data-tooltip-stickto** - Value for **stickTo** parameter.
 - **data-tooltip-maxwidth** - Value for **maxWidth** parameter.
 
-###Browser compatibility
+##Browser compatibility
 
 Tooltips are compatible with old browsers including IE7. Animation works in Chrome 1.0, Firefox 2.0, Internet Explorer 10, Opera 10.5, Safari 3.2.
