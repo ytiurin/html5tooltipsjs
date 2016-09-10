@@ -1,7 +1,7 @@
 {
   "name": "html5tooltipsjs",
-  "version": "1.5.1",
-  "description": "Tooltips, written in pure JavaScript, with smooth 3D animation implemented in CSS.",
+  "version": "1.6.0",
+  "description": "Tooltips with smooth 3D animation.",
   "main": "html5tooltips.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
