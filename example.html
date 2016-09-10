@@ -61,14 +61,14 @@ body {
 
   <fieldset>
     <legend>Contact information</legend>
-    <table>
+    <table data-tooltip-animate-function="spin" data-tooltip-stickto="right">
       <tbody>
         <tr>
           <td>
             <label for="fullname">Full name</label>
           </td>
           <td>
-            <input id="fullname" type="text" />
+            <input id="fullname" type="text" data-tooltip="Your first and second name" data-tooltip-color="indigo" />
           </td>
         </tr>
         <tr>
@@ -76,7 +76,7 @@ body {
             <label for="email">Email</label>
           </td>
           <td>
-            <input id="email" type="text" />
+            <input id="email" type="text" data-tooltip="It would be used to restore your password" data-tooltip-color="kelly" />
           </td>
         </tr>
         <tr>
@@ -84,7 +84,7 @@ body {
             <label for="phone">Phone</label>
           </td>
           <td>
-            <input id="phone" type="text" />
+            <input id="phone" type="text" data-tooltip="We may call you to verify your identity" data-tooltip-color="hot pink" />
           </td>
         </tr>
         <tr>
@@ -92,7 +92,7 @@ body {
             <label for="address">Address</label>
           </td>
           <td>
-            <textarea id="address" data-tooltip="For post delivery" data-tooltip-more="It should contain zip code and country name" data-tooltip-animate-function="spin" data-tooltip-color="bamboo" data-tooltip-delay="1000" data-tooltip-maxwidth="180" data-tooltip-stickto="right"></textarea>
+            <textarea id="address" data-tooltip="For post delivery" data-tooltip-more="It should contain zip code and country name" data-tooltip-color="bamboo" data-tooltip-delay="1000" data-tooltip-maxwidth="180"></textarea>
           </td>
         </tr>
       </tbody>
@@ -124,24 +124,6 @@ for(var i=10;i--;)
       contentText: "To ensure you remember it",
       color: "rouge",
       targetSelector: "#password2"
-    },
-    {
-      contentText: "Your first and second name",
-      color: "indigo",
-      stickTo: "right",
-      targetSelector: "#fullname"
-    },
-    {
-      contentText: "It would be used to restore your password",
-      color: "kelly",
-      stickTo: "right",
-      targetSelector: "#email"
-    },
-    {
-      contentText: "We may call you to verify your identity",
-      color: "hot pink",
-      stickTo: "right",
-      targetSelector: "#phone"
     }
   ]);
 

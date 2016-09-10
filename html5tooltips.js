@@ -559,18 +559,31 @@
     return nodes;
   }
 
+  function extractOptionAttribute(target, attrName, defaultValue)
+  {
+    var
+
+    value = target.getAttribute(attrName),
+    nextParent = target;
+
+    while(!value && (nextParent = nextParent.parentNode) && nextParent.getAttribute)
+      value = nextParent.getAttribute(attrName);
+
+    return value||defaultValue;
+  }
+
   function createDOMTooltips()
   {
     getElementsByAttribute("data-tooltip").forEach(function(target) {
 
       var options={
-        animateFunction: target.getAttribute("data-tooltip-animate-function")||defaultOptions.animateFunction,
-        color: target.getAttribute("data-tooltip-color")||'',
-        contentMore: target.getAttribute("data-tooltip-more")||'',
-        contentText: target.getAttribute("data-tooltip")||'',
-        delay: target.getAttribute("data-tooltip-delay")||defaultOptions.delay,
-        maxWidth: target.getAttribute("data-tooltip-maxwidth")||'auto',
-        stickTo: target.getAttribute("data-tooltip-stickto")||defaultOptions.stickTo,
+        animateFunction: extractOptionAttribute(target, "data-tooltip-animate-function", defaultOptions.animateFunction),
+        color: extractOptionAttribute(target, "data-tooltip-color", ''),
+        contentMore: extractOptionAttribute(target, "data-tooltip-more", ''),
+        contentText: extractOptionAttribute(target, "data-tooltip", ''),
+        delay: extractOptionAttribute(target, "data-tooltip-delay", defaultOptions.delay),
+        maxWidth: extractOptionAttribute(target, "data-tooltip-maxwidth", 'auto'),
+        stickTo: extractOptionAttribute(target, "data-tooltip-stickto", defaultOptions.stickTo)
       };
 
       createTooltip(target,options,DOMTooltips);
