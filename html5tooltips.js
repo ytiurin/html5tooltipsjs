@@ -1,9 +1,7 @@
 /*
-* html5tooltips
-* 2016-05-18
-* (c) Eugene Tiurin; MIT license
-*
 * Tooltips with smooth 3D animation.
+* 2016-10-10
+* (c) Eugene Tiurin; MIT license
 *
 * Contributors: nomiad, Friedel Ziegelmayer, Arend van Beelen jr.,
 * Peter Richmond, Bruno Wego, Kahmali Rose
@@ -119,8 +117,13 @@
   };
 
   // UI COMPONENT CONSTRUCTOR
-  function UIComponent(publicInterface,HTML)
+  function Component(publicInterface,HTML)
   {
+    function toArray(obj,fromIndex)
+    {
+      return Array.prototype.slice.call(obj,fromIndex);
+    }
+
     function argsToObj(args)
     {
       var argTypes=toArray(args).map(function(a){return typeof a});
@@ -164,7 +167,7 @@
       clearTimeout(notifyTimeoutID[propName]);
       notifyTimeoutID[propName]=setTimeout(function(){
         for(var i in modelObservers[propName])
-          modelObservers[propName][i](model[propName]);
+          modelObservers[propName][i](component.model[propName]);
 
         if(modelObservers[''])
           for(var i in modelObservers[''])
@@ -172,49 +175,23 @@
       });
     }
 
-    function toArray(obj,fromIndex)
-    {
-      return Array.prototype.slice.call(obj,fromIndex);
-    }
-
     var
 
-    anchors=[],
-    component={},
-    elements=[],
+    component=this,
     eventCallbacks={},
     modelObservers={},
-    model={},
     notifyTimeoutID={};
 
-    if(HTML){
-      var p=document.createElement('div');
-      p.innerHTML=HTML;
-      elements=toArray(p.children);
-      gainAnchorElements(elements,anchors);
-    }
-
     // COMPONENT PROPERTIES
-    component.anchors=anchors;
-    component.components=publicInterface.components={};
-    component.elements=publicInterface.elements=elements;
-    component.model=publicInterface.model=model;
+    component.anchors=[];
+    component.elements=[];
+    component.model={};
+    component.publ=publicInterface||{};
 
     // COMPONENT INTERFACE
-    component.assignModel=publicInterface.assignModel=function(userModel){
-      component.model=publicInterface.model=model=userModel;
-
-      for(var propName in model)
-        notifyObservers(propName);
-    };
-
-    component.destroy=publicInterface.destroy=function(){
-      for(var key in component.components)
-        component.components[key].destroy&&component.components[key].destroy();
-
-      for(var i=elements.length;i--;)
-        elements[i].parentNode&&
-          elements[i].parentNode.removeChild(elements[i]);
+    component.destroy=function()
+    {
+      component.unmount();
     };
 
     component.dispatch=function(eventName){
@@ -222,11 +199,82 @@
 
       setTimeout(function(){
         for(var i in eventCallbacks[eventName])
-          eventCallbacks[eventName][i].apply(publicInterface,args);
+          eventCallbacks[eventName][i].apply(component.publ,args);
       });
     };
 
-    component.on=publicInterface.on=function(){
+    component.onModelUpdate=function(){
+      var updateCallbacks=argsToObj(arguments);
+
+      for(var propName in updateCallbacks){
+        component.model[propName]=component.model[propName]||null;
+        modelObservers[propName]=modelObservers[propName]||[];
+        modelObservers[propName].push(updateCallbacks[propName]);
+        notifyObservers(propName);
+      }
+    };
+
+    component.mount=function(parent){
+      parent = parent || document.body;
+
+      try{
+        var el,i=0;
+
+        while(el = component.elements[i++])
+          parent.appendChild(el);
+      }
+      catch(e){
+        throw "Could not mount component: "+e.message;
+      }
+    };
+
+    component.set=function(){
+      var userObj=argsToObj(arguments);
+
+      for(var propName in userObj){
+        component.model[propName]=userObj[propName];
+
+        notifyObservers(propName);
+      }
+    };
+
+    component.unmount=function()
+    {
+      var el,i=0;
+
+      while(el = component.elements[i++])
+        el.parentNode&&
+          el.parentNode.removeChild(el);
+    };
+
+    Object.defineProperty(component,'element',{
+      configurable:true,
+      enumerable:true,
+      get:function(){return component.elements[0]},
+      set:function(val){component.elements[0]=val}
+    });
+
+    // PUBLIC INTERFACE
+    ['element','elements','model','set','unmount']
+
+    .forEach(function(propName){
+      Object.defineProperty(component.publ,propName,{
+        configurable:true,
+        enumerable:true,
+        get:function(){return component[propName]},
+        set:function(val){component[propName]=val}
+      });
+    });
+
+    component.publ.destroy=function(){
+      component.destroy();
+    };
+
+    component.publ.mount=function(parent){
+      component.mount(parent);
+    };
+
+    component.publ.on=function(){
       var userEventCallbacks=argsToObj(arguments);
 
       for(var eventName in userEventCallbacks){
@@ -235,30 +283,14 @@
       }
     };
 
-    component.onModelUpdate=function(){
-      var updateCallbacks=argsToObj(arguments);
-
-      for(var propName in updateCallbacks){
-        model[propName]=model[propName]||null;
-        modelObservers[propName]=modelObservers[propName]||[];
-        modelObservers[propName].push(updateCallbacks[propName]);
-        notifyObservers(propName);
-      }
-    };
-
-    component.set=publicInterface.set=function(){
-      var userObj=argsToObj(arguments);
-
-      for(var propName in userObj){
-        model[propName]=userObj[propName];
-
-        notifyObservers(propName);
-      }
-    };
-
-    return component;
+    // HTML-> DOM
+    if(HTML&&document){
+      var p=document.createElement('div');
+      p.innerHTML=HTML;
+      component.elements=toArray(p.children);
+      gainAnchorElements(component.elements,component.anchors);
+    }
   }
-
 
   // TOOLTIP UI COMPONENT
   function HTML5TooltipUIComponent()
@@ -409,7 +441,7 @@
       return this;
     }
 
-    var component=new UIComponent(this,tooltipHTML);
+    var component=new Component(this,tooltipHTML);
 
     var
     elBox=component.anchors.box[0],
@@ -478,7 +510,7 @@
         return;
 
       hovered = this;
-      document.body.appendChild(tooltip.elements[0]);
+      tooltip.mount();
 
       setTimeout(function() {
         if (this===hovered){
@@ -492,8 +524,7 @@
 
       if (this!==focused){
         tooltip.hide();
-        tooltip.elements[0].parentNode&&
-          tooltip.elements[0].parentNode.removeChild(tooltip.elements[0]);
+        tooltip.unmount();
       }
     });
 
@@ -504,15 +535,14 @@
 
       focused = this;
 
-      document.body.appendChild(tooltip.elements[0]);
+      tooltip.mount();
       tooltip.showMore();
     });
 
     target.addEventListener("blur",function(){
       focused = null;
       tooltip.hide();
-      tooltip.elements[0].parentNode&&
-        tooltip.elements[0].parentNode.removeChild(tooltip.elements[0]);
+      tooltip.unmount();
     });
   }
 

@@ -114,8 +114,6 @@ tooltip.set({
   target: target
 });
 
-document.body.appendChild(tooltip.elements[0]);
-
 target.addEventListener('mouseenter',function(){
   tooltip.show();
 });
@@ -123,6 +121,8 @@ target.addEventListener('mouseenter',function(){
 target.addEventListener('mouseleave',function(){
   tooltip.hide();
 });
+
+tooltip.mount();
 ```
 
 ##Get a tooltip by the target element
