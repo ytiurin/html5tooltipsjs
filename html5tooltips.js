@@ -1,10 +1,11 @@
 /*
 * Tooltips with smooth 3D animation.
-* 2016-09-10
 * (c) Eugene Tiurin; MIT license
 *
 * Contributors: nomiad, Friedel Ziegelmayer, Arend van Beelen jr.,
 * Peter Richmond, Bruno Wego, Kahmali Rose
+*
+* 2016-09-11
 */
 
 (function (root, factory) {

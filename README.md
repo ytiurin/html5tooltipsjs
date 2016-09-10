@@ -16,17 +16,31 @@ bower install html5tooltipsjs
 
 ##Simple usage
 
-The simplest way to tie tooltip to a specific UI element is by adding the data-* attribute to an HTML element.
+The simplest way to tie a tooltip to a specific UI element is to add a `data-*` attribute to an element's HTML code.
 
 ```html
 <span data-tooltip="Refresh"></span>
 ```
 
-Add extra attributes to customize tooltip.
+Add extra attributes to customize a tooltip.
 
 ```html
 <span data-tooltip="Refresh" data-tooltip-stickto="right" data-tooltip-color="bamboo"
   data-tooltip-animate-function="foldin"></span>
+```
+
+###Customization inheritance
+
+To customize multiple tooltips with less of code, add a `data-*` attribute to their shared parent element (or document body).
+
+```html
+<body data-tooltip-animate-function="foldin">
+  <div data-tooltip-color="bamboo">
+    <span data-tooltip="Build"></span>
+    <span data-tooltip="Refresh"></span>
+    <span data-tooltip="Delete"></span>
+  </div>
+</body>
 ```
 
 ##Advanced usage
@@ -77,7 +91,7 @@ html5tooltips([
 
 ##Styling
 
-To modify tooltip presentation, simply apply styling to it's root element `.html5tooltip-box`. `background-color, color, border-radius, box-shadow, font-family, font-size` will propogate to the tooltip text container and pointer.
+To modify tooltip presentation, simply apply styling to it's root element `.html5tooltip-box`. Properties `background-color`, `color`, `border-radius`, `box-shadow`, `font-family` and  `font-size` will propogate to the tooltip text container and pointer.
 
 ```css
 .html5tooltip-box
@@ -129,6 +143,7 @@ tooltip.mount();
 
 ```javascript
 var tooltip = html5tooltips.getTooltipByTarget(document.getElementById('myElement'));
+
 tooltip.destroy();
 ```
 
@@ -145,7 +160,7 @@ tooltip.destroy();
 - **targetSelector** - A CSS selector which is used to catch a target element in the document.
 - **maxWidth** - The maximum width of the expanded version of the tooltip.
 
-##List of possible data-* attributes
+##List of possible `data-*` attributes
 
 - **data-tooltip** - Value for the **contentText** parameter.
 - **data-tooltip-animate-function** - Value for the **animateFunction** parameter.
