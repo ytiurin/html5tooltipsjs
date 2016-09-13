@@ -1,14 +1,12 @@
-/**
-* html5tooltips.js
+/*
 * Tooltips with smooth 3D animation.
-* https://github.com/ytiurin/html5tooltipsjs
+* (c) Eugene Tiurin; MIT license
 *
-* Yevhen Tiurin <yevhentiurin@gmail.com>
-* The MIT License (MIT)
-* https://github.com/ytiurin/html5tooltipsjs/raw/master/LICENSE
+* Contributors: nomiad, Friedel Ziegelmayer, Arend van Beelen jr.,
+* Peter Richmond, Bruno Wego, Kahmali Rose
 *
-* Sep 1, 2015
-**/
+* 2016-09-13
+*/
 
 .html5tooltip-box
 {
@@ -16,6 +14,7 @@
   border-radius: 2px;
   box-shadow: 0 0 0 1px rgba(255,255,255,.15), 0 0 10px rgba(255,255,255,.15);
   color: #F7F7F7;
+  cursor: default;
   font-family: arial,sans-serif;
   font-size: 11px;
   font-weight: bold;
@@ -43,6 +42,10 @@
   font-weight: inherit;
   padding: 7px 9px;
   position: relative;
+}
+.html5tooltip-text a
+{
+  color: inherit;
 }
 .html5tooltip-more
 {

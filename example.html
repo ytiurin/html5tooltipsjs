@@ -61,7 +61,7 @@ body {
 
   <fieldset>
     <legend>Contact information</legend>
-    <table data-tooltip-animate-function="spin" data-tooltip-stickto="right">
+    <table data-tooltip-animate-function="spin" data-tooltip-stickto="right" data-tooltip-persistent="true">
       <tbody>
         <tr>
           <td>
@@ -113,12 +113,13 @@ for(var i=10;i--;)
       maxWidth: 180
     },
     {
-      contentText: "Not less then 8 characters",
+      contentText: "<a href='http://example.com' target='_blank'>Generate</a>",
       contentMore: "May contain d<span style='color:red;'>1</span>g<span style='color:red;'>1</span>ts and sp<span style='color:red;'>3</span>c<span style='color:red;'>!</span>al sym<span style='color:red;'>6</span>ols",
       targetSelector: "#password",
       stickTo: "right",
       color:'metalic silver',
-      maxWidth: 180
+      maxWidth: 180,
+      persistent: true
     },
     {
       contentText: "To ensure you remember it",

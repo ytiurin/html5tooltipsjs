@@ -5,7 +5,7 @@
 * Contributors: nomiad, Friedel Ziegelmayer, Arend van Beelen jr.,
 * Peter Richmond, Bruno Wego, Kahmali Rose
 *
-* 2016-09-11
+* 2016-09-13
 */
 
 (function (root, factory) {
@@ -33,10 +33,10 @@
 <div class="html5tooltip" style="box-sizing:border-box;position:fixed;z-index:2147483647">\
   <div class="html5tooltip-box" box>\
     <div class="html5tooltip-text" text></div>\
-      <div class="html5tooltip-more" style="overflow:hidden;" more>\
-        <div class="html5tooltip-text" more-text></div>\
-      </div>\
+    <div class="html5tooltip-more" style="overflow:hidden;" more>\
+      <div class="html5tooltip-text" more-text></div>\
     </div>\
+  </div>\
 </div>\
 ',
 
@@ -113,6 +113,8 @@
     animateFunction: html5tooltipsPredefined.animateFunction.fadeIn,
     delay: 500,
     disableAnimation: false,
+    hideDelay: 300,
+    persistent: false,
     stickTo: html5tooltipsPredefined.stickTo.bottom,
     stickDistance: 10
   };
@@ -256,7 +258,7 @@
     });
 
     // PUBLIC INTERFACE
-    ['element','elements','model','set','unmount']
+    ['element','elements','model','set']
 
     .forEach(function(propName){
       Object.defineProperty(component.publ,propName,{
@@ -282,6 +284,10 @@
         eventCallbacks[eventName]=eventCallbacks[eventName]||[];
         eventCallbacks[eventName].push(userEventCallbacks[eventName]);
       }
+    };
+
+    component.publ.unmount=function(){
+      component.unmount();
     };
 
     // HTML-> DOM
@@ -321,12 +327,12 @@
         el.classList.remove(fromClass);
         el.classList.add(toClass);
 
-        if (updateHandler)
-          updateHandler();
-
         setTimeout(function() {
           el.classList.remove("animating");
           el.classList.remove(toClass);
+
+          if (updateHandler)
+            updateHandler();
         }, ttModel.animateDuration);
       }
       else
@@ -334,7 +340,7 @@
           updateHandler();
     }
 
-    function hide()
+    function resetTooltipPosition()
     {
       if (ttElement.style.visibility !== 'collapse')
         ttElement.style.visibility = 'collapse';
@@ -346,6 +352,22 @@
         elMore.style.visibility = 'collapse';
         elMore.style.height = 'auto';
       }
+    }
+
+    function hide(cb)
+    {
+      isHiding = true;
+
+      applyAnimationClass(elBox, ttModel.animateFunction + "-to",
+        ttModel.animateFunction + "-from",
+
+        function(){
+          if(!isHiding)
+            return;
+
+          resetTooltipPosition();
+          cb&&cb();
+        });
 
       return this;
     }
@@ -394,6 +416,8 @@
 
     function show()
     {
+      isHiding = false;
+
       if (ttElement.style.visibility !== 'visible') {
         ttElement.style.visibility = 'visible';
 
@@ -442,16 +466,19 @@
       return this;
     }
 
-    var component=new Component(this,tooltipHTML);
-
     var
+
+    component=new Component(this,tooltipHTML),
+
     elBox=component.anchors.box[0],
     elText=component.anchors.text[0],
     elMore=component.anchors.more[0],
     elMoreText=component.anchors.moreText[0],
-    ttElement=component.elements[0];
+    ttElement=component.elements[0],
 
-    hide();
+    isHiding = false;
+
+    resetTooltipPosition();
 
     if(typeof window !== 'undefined')
       window.addEventListener("scroll", moveTooltip, false );
@@ -482,6 +509,12 @@
     this.hide=hide;
     this.show=show;
     this.showMore=showMore;
+
+    component.publ.unmount = function(){
+      resetTooltipPosition();
+
+      component.unmount();
+    }
   }
 
   var userTooltips=[],DOMTooltips=[];
@@ -506,28 +539,47 @@
 
     var hovered,focused;
 
+    function tryUnmountTooltip()
+    {
+      if (target===hovered || tooltip.element===hovered)
+        return;
+
+      if (tooltip.model.persistent)
+        tooltip.hide(function(){
+          tooltip.unmount();
+        });
+      else
+        tooltip.unmount();
+    }
+
+    function disposeTooltip()
+    {
+      hovered = null;
+
+      if (target===focused)
+        return;
+
+      if (tooltip.model.persistent)
+        setTimeout(tryUnmountTooltip, tooltip.model.hideDelay);
+      else
+        tryUnmountTooltip();
+    }
+
     target.addEventListener("mouseenter",function(){
       if (this===hovered || this===focused)
         return;
 
       hovered = this;
-      tooltip.mount();
 
       setTimeout(function() {
         if (this===hovered){
+          tooltip.mount();
           tooltip.show();
         }
       }.bind(this), tooltip.model.delay);
     });
 
-    target.addEventListener("mouseleave",function(){
-      hovered = null;
-
-      if (this!==focused){
-        tooltip.hide();
-        tooltip.unmount();
-      }
-    });
+    target.addEventListener("mouseleave",disposeTooltip);
 
     target.addEventListener("focus",function(){
       if (["INPUT", "TEXTAREA"].indexOf(this.tagName) === -1 &&
@@ -542,9 +594,17 @@
 
     target.addEventListener("blur",function(){
       focused = null;
-      tooltip.hide();
-      tooltip.unmount();
+
+      if(hovered !== tooltip.element){
+        tooltip.unmount();
+      }
     });
+
+    tooltip.element.addEventListener("mouseenter",function(){
+      hovered = this;
+    });
+
+    tooltip.element.addEventListener("mouseleave",disposeTooltip);
   }
 
   function getElementsByAttribute(attr, context)
@@ -583,7 +643,9 @@
         contentMore: extractOptionAttribute(target, "data-tooltip-more", ''),
         contentText: extractOptionAttribute(target, "data-tooltip", ''),
         delay: extractOptionAttribute(target, "data-tooltip-delay", defaultOptions.delay),
+        hideDelay: extractOptionAttribute(target, "data-tooltip-hide-delay", defaultOptions.delay),
         maxWidth: extractOptionAttribute(target, "data-tooltip-maxwidth", 'auto'),
+        persistent: extractOptionAttribute(target, "data-tooltip-persistent", defaultOptions.persistent),
         stickTo: extractOptionAttribute(target, "data-tooltip-stickto", defaultOptions.stickTo)
       };
 
