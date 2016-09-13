@@ -153,22 +153,26 @@ tooltip.destroy();
 - **color** - Any CSS color or one of the predefined colors: ``daffodil``, ``daisy``, ``mustard``, ``citrus-zest``, ``pumpkin``, ``tangerine``, ``salmon``, ``persimmon``, ``rouge``, ``scarlet``, ``hot-pink``, ``princess``, ``petal``, ``lilac``, ``lavender``, ``violet``, ``cloud``, ``dream``, ``gulf``, ``turquoise``, ``indigo``, ``navy``, ``sea-foam``, ``teal``, ``peacock``, ``ceadon``, ``olive``, ``bamboo``, ``grass``, ``kelly``, ``forrest``, ``chocolate``, ``terra-cotta``, ``camel``, ``linen``, ``stone``, ``smoke``, ``steel``, ``slate``, ``charcoal``, ``black``, ``white``, ``metalic-silver``, ``metalic-gold``, ``metalic-copper``.
 - **contentText** - Text for a tooltip; HTML may be applied.
 - **contentMore** - Text for the expanded version of a tooltip which shows up when focused on a target element; HTML may be applied.
-- **delay** - Delay the tooltip show up in milliseconds. Default value is ``300``.
+- **delay** - Delay the tooltip show up in milliseconds. Default value is ``500``.
+- **hideDelay** - Delay the tooltip hide in milliseconds, if the tooltip is persistent. Default value is ``300``.
 - **disableAnimation** - Disable the animation: ``true`` or ``false``. Default value is ``false``.
+- **maxWidth** - The maximum width of the expanded version of the tooltip.
+- **persistent** - If set to true, the tooltip will wait for `hideDelay` number of milliseconds before hide. Default value is `false`.
 - **stickTo** - Choose one of the available stick values: ``bottom``, ``left``, ``right``, ``top``. Default value is ``bottom``.
 - **stickDistance** - The ``number`` of pixels that represent the distance between the tooltip and a target element.
 - **targetSelector** - A CSS selector which is used to catch a target element in the document.
-- **maxWidth** - The maximum width of the expanded version of the tooltip.
 
 ##List of possible `data-*` attributes
 
-- **data-tooltip** - Value for the **contentText** parameter.
-- **data-tooltip-animate-function** - Value for the **animateFunction** parameter.
-- **data-tooltip-color** - Value for the **color** parameter.
-- **data-tooltip-delay** - Value for the **delay** parameter.
-- **data-tooltip-more** - Value for **contentMore** parameter.
-- **data-tooltip-stickto** - Value for **stickTo** parameter.
-- **data-tooltip-maxwidth** - Value for **maxWidth** parameter.
+- **data-tooltip** - Value for the `contentText` parameter.
+- **data-tooltip-animate-function** - Value for the `animateFunction` parameter.
+- **data-tooltip-color** - Value for the `color` parameter.
+- **data-tooltip-delay** - Value for the `delay` parameter.
+- **data-tooltip-hide-delay** - Value for the `hideDelay` parameter.
+- **data-tooltip-maxwidth** - Value for the `maxWidth` parameter.
+- **data-tooltip-more** - Value for the `contentMore` parameter.
+- **data-tooltip-persistent** - Value for the `persistent` parameter.
+- **data-tooltip-stickto** - Value for the `stickTo` parameter.
 
 ##Browser compatibility
 
