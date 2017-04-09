@@ -5,7 +5,7 @@
 * Contributors: nomiad, Friedel Ziegelmayer, Arend van Beelen jr.,
 * Peter Richmond, Bruno Wego, Kahmali Rose
 *
-* 2016-09-13
+* 2017-04-10
 */
 
 (function (root, factory) {

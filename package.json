@@ -1,6 +1,6 @@
 {
   "name": "html5tooltipsjs",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "Tooltips with smooth 3D animation.",
   "main": "html5tooltips.js",
   "scripts": {
