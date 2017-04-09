@@ -5,7 +5,7 @@ html5tooltips.js
 ===============
 Tooltips, written in pure JavaScript, with smooth 3D animation implemented in CSS. No framework required. [http://ytiurin.github.io/html5tooltipsjs](http://ytiurin.github.io/html5tooltipsjs)
 
-##Install
+## Install
 ```
 npm install html5tooltipsjs
 ```
@@ -14,7 +14,7 @@ or
 bower install html5tooltipsjs
 ```
 
-##Simple usage
+## Simple usage
 
 The simplest way to tie a tooltip to a specific UI element is to add a `data-*` attribute to an element's HTML code.
 
@@ -29,7 +29,7 @@ Add extra attributes to customize a tooltip.
   data-tooltip-animate-function="foldin"></span>
 ```
 
-###Customization inheritance
+### Customization inheritance
 
 To customize multiple tooltips with less of code, add a `data-*` attribute to their shared parent element (or document body).
 
@@ -43,7 +43,7 @@ To customize multiple tooltips with less of code, add a `data-*` attribute to th
 </body>
 ```
 
-##Advanced usage
+## Advanced usage
 
 You may use a JavaScript constructor to abstract from your view layer.
 
@@ -89,7 +89,7 @@ html5tooltips([
 ]);
 ```
 
-##Styling
+## Styling
 
 To modify tooltip presentation, simply apply styling to it's root element `.html5tooltip-box`. Properties `background-color`, `color`, `border-radius`, `box-shadow`, `font-family` and  `font-size` will propogate to the tooltip text container and pointer.
 
@@ -106,7 +106,7 @@ To modify tooltip presentation, simply apply styling to it's root element `.html
 }
 ```
 
-##For Single Page Applications
+## For Single Page Applications
 
 Refresh tooltips when you update declarative announcement of tooltips or when DOM change, affecting tooltips target elements.
 
@@ -114,7 +114,7 @@ Refresh tooltips when you update declarative announcement of tooltips or when DO
 html5tooltips.refresh();
 ```
 
-##HTML5Tooltip UI Component
+## HTML5Tooltip UI Component
 
 ```javascript
 var tooltip = new HTML5TooltipUIComponent;
@@ -139,7 +139,7 @@ target.addEventListener('mouseleave',function(){
 tooltip.mount();
 ```
 
-##Get a tooltip by the target element
+## Get a tooltip by the target element
 
 ```javascript
 var tooltip = html5tooltips.getTooltipByTarget(document.getElementById('myElement'));
@@ -147,7 +147,7 @@ var tooltip = html5tooltips.getTooltipByTarget(document.getElementById('myElemen
 tooltip.destroy();
 ```
 
-##List of possible parameters
+## List of possible parameters
 
 - **animateFunction** - Choose one of the available animate functions: ``fadein``, ``foldin``, ``foldout``, ``roll``, ``scalein``, ``slidein``, ``spin``. Default value ``fadein``.
 - **color** - Any CSS color or one of the predefined colors: ``daffodil``, ``daisy``, ``mustard``, ``citrus-zest``, ``pumpkin``, ``tangerine``, ``salmon``, ``persimmon``, ``rouge``, ``scarlet``, ``hot-pink``, ``princess``, ``petal``, ``lilac``, ``lavender``, ``violet``, ``cloud``, ``dream``, ``gulf``, ``turquoise``, ``indigo``, ``navy``, ``sea-foam``, ``teal``, ``peacock``, ``ceadon``, ``olive``, ``bamboo``, ``grass``, ``kelly``, ``forrest``, ``chocolate``, ``terra-cotta``, ``camel``, ``linen``, ``stone``, ``smoke``, ``steel``, ``slate``, ``charcoal``, ``black``, ``white``, ``metalic-silver``, ``metalic-gold``, ``metalic-copper``.
@@ -162,7 +162,7 @@ tooltip.destroy();
 - **stickDistance** - The ``number`` of pixels that represent the distance between the tooltip and a target element.
 - **targetSelector** - A CSS selector which is used to catch a target element in the document.
 
-##List of possible `data-*` attributes
+## List of possible `data-*` attributes
 
 - **data-tooltip** - Value for the `contentText` parameter.
 - **data-tooltip-animate-function** - Value for the `animateFunction` parameter.
@@ -174,6 +174,6 @@ tooltip.destroy();
 - **data-tooltip-persistent** - Value for the `persistent` parameter.
 - **data-tooltip-stickto** - Value for the `stickTo` parameter.
 
-##Browser compatibility
+## Browser compatibility
 
 Tooltips are compatible with old browsers including IE7. Animation works in Chrome 1.0, Firefox 2.0, Internet Explorer 10, Opera 10.5, Safari 3.2.

@@ -515,6 +515,7 @@
     this.hide=hide;
     this.show=show;
     this.showMore=showMore;
+    this.moveTooltip=moveTooltip;
 
     component.publ.unmount = function(){
       resetTooltipPosition();
