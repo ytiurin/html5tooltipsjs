@@ -23,7 +23,6 @@
         root.html5tooltips = factory();
     }
 
-// HTML5TOOLTIPS MODULE
 }(this, function () {
   'use strict';
 
@@ -194,6 +193,11 @@
     // COMPONENT INTERFACE
     component.destroy=function()
     {
+      if(typeof window!=='undefined'){
+        window.removeEventListener("resize", moveTooltip);
+        window.removeEventListener("scroll", moveTooltip);
+      }
+
       component.unmount();
     };
 
@@ -480,8 +484,10 @@
 
     resetTooltipPosition();
 
-    if(typeof window !== 'undefined')
-      window.addEventListener("scroll", moveTooltip, false );
+    if(typeof window!=='undefined'){
+      window.addEventListener("resize", moveTooltip, false);
+      window.addEventListener("scroll", moveTooltip, false);
+    }
 
     component.set(defaultOptions);
     var ttModel=component.model;
