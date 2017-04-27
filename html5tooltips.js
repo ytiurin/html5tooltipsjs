@@ -643,8 +643,13 @@
   function createDOMTooltips()
   {
     getElementsByAttribute("data-tooltip").forEach(function(target) {
+      createDefaultTooltip(target);
+    });
+  }
 
-      var options={
+  function createDefaultTooltip(target)
+  {
+    var options = {
         animateFunction: extractOptionAttribute(target, "data-tooltip-animate-function", defaultOptions.animateFunction),
         color: extractOptionAttribute(target, "data-tooltip-color", ''),
         contentMore: extractOptionAttribute(target, "data-tooltip-more", ''),
@@ -654,12 +659,10 @@
         maxWidth: extractOptionAttribute(target, "data-tooltip-maxwidth", 'auto'),
         persistent: extractOptionAttribute(target, "data-tooltip-persistent", defaultOptions.persistent),
         stickTo: extractOptionAttribute(target, "data-tooltip-stickto", defaultOptions.stickTo)
-      };
+    };
 
-      createTooltip(target,options,DOMTooltips);
-    });
+    createTooltip(target, options, DOMTooltips);
   }
-
   function getElementsBySelector(selector, context)
   {
     var nodes = [];
@@ -700,7 +703,9 @@
   html5tooltips.refresh=function(){
     createDOMTooltips();
   };
-
+  html5tooltips.createDefaultTooltip = function (target) {
+    createDefaultTooltip(target);
+  }
   html5tooltips.getTooltipByTarget=function(target){
     for(var i=userTooltips.length;i--;)
       if(userTooltips[i].model.target===target)
