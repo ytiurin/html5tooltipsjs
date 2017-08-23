@@ -193,11 +193,6 @@
     // COMPONENT INTERFACE
     component.destroy=function()
     {
-      if(typeof window!=='undefined'){
-        window.removeEventListener("resize", moveTooltip);
-        window.removeEventListener("scroll", moveTooltip);
-      }
-
       component.unmount();
     };
 
@@ -516,6 +511,15 @@
     this.show=show;
     this.showMore=showMore;
     this.moveTooltip=moveTooltip;
+
+    component.publ.destroy = function(){
+      if(typeof window!=='undefined'){
+        window.removeEventListener("resize", moveTooltip);
+        window.removeEventListener("scroll", moveTooltip);
+      }
+
+      component.destroy();
+    }
 
     component.publ.unmount = function(){
       resetTooltipPosition();
