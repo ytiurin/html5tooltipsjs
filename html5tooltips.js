@@ -3,7 +3,8 @@
 * (c) Eugene Tiurin; MIT license
 *
 * Contributors: nomiad, Friedel Ziegelmayer, Arend van Beelen jr.,
-* Peter Richmond, Bruno Wego, Kahmali Rose
+* Peter Richmond, Bruno Wego, Kahmali Rose, Axosoft-Ashley, Jim Doyle,
+* brunobatista
 *
 * 2017-04-10
 */
