@@ -6,7 +6,7 @@
 * Peter Richmond, Bruno Wego, Kahmali Rose, Axosoft-Ashley, Jim Doyle,
 * brunobatista
 *
-* 2017-04-10
+* 2017-08-23
 */
 
 (function (root, factory) {
