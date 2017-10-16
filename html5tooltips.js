@@ -169,8 +169,12 @@
     {
       clearTimeout(notifyTimeoutID[propName]);
       notifyTimeoutID[propName]=setTimeout(function(){
-        for(var i in modelObservers[propName])
-          modelObservers[propName][i](component.model[propName]);
+        for(var i in modelObservers[propName]) {
+          try {
+              modelObservers[propName][i](component.model[propName]);
+          } catch (e) {
+          }
+        }
 
         if(modelObservers[''])
           for(var i in modelObservers[''])
