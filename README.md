@@ -166,6 +166,7 @@ tooltip.destroy();
 
 - **data-tooltip** - Value for the `contentText` parameter.
 - **data-tooltip-animate-function** - Value for the `animateFunction` parameter.
+- **data-tooltip-disable-animation** - Value for the `disableAnimation` parameter.
 - **data-tooltip-color** - Value for the `color` parameter.
 - **data-tooltip-delay** - Value for the `delay` parameter.
 - **data-tooltip-hide-delay** - Value for the `hideDelay` parameter.
